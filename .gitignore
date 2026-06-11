@@ -1,4 +1,20 @@
+# ============================================================
+# Obsidian Internal State
+# ============================================================
+# These files track window layout, open tabs, and scroll
+# positions. They change every time you open the vault and
+# shouldn't be versioned — each device generates its own.
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+
+# ============================================================
+# macOS
+# ============================================================
+# Finder metadata. macOS creates these in every folder.
 .DS_Store
+
+# ============================================================
+# Obsidian Trash
+# ============================================================
+# Deleted files go here before permanent removal.
 _trash/

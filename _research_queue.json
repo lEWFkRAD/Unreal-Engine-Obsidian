@@ -1,0 +1,376 @@
+{
+  "gas": {
+    "topic": "Gameplay Ability System (GAS)",
+    "priority": "HIGH",
+    "current_coverage": "0 files",
+    "videos": [
+      {
+        "title": "Unreal Engine's Gameplay Ability System - Part 1: The Setup",
+        "channel": "Ali Elzoheiry",
+        "url": "https://www.youtube.com/watch?v=1QgGyndH_u4",
+        "notes": "24-part C++ series. THE gold standard for GAS."
+      },
+      {
+        "title": "Learn Unreal Engine's GAS in 14.65 minutes",
+        "channel": "Umbral Studios",
+        "url": "https://www.youtube.com/watch?v=wpAvEOZAlEs",
+        "notes": "Quick overview, 13-episode series."
+      },
+      {
+        "title": "Unreal Gameplay Ability System - FULL COURSE",
+        "channel": "gamedev.tv",
+        "url": "https://www.youtube.com/watch?v=RrMQy9pGF-k",
+        "notes": "Professional full course."
+      },
+      {
+        "title": "Intro to Gameplay Ability System - UE5.5 2025",
+        "channel": "CodeWithRo",
+        "url": "https://www.youtube.com/watch?v=APHw7NzLSzo",
+        "notes": "Up to date for UE 5.5."
+      },
+      {
+        "title": "Intro to Combat using GAS",
+        "channel": "Ryan Laley",
+        "url": "https://www.youtube.com/watch?v=dqJy_n44BgM",
+        "notes": "Combat-focused GAS."
+      }
+    ]
+  },
+  "cpp": {
+    "topic": "C++ for UE5",
+    "priority": "HIGH",
+    "current_coverage": "0 files",
+    "videos": [
+      {
+        "title": "From Blueprints to C++ in Unreal Engine",
+        "channel": "Ali Elzoheiry",
+        "url": "https://www.youtube.com/watch?v=4AdGIPV1Yw4",
+        "notes": "Blueprint-to-C++ transition."
+      },
+      {
+        "title": "Unreal Engine Tutorial - Episode 1 - Start Using C++ Code",
+        "channel": "Code, Tech, and Tutorials",
+        "url": "https://www.youtube.com/watch?v=ai3nRYOUunY",
+        "notes": "C++ project setup, UCLASS/UPROPERTY basics."
+      },
+      {
+        "title": "Unlock the Power of UPROPERTY & UFUNCTION Macros",
+        "channel": "UE5 tutorial",
+        "url": "https://www.youtube.com/watch?v=T2_AaJqR2uk",
+        "notes": "Deep dive on macros."
+      },
+      {
+        "title": "Blueprint and C++ Communication in Unreal Engine",
+        "channel": "QuicksterGames",
+        "url": "https://www.youtube.com/watch?v=CTiidefyPAI",
+        "notes": "Bidirectional C++/BP communication."
+      },
+      {
+        "title": "C++ vs Blueprints: The Ultimate UE5 Showdown",
+        "channel": "Tic Toxic Studios",
+        "url": "https://www.youtube.com/watch?v=XCn_6Ifwhfg",
+        "notes": "When to use C++ vs Blueprints."
+      }
+    ]
+  },
+  "ai": {
+    "topic": "AI (Behavior Trees, EQS)",
+    "priority": "MEDIUM",
+    "current_coverage": "2 files",
+    "videos": [
+      {
+        "title": "Smart Enemy AI | Part 1: Behavior Trees | UE5",
+        "channel": "Ali Elzoheiry",
+        "url": "https://www.youtube.com/watch?v=-t3PbGRazKg",
+        "notes": "BT, Blackboards, EQS, custom tasks."
+      },
+      {
+        "title": "How to Make a Simple Behavior Tree in UE5",
+        "channel": "Gorka Games",
+        "url": "https://www.youtube.com/watch?v=QJuaB2V79mU",
+        "notes": "Wander + chase, Pawn Sensing."
+      },
+      {
+        "title": "Introduction to AI Perception | UE5",
+        "channel": "Tony Munoz",
+        "url": "https://www.youtube.com/watch?v=ol0_73lwCXU",
+        "notes": "AI Perception, sight config."
+      }
+    ]
+  },
+  "niagara": {
+    "topic": "Niagara Particles",
+    "priority": "MEDIUM",
+    "current_coverage": "2 files",
+    "videos": [
+      {
+        "title": "Introduction To Niagara (UE5 Tutorial)",
+        "channel": "Unreal University",
+        "url": "https://www.youtube.com/watch?v=hnUQiwJweeg",
+        "notes": "Complete beginner intro."
+      },
+      {
+        "title": "Ground Slash VFX - Niagara Tutorial",
+        "channel": "Gabriel Aguiar Prod.",
+        "url": "https://www.youtube.com/watch?v=EXWwZ4F_reA",
+        "notes": "Multi-emitter, mesh renderer, decals."
+      },
+      {
+        "title": "Making Smoke Particles In UE5",
+        "channel": "Peyton Varney",
+        "url": "https://www.youtube.com/watch?v=omDpFnDi9fs",
+        "notes": "Smoke material, color over life."
+      }
+    ]
+  },
+  "ui_umg": {
+    "topic": "UI / UMG",
+    "priority": "MEDIUM",
+    "current_coverage": "1 file",
+    "videos": [
+      {
+        "title": "How To Build MENUS AND UI In UE5",
+        "channel": "Tinkr Academy",
+        "url": "https://www.youtube.com/watch?v=198AMGtdo-E",
+        "notes": "Main menu, health bar, widget styling."
+      },
+      {
+        "title": "Best Practices for Creating and Managing Widgets | UE5",
+        "channel": "Kekdot",
+        "url": "https://www.youtube.com/watch?v=7b7a20j0azc",
+        "notes": "HUD management, widget lists, toggle visibility."
+      },
+      {
+        "title": "Widgets Part 1: Canvas Panel",
+        "channel": "Ryan Laley",
+        "url": "https://www.youtube.com/watch?v=u4tfL6UpRWE",
+        "notes": "Canvas Panel, Anchors, HUD architecture."
+      }
+    ]
+  },
+  "enhanced_input": {
+    "topic": "Enhanced Input System",
+    "priority": "MEDIUM",
+    "current_coverage": "1 file",
+    "videos": [
+      {
+        "title": "Enhanced Input System Tutorial - UE5",
+        "channel": "Tutorial",
+        "url": "https://www.youtube.com/watch?v=YFEqdi-9mD8",
+        "notes": "Complete setup, Input Actions, Mapping Contexts."
+      },
+      {
+        "title": "Enhanced Input Tutorial Masterclass for Beginners",
+        "channel": "UNF Games",
+        "url": "https://www.youtube.com/watch?v=RBCLAWMWyDw",
+        "notes": "2+ hour masterclass."
+      },
+      {
+        "title": "Enhanced Input Part 2: Hold to Interact",
+        "channel": "Tutorial",
+        "url": "https://www.youtube.com/watch?v=8Dnc9KtMkss",
+        "notes": "Advanced: hold triggers, interaction."
+      }
+    ]
+  },
+  "save_system": {
+    "topic": "Save System",
+    "priority": "MEDIUM",
+    "current_coverage": "1 file",
+    "videos": [
+      {
+        "title": "How to Save and Load your Game In UE5 (Easy)",
+        "channel": "Gorka Games",
+        "url": "https://www.youtube.com/watch?v=14wmGdbhLOA",
+        "notes": "Quick and simple, 133K views."
+      },
+      {
+        "title": "Organised Save System In UE5.1 with Structs",
+        "channel": "Tutorial",
+        "url": "https://www.youtube.com/watch?v=a37tLeTZugc",
+        "notes": "Advanced: Structs, Game Instance, Event Dispatchers."
+      },
+      {
+        "title": "Save Game System (Manual, Checkpoints, Autosave)",
+        "channel": "2xP Games",
+        "url": "https://www.youtube.com/watch?v=F1jyiy-Gx-s",
+        "notes": "Multiple save types."
+      }
+    ]
+  },
+  "animation": {
+    "topic": "Animation Blueprint / State Machine",
+    "priority": "MEDIUM",
+    "current_coverage": "6 files",
+    "videos": [
+      {
+        "title": "How to Animate Your Character in UE5",
+        "channel": "Gorka Games",
+        "url": "https://www.youtube.com/watch?v=WUXvq6At6pE",
+        "notes": "1D Blendspace, AnimBP, state machines. 542K views."
+      },
+      {
+        "title": "Animation Blueprint Fundamentals | First State Machine",
+        "channel": "Revived Zeal",
+        "url": "https://www.youtube.com/watch?v=BnUxJScdkQY",
+        "notes": "Idle-to-Walk state machine."
+      },
+      {
+        "title": "Animation Blueprint Part 1: State Machines",
+        "channel": "Ryan Laley",
+        "url": "https://www.youtube.com/watch?v=9wksRrMJXtQ",
+        "notes": "Detailed state machine tutorial. 155K views."
+      }
+    ]
+  },
+  "audio": {
+    "topic": "MetaSounds / Audio",
+    "priority": "LOW",
+    "current_coverage": "2 files",
+    "videos": [
+      {
+        "title": "UE5 Audio Beginner Tutorial - MetaSounds!",
+        "channel": "Tutorial",
+        "url": "https://www.youtube.com/watch?v=0H7PiqIl0Io",
+        "notes": "2D/3D sounds, attenuation, MetaSound sources."
+      },
+      {
+        "title": "Intro to MetaSounds in Unreal Engine",
+        "channel": "PrismaticaDev",
+        "url": "https://www.youtube.com/watch?v=92RIT7tObDg",
+        "notes": "Wave Player, distance-based variation."
+      },
+      {
+        "title": "Dynamic Footsteps with MetaSounds",
+        "channel": "Tutorial",
+        "url": "https://www.youtube.com/watch?v=pYxocPdtHBw",
+        "notes": "Surface-based footstep sounds."
+      }
+    ]
+  },
+  "materials": {
+    "topic": "Materials / Shaders (Advanced)",
+    "priority": "LOW",
+    "current_coverage": "3 files",
+    "videos": [
+      {
+        "title": "Advanced Glass Material - UE5",
+        "channel": "WorldofLevelDesign",
+        "url": "https://www.youtube.com/watch?v=bahRaP4uA3o",
+        "notes": "Fresnel, refraction, parameter groups."
+      },
+      {
+        "title": "Layered Material Workflow Breakdown",
+        "channel": "Tutorial",
+        "url": "https://www.youtube.com/watch?v=CPxU3pYZtyY",
+        "notes": "Material Layers, Layer Blends."
+      },
+      {
+        "title": "Parallax Occlusion Mapping | 5-Minute Materials",
+        "channel": "Tutorial",
+        "url": "https://www.youtube.com/watch?v=h0xytNFiqbQ",
+        "notes": "POM setup, height ratio."
+      }
+    ]
+  },
+  "optimization": {
+    "topic": "Optimization / Profiling",
+    "priority": "MEDIUM",
+    "current_coverage": "3 files",
+    "videos": [
+      {
+        "title": "UE5 Optimization Made Easy: Fundamentals",
+        "channel": "Dallas Drapeau",
+        "url": "https://www.youtube.com/watch?v=zVNViTNHHdA",
+        "notes": "View modes, actionable fixes. 94K views."
+      },
+      {
+        "title": "How to Optimize Performance in UE5",
+        "channel": "Nu Makes Games",
+        "url": "https://www.youtube.com/watch?v=lfjG3z5VVIw",
+        "notes": "Unreal Insights, 20 FPS -> 120 FPS case study."
+      },
+      {
+        "title": "1-hour of Unreal GPU Optimization Tips",
+        "channel": "Tom Looman",
+        "url": "https://www.youtube.com/watch?v=c2MH20OPSw0",
+        "notes": "VSM, Niagara culling, Nanite settings."
+      }
+    ]
+  },
+  "data_assets": {
+    "topic": "Data Assets / Data Tables",
+    "priority": "HIGH",
+    "current_coverage": "0 files",
+    "videos": [
+      {
+        "title": "Unreal Engine Data Assets EXPLAINED",
+        "channel": "The Game Dev Cave",
+        "url": "https://www.youtube.com/watch?v=GQyo3q31jTQ",
+        "notes": "Primary Data Asset, practical usage."
+      },
+      {
+        "title": "Unreal Engine 5 Data Tables with C++",
+        "channel": "Tutorial",
+        "url": "https://www.youtube.com/watch?v=hXZR3udztWE",
+        "notes": "C++ structs, TSoftObjectPtr."
+      },
+      {
+        "title": "How to use Data Assets in UE5",
+        "channel": "GDXR",
+        "url": "https://www.youtube.com/watch?v=ORye2_bkz3M",
+        "notes": "PrimaryDataAsset, runtime modification."
+      }
+    ]
+  },
+  "world_partition": {
+    "topic": "World Partition / Level Streaming",
+    "priority": "MEDIUM",
+    "current_coverage": "0 files",
+    "videos": [
+      {
+        "title": "Simplified Guide: UE5's World Partition Tool",
+        "channel": "BlackShinobi956",
+        "url": "https://www.youtube.com/watch?v=FP0BNaeHok4",
+        "notes": "Grid system, HLOD, Data Layers."
+      },
+      {
+        "title": "Open World Landscapes with Partitioning in UE5",
+        "channel": "Aziel Arts",
+        "url": "https://www.youtube.com/watch?v=B2f6EoOXRHg",
+        "notes": "4km landscape, heightmap import."
+      },
+      {
+        "title": "World Partition & HLOD's (UE5.4)",
+        "channel": "Tutorial",
+        "url": "https://www.youtube.com/watch?v=oaon_1huRoI",
+        "notes": "HLOD methods, 3D grid."
+      }
+    ]
+  },
+  "multiplayer": {
+    "topic": "Multiplayer / Networking",
+    "priority": "LOW",
+    "current_coverage": "0 files",
+    "videos": [
+      {
+        "title": "Intro To Replication And Multiplayer - UE5",
+        "channel": "Pitchfork Academy",
+        "url": "https://www.youtube.com/watch?v=bBK8A-mFH-s",
+        "notes": "Comprehensive: RPCs, RepNotify."
+      },
+      {
+        "title": "Multiplayer Replication Basics in UE5",
+        "channel": "Gorka Games",
+        "url": "https://www.youtube.com/watch?v=ef6SeknakeU",
+        "notes": "Quick intro. 154K views."
+      },
+      {
+        "title": "Basics of Replication | Instances, RepNotify, RPC's",
+        "channel": "Kekdot",
+        "url": "https://www.youtube.com/watch?v=OVeo3cVTIcU",
+        "notes": "Three core mechanisms. 71K views."
+      }
+    ]
+  }
+}

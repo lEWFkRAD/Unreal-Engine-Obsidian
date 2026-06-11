@@ -4,6 +4,27 @@ All notable changes to the UE5 Tutorial Knowledge Base will be documented in thi
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v1.2.0] — 2026-06-11
+
+### Added
+- **Architecture/** folder — 7 design decision docs from Hermes knowledge base:
+  - `unreal-engine-rpg-systems.md` — Inventory, quests, dialogue, save system architecture patterns
+  - `unreal-engine-solo-rpg-learning-path.md` — Priority-ordered learning plan for solo RPG dev
+  - `unreal-engine-gameplay-ability-system.md` — GAS overview with RPG system mapping
+  - `unreal-engine-blueprint-hybrid-workflow.md` — C++/Blueprint split strategy
+  - `unreal-engine-cpp-foundations.md` — UObject system, reflection, garbage collection
+  - `GASDocumentation.md` — Reference to tranek's GAS documentation (324KB)
+  - `open-source-ue5-game-references.md` — ActionRoguelike and Alis as reference projects
+- MOC index file for Architecture folder
+- Wikilinks between architecture docs
+
+### Notes
+- Architecture docs are complementary to tutorials — they teach design decisions, not implementation steps
+- 3 tooling docs (LLM tooling, MCP servers, skills) excluded pending audit
+- Reviewed by 3 independent profiles (Senna, Architect, Secretary) before merge
+
+---
+
 ## [v1.1.0] — 2026-06-11
 
 ### Added

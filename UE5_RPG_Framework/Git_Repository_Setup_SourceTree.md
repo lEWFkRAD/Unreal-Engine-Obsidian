@@ -1,0 +1,429 @@
+---
+title: "How to Set Up an Unreal Engine 5 Git Repository - SourceTree Source Control"
+source: "https://www.youtube.com/watch?v=zIllLXkkHB0"
+video_id: "zIllLXkkHB0"
+type: "youtube-transcript"
+series: "UE5 RPG Framework"
+episode: 0
+tags: [youtube, tutorial, transcript, ue5, rpg, gamedev]
+---
+
+# How to Set Up an Unreal Engine 5 Git Repository - SourceTree Source Control
+
+**URL:** https://www.youtube.com/watch?v=zIllLXkkHB0
+**Segments:** 406
+
+## Transcript
+
+- [**0:00**] what's up guys welcome to new Unreal
+- [**0:02**] Engine 5 tutorial today I will show you
+- [**0:04**] on how to create a GitHub repository for
+- [**0:06**] your Unreal Engine 5 project and use
+- [**0:09**] sorcery as the source Control software
+- [**0:11**] it's gonna be a very easy way to follow
+- [**0:13**] so let's get started alright so I also
+- [**0:16**] have added this video as an episode for
+- [**0:18**] my RPG tutorial Series so I will be
+- [**0:20**] using the upred as an example so the
+- [**0:23**] guys the guys that you found in that
+- [**0:24**] series you can also do this video so
+- [**0:27**] what is a repository and Source control
+- [**0:29**] for Unreal Engine a Gateway past story
+- [**0:32**] is used to manage changes to the game's
+- [**0:34**] code assets and configurations and have
+- [**0:37**] them in a version control system to
+- [**0:39**] track changes or files over time so this
+- [**0:42**] can be also used to allow multiple
+- [**0:44**] people to work on the same project
+- [**0:46**] simultaneously without stepping on each
+- [**0:48**] other's Toes or losing their work it is
+- [**0:51**] a very convenient way of working in a
+- [**0:53**] team but hey for solo I do recommend to
+- [**0:56**] also have track of everything social
+- [**0:58**] control is perfect so the first thing
+- [**1:00**] that we have to do is go into GitHub and
+- [**1:03**] create a new account I will be linking
+- [**1:05**] all in the description so I'll be
+- [**1:07**] linking this page over here now maybe
+- [**1:09**] you probably already know about GitHub
+- [**1:11**] and basically here is where we're gonna
+- [**1:13**] be storing our repository like for
+- [**1:16**] example here the own Unreal Engine 5
+- [**1:18**] source code is stored in GitHub so you
+- [**1:20**] know just to give you an example of the
+- [**1:22**] scale that this has so go ahead and sign
+- [**1:24**] up and if not you can sign in if you
+- [**1:27**] already have an account so then we have
+- [**1:28**] to go into source3 and download it so
+- [**1:31**] this is going to be the software they're
+- [**1:32**] gonna use in order to manage everything
+- [**1:34**] okay uh commit to push the changes pool
+- [**1:38**] manage the branches everything okay so
+- [**1:40**] we have to download this now GitHub this
+- [**1:43**] Hub is some software this but this one
+- [**1:46**] is the one that I use and it's so much
+- [**1:48**] more advanced and certificated so I do
+- [**1:51**] recommend to use source resource what
+- [**1:52**] I'm gonna use today so go ahead and
+- [**1:54**] express download to Windows agree and
+- [**1:56**] now you can go ahead and download it
+- [**1:57**] alright so once you have downloaded just
+- [**1:59**] go ahead and no pre and you will see the
+- [**2:01**] wizard so you have some questions over
+- [**2:04**] here first of all just agree to the term
+- [**2:06**] servers and then you will be asked if
+- [**2:08**] you want to create a bit bucket or a
+- [**2:10**] lesson account and here you want to
+- [**2:12**] create an attached athleticism account
+- [**2:13**] if the bucket is basically like it's on
+- [**2:16**] GitHub server so you can also store your
+- [**2:18**] repository there but we're gonna be
+- [**2:19**] using GitHub so you only want to create
+- [**2:21**] the atlation account which are basically
+- [**2:24**] the company of this software over here
+- [**2:26**] which are also the company of Trello and
+- [**2:28**] other known services so
+- [**2:31**] very good company over here
+- [**2:33**] and then you will probably be asked to
+- [**2:35**] install git and Mercury so go ahead and
+- [**2:37**] select both and then install them and
+- [**2:39**] then after that you'll be asked if you
+- [**2:41**] want to create a global git file in this
+- [**2:43**] one say no because we will need to go
+- [**2:45**] ahead and create our own one customize
+- [**2:47**] for Unreal Engine and then you'll
+- [**2:49**] probably be asked again if you want to
+- [**2:51**] create an SSH key and here it say no
+- [**2:54**] because it will just be a pain okay this
+- [**2:56**] is just a mess
+- [**2:57**] um basically it's just a safer way of
+- [**3:00**] just managing your repository basically
+- [**3:03**] having a key and stuff but it's very
+- [**3:04**] complex and for this tutorial it's not
+- [**3:06**] very convenient so say no and okay once
+- [**3:08**] we have everything set up you'll
+- [**3:10**] probably see this so you have a new tab
+- [**3:12**] and then we have this options over here
+- [**3:14**] now you will not see all this price here
+- [**3:16**] because of course you probably haven't
+- [**3:18**] used it before but what we want to do is
+- [**3:21**] go over here into remote and then in
+- [**3:23**] here we will see all the accounts that
+- [**3:24**] we have so what you want to do already
+- [**3:26**] have you know set up my GitHub over here
+- [**3:28**] but you want to press here add a new
+- [**3:31**] account and then in hosting service
+- [**3:33**] instead of big bucket you want to select
+- [**3:35**] GitHub okay now GitHub Enterprise or
+- [**3:38**] GitHub just add a regular GitHub and
+- [**3:41**] then you will not need to change
+- [**3:42**] everything here leave it as https not
+- [**3:45**] SSH okay no use https and then the
+- [**3:48**] authentication make sure that it's on
+- [**3:50**] basic okay
+- [**3:51**] make sure that's on basic okay and then
+- [**3:54**] they will place the username and then
+- [**3:55**] the password and then you will press OK
+- [**3:57**] and then you'll probably be logged in
+- [**3:59**] into your account and then you'll be
+- [**4:01**] able to manage everything okay so what
+- [**4:04**] we want right now is to create a new
+- [**4:06**] repository so we're going to do is go up
+- [**4:09**] here into the create Tab and now we need
+- [**4:11**] to plug in a destination path now the
+- [**4:14**] thing is that we have to create a new
+- [**4:16**] empty folder not the um basically
+- [**4:18**] repository will not be able to create we
+- [**4:20**] cannot assign it already into our
+- [**4:22**] existing uh price which in my case will
+- [**4:24**] be the RPG and so what we have to do is
+- [**4:27**] create a new empty folder now it's a
+- [**4:29**] pain but it is what we have to do and
+- [**4:30**] then later on copy the files of the
+- [**4:32**] product and move them on so yes that
+- [**4:35**] pain but is what we have to do now of
+- [**4:36**] course if you want to set up firstly the
+- [**4:39**] repository and then create from the epic
+- [**4:42**] games launcher
+- [**4:43**] um your project into that path you can
+- [**4:45**] do so and you don't have to then copy
+- [**4:46**] and paste the files but in my case
+- [**4:49**] because I already have a credit we have
+- [**4:51**] to do that so let's go into uh your
+- [**4:54**] location and what you want to do is just
+- [**4:56**] go ahead and create a new folder so in
+- [**4:59**] my case uh this folder will be the RPG
+- [**5:03**] underscore tutorial underscore series
+- [**5:07**] and then we're going to do to basically
+- [**5:11**] um differentiate it from the other one
+- [**5:13**] is that git at the end and I also
+- [**5:15**] recommend that you do so for your pride
+- [**5:18**] at underscore git at the end so we know
+- [**5:21**] that that's the source control version
+- [**5:22**] normally I do that and I recommend doing
+- [**5:25**] so but of course you can do what you
+- [**5:27**] want but I yeah I basically recommend it
+- [**5:30**] so once that you have created that
+- [**5:32**] folder
+- [**5:33**] um the RPG tutorial series underscore
+- [**5:36**] get or you found the tutorial series it
+- [**5:38**] will be the same but if you're in your
+- [**5:40**] own Pride you have to create a new empty
+- [**5:42**] folder and now we can go ahead and plug
+- [**5:43**] it in okay and then you can go ahead and
+- [**5:45**] put a name so this is basically the name
+- [**5:48**] of the repository itself in GitHub so in
+- [**5:50**] here we can do so and remove the gear
+- [**5:53**] and then here I'm gonna add Gorka games
+- [**5:56**] uh RPG third series okay and then I can
+- [**5:59**] remove also the underscore so it's a bit
+- [**6:01**] uh cleaner so you can the ones that are
+- [**6:04**] following my RPG series you can put
+- [**6:05**] exactly the same and if you are using
+- [**6:08**] your own product you can go ahead and
+- [**6:09**] just put it whatever name you want down
+- [**6:12**] here of course when I select git and
+- [**6:14**] then it is very important that we click
+- [**6:16**] on this create repository in account
+- [**6:18**] this will automatically create the
+- [**6:20**] repository on GitHub okay in the cloud
+- [**6:22**] so this is what we want if not we will
+- [**6:25**] need to do many more things so this will
+- [**6:27**] save us a lot of time so here go ahead
+- [**6:28**] answer your GitHub account that we
+- [**6:30**] created earlier in the remote Tab and
+- [**6:32**] then uh you go ahead and select adjust
+- [**6:35**] yourself and then if you want you can
+- [**6:37**] put a description but you know that's
+- [**6:39**] basically up to you and then I recommend
+- [**6:41**] the ones that you follow my tutorial
+- [**6:43**] series to click spray as is private and
+- [**6:46**] and of course if you have your own um
+- [**6:49**] project you can basically see if you
+- [**6:52**] want to click it's private or not this
+- [**6:54**] will depend now normally I do recommend
+- [**6:56**] starting out as is private and then as
+- [**6:58**] you see that the product is advancing
+- [**7:00**] you can create a license and then put it
+- [**7:02**] public and stuff later on but right now
+- [**7:05**] I recommend to click on subscribe it
+- [**7:06**] okay so now with that we have everything
+- [**7:08**] now we're going to say grid and just
+- [**7:10**] wait a few seconds and it'll be
+- [**7:11**] basically setting up the repository in
+- [**7:14**] the cloud on GitHub and also setting the
+- [**7:16**] files in our computer so there we go now
+- [**7:19**] we have a new tab with our project
+- [**7:22**] created and now we don't have anything
+- [**7:24**] yet so we have to start doing some
+- [**7:26**] things let's go ahead and open our pride
+- [**7:29**] I know you see a DOT get a new folder
+- [**7:31**] over here now maybe you don't see this
+- [**7:33**] because I have and basically
+- [**7:36**] um uh how you would say in English
+- [**7:38**] basically hitting elements so basically
+- [**7:42**] this folder is like hidden so maybe you
+- [**7:43**] don't see it if not you can just go here
+- [**7:45**] and see uh hidden elements I know you
+- [**7:47**] will see so if your uh probably is
+- [**7:49**] probably set up you will see this here
+- [**7:51**] okay now we want to create the dot
+- [**7:53**] ignore file which is basically just like
+- [**7:55**] a filter which says what files can be
+- [**7:57**] basically committed into these servers
+- [**8:00**] into our repository now we don't want to
+- [**8:02**] basically check everything we just want
+- [**8:03**] to share our blueprints levels Etc it is
+- [**8:07**] more convenient the things that we need
+- [**8:08**] so I have basically I just left in the
+- [**8:10**] description so just go ahead and
+- [**8:12**] download it and now we can go ahead and
+- [**8:14**] just paste it over here and we open it
+- [**8:16**] up you will see that it's just a text
+- [**8:17**] with a lot of different file options
+- [**8:19**] okay
+- [**8:20**] so now it will be there and now it will
+- [**8:22**] go into our product and go into file
+- [**8:24**] status you'll see that it watch will be
+- [**8:26**] detected and be added to Source control
+- [**8:28**] so basically all the changes that we'll
+- [**8:30**] make will be out of here and then on
+- [**8:32**] here is the ones that will be committed
+- [**8:34**] and then we can push them into the
+- [**8:35**] server okay so I'll explain how
+- [**8:37**] everything works in a second but now
+- [**8:38**] what we want to do is get all our files
+- [**8:41**] of the uh unreal bright which in my case
+- [**8:44**] will be the RPG print and then paste
+- [**8:46**] them so let's go ahead and open the
+- [**8:47**] folder and then we want to go into the
+- [**8:49**] other part and I want to do is basically
+- [**8:52**] copy all of this so Ctrl C and then go
+- [**8:55**] into the airplane
+- [**8:57**] and I'll control B so this might take a
+- [**8:59**] bit I think it's 1.1 gig so it shouldn't
+- [**9:02**] really take a long time and yeah you
+- [**9:04**] just want to paste it now I recommend
+- [**9:06**] copying it and pasting not cutting it
+- [**9:08**] because imagine there's an error on the
+- [**9:10**] copying and pasting and you just you
+- [**9:13**] know destroyed everything so you want to
+- [**9:14**] be careful with this all right so now
+- [**9:16**] everything is spaces so if we go back
+- [**9:17**] into the uh
+- [**9:19**] over here just wait a few seconds now
+- [**9:21**] you can go into history and then file
+- [**9:23**] status and it will probably update or
+- [**9:26**] just click commit and there we go we
+- [**9:27**] have all the files over here and this
+- [**9:30**] will be basically with a filter of the
+- [**9:33**] getting North so we don't have like
+- [**9:34**] temporary files over here we just want
+- [**9:35**] the U assets which are the ones that we
+- [**9:38**] need so now we want to do is say stage
+- [**9:40**] all so this is basically you're saying
+- [**9:42**] we want all these assets to be on this
+- [**9:44**] stage spouts which are the ones that
+- [**9:46**] will not upload so say stage o now we
+- [**9:49**] may have some warnings about some of the
+- [**9:51**] textures and stuff that hey there are
+- [**9:53**] more than 10 megabytes are you sure you
+- [**9:55**] want to have them in short control so in
+- [**9:58**] our case for the RPG tutorial you say
+- [**9:59**] Okay
+- [**10:01**] um for now it's not going to create a
+- [**10:02**] problem the problem is going to be later
+- [**10:04**] if we start adding a lot of things now
+- [**10:06**] for your case uh that depends on you if
+- [**10:08**] you want to remove them from the source
+- [**10:10**] control you can but later on if you need
+- [**10:12**] to backup you will not have those assets
+- [**10:14**] so I recommend putting them but you know
+- [**10:17**] that depends to you now you can go ahead
+- [**10:18**] and set up a large file system in your
+- [**10:22**] Source controls you can upload those
+- [**10:23**] without any problem but that is way more
+- [**10:25**] advanced so I'm not covering that
+- [**10:27**] tutorial anyway so now you'll probably
+- [**10:29**] need to wait a few seconds maybe even
+- [**10:31**] minutes so
+- [**10:33**] just leave it there okay just wait a few
+- [**10:35**] seconds and we'll basically get back
+- [**10:37**] into it okay and now all the files will
+- [**10:39**] be stashed so there we go and now what
+- [**10:42**] we want to do is basically commit it so
+- [**10:44**] we want to put a note over here and this
+- [**10:46**] is going to be initial
+- [**10:49**] comment okay basically
+- [**10:51**] um the first comment to initialize the
+- [**10:53**] repository okay so that's what we want
+- [**10:55**] to do and now what we want to do is put
+- [**10:57**] on here all the things that we have up
+- [**10:59**] to now so in my case you know for the
+- [**11:02**] uh for the ones for the RPG series I
+- [**11:05**] just have Locomotion and basically we
+- [**11:07**] have uh vaulting we have assassinations
+- [**11:12**] um and well we have a few more things
+- [**11:16**] like crouching
+- [**11:17**] uh leaning and and so on but hey I'm
+- [**11:21**] gonna say this and more it doesn't
+- [**11:24**] really matter okay this is a note of and
+- [**11:26**] you always have to book whatever you do
+- [**11:27**] now you do what you want and you put the
+- [**11:30**] deal to the detail that you want on me
+- [**11:32**] here in my case for this is okay now
+- [**11:34**] let's just basically uncheck this for
+- [**11:36**] now leave it at the Depot and now we can
+- [**11:38**] say commit
+- [**11:40**] so we just want to wait a few seconds
+- [**11:42**] and basically now we will have them as a
+- [**11:45**] comment which is basically imagine that
+- [**11:47**] it is just a little plain okay we just
+- [**11:49**] right now said in the sky in order to
+- [**11:52**] basically be
+- [**11:54**] um transported whatever we want okay
+- [**11:56**] it's
+- [**11:57**] I just made an awful description but
+- [**11:59**] imagine it's like a small plane so right
+- [**12:01**] now we have this plane on our local
+- [**12:05**] desktop okay so we have basically a
+- [**12:08**] version of our private right now in the
+- [**12:11**] files of our machine but we want to
+- [**12:13**] basically export this into our server
+- [**12:15**] because right now if I enter in my
+- [**12:17**] GitHub repository and I go into
+- [**12:19**] repositories you will see that we have
+- [**12:20**] the RPG tutorial series that we created
+- [**12:22**] when we created with the sorcery but
+- [**12:24**] when I enter you will see that we don't
+- [**12:27**] have anything
+- [**12:28**] see we don't have anything okay so what
+- [**12:30**] we want to do is upload it to the
+- [**12:31**] servers so we're going to do is press
+- [**12:33**] this push button okay so push will be
+- [**12:36**] sending it into the repository in GitHub
+- [**12:39**] and pulling will be basically if another
+- [**12:41**] team
+- [**12:43**] um member
+- [**12:44**] made another comment and it applied to
+- [**12:47**] the servers we need to download their
+- [**12:48**] change so push and pull they're pretty
+- [**12:51**] self-explanatory so we want to push it
+- [**12:53**] and now we want to select the master
+- [**12:56**] Branch into the origin and then there we
+- [**12:59**] go and then so it all push all tags
+- [**13:01**] track there we go as default pretty much
+- [**13:03**] and you say push and we'll just upload
+- [**13:06**] all this into our repository so let's go
+- [**13:08**] ahead and just wait a few seconds this
+- [**13:10**] might again take a few seconds or
+- [**13:12**] minutes depending on how much uh you are
+- [**13:15**] going ahead and pushing all right so I
+- [**13:18**] just basically
+- [**13:19**] um pushed it and now it is done so if I
+- [**13:22**] go into my uh comment over here my
+- [**13:25**] repository sorry in GitHub you will see
+- [**13:27**] that if I refresh it I have everything
+- [**13:28**] with my initial comment local motion to
+- [**13:31**] the thumb and in content I have
+- [**13:32**] everything let's go so so cool so you
+- [**13:36**] can do exactly the same with your print
+- [**13:39**] so basically every time that you make a
+- [**13:41**] change you go over here and go into
+- [**13:44**] comment
+- [**13:45**] go and Stage all of your things and then
+- [**13:49**] basically put a note commit it and then
+- [**13:51**] push into the server and great you will
+- [**13:53**] have your history over here and there we
+- [**13:55**] go and later on you know I will not show
+- [**13:57**] you this here but you can create
+- [**13:58**] multiple branches so for example let's
+- [**14:00**] say that you're gonna make a big change
+- [**14:01**] from the game and you're gonna add
+- [**14:02**] multiplayer so to not break everything
+- [**14:04**] you can create a separate branch and
+- [**14:06**] then make all your changes here and if
+- [**14:08**] it ends good you basically merge it but
+- [**14:11**] if it ends back the multiplayer thing
+- [**14:14**] you go ahead and go back into master and
+- [**14:16**] you have everything like you had before
+- [**14:17**] so it is very very powerful so yeah so
+- [**14:20**] if you found it so helpful I would
+- [**14:22**] really appreciate you collect the video
+- [**14:23**] and subscribe to my channel
+- [**14:25**] I have lots of unreal entry pack
+- [**14:26**] tutorials so if you want to go ahead and
+- [**14:28**] check it out go ahead uh join my Discord
+- [**14:30**] server so you can ask any question and
+- [**14:31**] show your work and so on and follow me
+- [**14:34**] on all my social such as Twitter and
+- [**14:36**] Instagram and now yes we've all said bye
+- [**14:38**] bye
+- [**14:39**] foreign
+- [**14:44**] [Music]
+
+---
+
+## Related
+
+- → Next: [[02_Locomotion_Blendspace_Crouching_and_Procedural_Leaning]]

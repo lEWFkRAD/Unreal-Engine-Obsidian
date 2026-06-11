@@ -1,0 +1,1253 @@
+---
+title: "Unreal Engine 5 RPG Tutorial Series - #10: Sword Trace Damage and Hit Reactions"
+source: "https://www.youtube.com/watch?v=zbbWk851IXk"
+video_id: "zbbWk851IXk"
+type: "youtube-transcript"
+series: "UE5 RPG Framework"
+episode: 10
+tags: [youtube, tutorial, transcript, ue5, rpg, gamedev]
+---
+
+# Unreal Engine 5 RPG Tutorial Series - #10: Sword Trace Damage and Hit Reactions
+
+**URL:** https://www.youtube.com/watch?v=zbbWk851IXk
+**Duration:** 49:45
+**Segments:** 1227
+
+## Transcript
+
+- [**0:00**] what's up guys welcome to new Unreal
+- [**0:02**] Engine 5 tutorial and today we will
+- [**0:04**] continue with the RPG series we'll go
+- [**0:06**] ahead and implement the sword trade so
+- [**0:08**] we can detect our enemy and apply damage
+- [**0:10**] and we'll go ahead and also add a hit
+- [**0:12**] animation camera shake and also some
+- [**0:15**] sounds so we start to improve a bit the
+- [**0:17**] you know combat system and so on it's
+- [**0:20**] gonna be a very easy beautiful so let's
+- [**0:23**] get started
+- [**0:24**] [Music]
+- [**0:26**] all right so the first thing that we're
+- [**0:28**] going to do is of course go ahead and
+- [**0:31**] import our hit animations okay so we're
+- [**0:35**] going to do is go into characters RPG
+- [**0:37**] character animations and go ahead and
+- [**0:39**] create a new folder this will be the hit
+- [**0:41**] and underscore reacts
+- [**0:44**] and go ahead and open up this folder and
+- [**0:47**] now I will be you know be leaving the
+- [**0:49**] animations in the description so you can
+- [**0:51**] go ahead and download them they're again
+- [**0:53**] from the official epic games free RPG
+- [**0:56**] template so I've just extracted the ones
+- [**0:58**] that we needed and lead them in a Google
+- [**1:01**] Drive so it's easier uh for you guys as
+- [**1:04**] always so let's go ahead and open the
+- [**1:06**] folder select the you know this both
+- [**1:09**] animations and just drag them into the
+- [**1:11**] content browser and now we can go ahead
+- [**1:14**] and just say reset default just in case
+- [**1:16**] and now we need to apply this skeleton
+- [**1:18**] which in this case will be again the SK
+- [**1:20**] mannequin for the ue5 okay again done
+- [**1:23**] confused with the ue4 it's the ue5 just
+- [**1:26**] the SK mannequin and great now we can
+- [**1:28**] say import all and within one some
+- [**1:30**] seconds we have all the animations
+- [**1:32**] imported there we go you can see that
+- [**1:34**] it's already looking really cool
+- [**1:36**] go go ahead and Contour shift s to save
+- [**1:39**] everything so there's no you know any
+- [**1:41**] lost progress
+- [**1:43**] okay so right now when we go ahead and
+- [**1:45**] press play we can go ahead and start
+- [**1:47**] attacking the combo and stop so
+- [**1:49**] basically we have to make some sort of
+- [**1:52**] detection so when we hit our enemy okay
+- [**1:55**] another thing that we have to do is
+- [**1:56**] control the don't worry about us loading
+- [**1:59**] this haters it's controlled that there
+- [**2:01**] and sometimes we combine the combo with
+- [**2:05**] the assassination system so we first of
+- [**2:07**] all have to make sure that we will not
+- [**2:09**] assassinate at the same time that we are
+- [**2:11**] you know attacking with the combo
+- [**2:13**] and then also
+- [**2:16**] um yeah we have to basically make a sort
+- [**2:18**] of detection trait in order to do this
+- [**2:20**] and we'll create a very accurate one and
+- [**2:22**] you will see how we'll do it in a second
+- [**2:25**] so first of all let me let's make sure
+- [**2:27**] that we don't go ahead and attack and
+- [**2:29**] assassinate at the same time
+- [**2:31**] the first thing I want to do is actually
+- [**2:33**] first of all change the key so for the
+- [**2:37**] assassinations it will actually be the
+- [**2:39**] left so the right Mouse button and the
+- [**2:42**] normal combos will be on the left Mouse
+- [**2:44**] button so we'll just change a bit the
+- [**2:47**] assassination input
+- [**2:49**] um of course this is just personal
+- [**2:50**] preference but we'll do so like that and
+- [**2:52**] then also we'll go ahead and change the
+- [**2:54**] radio so it's a bit more behind and
+- [**2:55**] smaller so we only can even assassinate
+- [**2:58**] when we are just in his back so to do
+- [**3:01**] this we just gonna go into the third
+- [**3:03**] person folder input and then in the
+- [**3:06**] collection we can just go into the
+- [**3:08**] Assassin and here instead of using the
+- [**3:11**] left Mouse button we can just press disk
+- [**3:13**] icon over here and then in your mouse is
+- [**3:15**] press the right Mouse button and there
+- [**3:17**] we go now it will go ahead and change
+- [**3:19**] another thing that we have to do is now
+- [**3:21**] change the UI because it was saying you
+- [**3:23**] know left Mouse so I just go into UI
+- [**3:25**] in the ssna blueprint just go ahead and
+- [**3:28**] widget sorry just open it select the
+- [**3:31**] text and then instead of M just go ahead
+- [**3:33**] and replace that with an r and that's it
+- [**3:36**] we can just go ahead and compile unsafe
+- [**3:39**] great so now we have to do is select the
+- [**3:42**] um dummy over here and then say Ctrl e
+- [**3:44**] so it will just directly open the
+- [**3:46**] blueprint
+- [**3:47**] great so now we're going to do is go to
+- [**3:48**] the viewport and select the uh where I
+- [**3:51**] said the assassination radius and we're
+- [**3:54**] going to do is get the radius and make
+- [**3:56**] it way smaller okay let's make around 35
+- [**3:59**] and then go ahead and put it over here
+- [**4:01**] more into the enemies back it was
+- [**4:05**] already pretty decent uh you know in his
+- [**4:07**] back but we can basically make a bit
+- [**4:09**] smaller
+- [**4:11**] so now we will press play and go over
+- [**4:13**] here now we can attack without any
+- [**4:14**] problems okay and then uh it will not do
+- [**4:18**] both things but when I get into his back
+- [**4:21**] like really into his back I can now
+- [**4:23**] press the right Mouse button and
+- [**4:25**] assassinate him really cool okay we are
+- [**4:28**] having some cool things over here
+- [**4:30**] great one thing before actually
+- [**4:32**] continuing with the compass system let's
+- [**4:34**] go quickly into the third person
+- [**4:36**] character blueprint and I want to change
+- [**4:37**] only one thing and basically it's in the
+- [**4:41**] Crouch and some of you just let me know
+- [**4:43**] in the Discord that is better if we just
+- [**4:46**] instead of reversing it from the end
+- [**4:47**] just go ahead and reverse it by normal
+- [**4:49**] let's go ahead and change that so hold
+- [**4:52**] Ctrl and just put it up into reverse
+- [**4:54**] this is because if if we press quickly
+- [**4:57**] it could be Ctrl twice
+- [**4:59**] um it would not be like snapping into
+- [**5:01**] the end it will just continue from where
+- [**5:03**] it is it would just be a bit smoother so
+- [**5:06**] thanks for you know let me know in the
+- [**5:08**] Discord also you can guys go ahead and
+- [**5:10**] join the Discord server in order to you
+- [**5:13**] know ask any questions put your progress
+- [**5:15**] and so on okay now yes we can close this
+- [**5:19**] blueprint and also the dummy and what we
+- [**5:21**] have to do is go ahead and go into
+- [**5:22**] Blueprints and open the you know attack
+- [**5:25**] system component that we created earlier
+- [**5:28**] don't worry about this note I just
+- [**5:30**] basically was making a slow motion for
+- [**5:32**] the thumbnail so it's easier for me to
+- [**5:34**] take a Snapchat so yeah don't worry
+- [**5:35**] about that anyway so this is what we had
+- [**5:37**] in the last episode we'll build the
+- [**5:39**] combo system so now we basically have to
+- [**5:41**] make the
+- [**5:44**] um the trace okay basically the trace
+- [**5:46**] will consist of invisible
+- [**5:49**] um invisible capsules that will be
+- [**5:53**] placed exactly on the sword on the on
+- [**5:56**] the source plate so when you know the
+- [**5:59**] sword gets through it and it will detect
+- [**6:03**] the enemy and so on
+- [**6:04**] so what we're going to do is comment all
+- [**6:07**] this so select everything press C and
+- [**6:09**] this is going to be the combo system
+- [**6:13**] uh okay I just put it in all caps no
+- [**6:16**] combo system then let's put our presets
+- [**6:19**] it looks a bit nicer great let's go down
+- [**6:22**] over here let's right click and let's
+- [**6:23**] create a new custom event and this will
+- [**6:26**] be the start sword
+- [**6:29**] phrase
+- [**6:30**] and basically this is what we're gonna
+- [**6:32**] call from the animation Montage in order
+- [**6:35**] to begin our Trace okay so we want to do
+- [**6:39**] now is go and right click and create
+- [**6:41**] another custom event and this will be
+- [**6:43**] the sword
+- [**6:45**] Trace Loop so it will be basically the
+- [**6:49**] loop and which will be you know
+- [**6:50**] repeating itself once we are playing the
+- [**6:53**] animation
+- [**6:54**] so what we're going to do here is get
+- [**6:56**] this uh output or the delegate and just
+- [**6:59**] drag it over here and what we can do
+- [**7:01**] right now is just go ahead and call this
+- [**7:03**] which is set timer by event
+- [**7:06**] let's go ahead and out uh
+- [**7:09**] left click to remove the connection you
+- [**7:11**] just put it on the start sword Trace so
+- [**7:14**] basically we need to basically enable
+- [**7:16**] looping over here and put the time to be
+- [**7:18**] around 0.1 and we don't have to change
+- [**7:20**] any of the other settings so basically
+- [**7:22**] this is exactly what we did with the
+- [**7:24**] stamina system as you can see over here
+- [**7:26**] let me just open this just to Showcase
+- [**7:28**] you guys what we did here it's basically
+- [**7:30**] exactly the same we are repeating this
+- [**7:33**] event on all these things in this
+- [**7:36**] specific time uh it's gonna be just
+- [**7:39**] looping basically so we're doing exactly
+- [**7:42**] the same but with our sword Trace so
+- [**7:45**] here we want to make basically make a
+- [**7:47**] sword uh sorry sphere Trace by 10.
+- [**7:52**] okay and we'll go ahead and detect of
+- [**7:54**] the object and we are using a sphere
+- [**7:56**] Trace instead of a line Trace because it
+- [**7:58**] will just feel a bit better the you know
+- [**8:00**] the I guess the area The Sword and the
+- [**8:03**] shape and it will just be you know more
+- [**8:05**] convenient for us and we can tune it in
+- [**8:07**] so it's larger smaller so you can tune
+- [**8:09**] in the gameplay so it's easier to hit or
+- [**8:11**] harder to hit and so on so let's put the
+- [**8:14**] radius to be around 12 something like
+- [**8:16**] that and then what we have to do is
+- [**8:18**] basically get the starting point and the
+- [**8:20**] ending point let's go and compound save
+- [**8:22**] real quick and go into the third person
+- [**8:24**] guide to blueprint let's go ahead and
+- [**8:26**] open this eye let's go into the viewport
+- [**8:28**] and in the last episode we went ahead
+- [**8:30**] and added a sword
+- [**8:32**] so let's go ahead and put two pins on
+- [**8:34**] this sword so we know when uh what where
+- [**8:38**] is the position where we will start and
+- [**8:40**] finish so in this case it will be the
+- [**8:42**] tips
+- [**8:43**] so just go ahead and go into the sword
+- [**8:45**] right click on it sorry select the sword
+- [**8:47**] and up here into the components and
+- [**8:50**] search for an arrow and this will be the
+- [**8:53**] sword top
+- [**8:56**] point
+- [**8:58**] so this is where the top point of the
+- [**9:00**] trades will start another thing to build
+- [**9:02**] you know be able to go ahead and change
+- [**9:05**] the rotation and stuff of it let's go up
+- [**9:08**] here into the three points and disable
+- [**9:10**] real time so now we'll be paused so it's
+- [**9:13**] easier for us to change this so we have
+- [**9:15**] to do is just put this up here and to
+- [**9:17**] the tip of the sword and rotate this a
+- [**9:20**] bit so let me also enable snapping back
+- [**9:22**] again
+- [**9:23**] and let me just rotate it over here so
+- [**9:25**] it's facing that way really the rotation
+- [**9:27**] doesn't matter but I think it gets a bit
+- [**9:28**] you know cleaner honestly they just
+- [**9:30**] arrows pointing everywhere
+- [**9:32**] um so there we go you can see my exact
+- [**9:34**] and coordinates here it says around
+- [**9:36**] minus a hundred as you can see great and
+- [**9:40**] another thing that I have to do is
+- [**9:42**] duplicate this and this will be the
+- [**9:44**] sword
+- [**9:45**] button
+- [**9:46**] Point okay and basically we'll go ahead
+- [**9:49**] and put this at the start of the blade
+- [**9:53**] pretty much and now we can go ahead and
+- [**9:55**] rotate this back here and then put this
+- [**9:58**] let's change the this will be a five so
+- [**10:01**] it's a bit there we go so around here
+- [**10:04**] and then the top point I think we can
+- [**10:06**] manage to put it over here so minus 110.
+- [**10:09**] so there we go we have just the blade um
+- [**10:12**] so we have two points basically the top
+- [**10:14**] and the bottom point so basically our
+- [**10:16**] sphere Trace will be
+- [**10:18**] around in this two points
+- [**10:20**] so now we can use compile and save so
+- [**10:23**] let's go back into our attack system
+- [**10:24**] component and what we can do right now
+- [**10:26**] is go ahead and go into components and
+- [**10:29**] get the character mesh sorry now the
+- [**10:31**] character mesh we want the whole
+- [**10:32**] blueprint so what we can do is actually
+- [**10:35**] before we do the character mesh as we
+- [**10:38**] did in the last episode to get the well
+- [**10:40**] the mesh of the character we can also go
+- [**10:42**] ahead and just right click promote this
+- [**10:43**] to a variable and this will be the
+- [**10:46**] um basically the blueprint so character
+- [**10:49**] BP and let's go ahead and set this
+- [**10:53**] there we go so now what we can do is
+- [**10:55**] directly access the blueprint for from
+- [**10:59**] any time so we can just go here get it
+- [**11:01**] and then we can just get the top and
+- [**11:04**] sort top point and stuff so we're gonna
+- [**11:06**] do that
+- [**11:08**] so this will be the sword it will go
+- [**11:10**] down you'll see here the variables and
+- [**11:12**] then get a sword top point and what to
+- [**11:16**] do is just get the world location
+- [**11:19**] of this specific socket I just put it
+- [**11:22**] into the start and now we do exactly the
+- [**11:25**] same so get again the character
+- [**11:27**] blueprint and we will basically get the
+- [**11:30**] sword but bottom point this time go down
+- [**11:33**] here it is and then copy this node and
+- [**11:36**] paste it plug it in and this will be the
+- [**11:38**] end point basically our bottom point it
+- [**11:41**] doesn't matter the order you can do it
+- [**11:42**] the other way now but whatever
+- [**11:44**] and now we will go ahead and just draw a
+- [**11:47**] debug
+- [**11:48**] um so we can see how it looks so let's
+- [**11:50**] go into the fourth duration and put this
+- [**11:52**] to be 0.1 seconds
+- [**11:54**] and great so now we can actually start
+- [**11:58**] seeing how it looks so right now we have
+- [**12:01**] to call this so of course we'll call it
+- [**12:03**] from an animation notify from a name
+- [**12:06**] Montage so it will play exactly where we
+- [**12:08**] are Swinging The Sword but use the test
+- [**12:11**] real quick let's go into the attack
+- [**12:12**] input and just put here the start
+- [**12:16**] um short Trace which is right over here
+- [**12:18**] so we can see how it looks it's compound
+- [**12:20**] save go and press play and now you will
+- [**12:22**] see that if I attack we see the trace
+- [**12:25**] there we go so basically this will
+- [**12:29**] detect all of the objects that the
+- [**12:33**] sword will go through so when we get
+- [**12:35**] into our enemy we'll be able to deal
+- [**12:37**] damage if it goes through as you can see
+- [**12:38**] when it gets green is that it's
+- [**12:40**] detecting the something and you can
+- [**12:43**] totally play with the here
+- [**12:46**] with the two points with the radius to
+- [**12:49**] make it look how you want and
+- [**12:51**] and feel how you want and stuff okay so
+- [**12:54**] let's go ahead and delete that started
+- [**12:56**] sword Trace at the input because we
+- [**12:58**] don't need it we will create a any month
+- [**13:00**] uh notify sorry so this is exactly what
+- [**13:03**] we're going to do before we continue on
+- [**13:04**] so let's go back into the project
+- [**13:07**] um
+- [**13:08**] files over here and we're going to do is
+- [**13:11**] go into Blueprints and create a right
+- [**13:14**] click blueprint class and go into all
+- [**13:16**] classes over here and search for a name
+- [**13:19**] notify
+- [**13:21**] and this time instead of a a normal
+- [**13:24**] notify it will be basically a state so
+- [**13:27**] in the last episode we use uh you know
+- [**13:29**] no more notifieds for our combo but this
+- [**13:32**] time we'll use an NN notify state for
+- [**13:34**] this trace and you'll see the difference
+- [**13:36**] in a second let's go ahead and select it
+- [**13:38**] and this will be a BP underscore let's
+- [**13:41**] say oh my God they just saved okay BP
+- [**13:45**] let me rename this BP underscore notify
+- [**13:49**] underscore let's say a sword at race
+- [**13:53**] uh loop okay you can call it whatever
+- [**13:56**] you want let's go ahead and open this
+- [**13:58**] real quick
+- [**13:59**] so basically we will have the function
+- [**14:02**] over here that we can overwrite so
+- [**14:04**] basically we want to go into the
+- [**14:05**] received notify begin basically when the
+- [**14:09**] notify starts and then what to do is do
+- [**14:12**] a very similar thing that we did in the
+- [**14:14**] last episode for a combo which is get
+- [**14:16**] the mesh component and let's say get a
+- [**14:18**] owner
+- [**14:19**] right over here and now we can go and
+- [**14:22**] use this to cast to our third person
+- [**14:24**] character
+- [**14:26**] there you go plug this in so now we want
+- [**14:28**] to do is basically get the bpc
+- [**14:32**] um
+- [**14:33**] attack system component and now we can
+- [**14:36**] go ahead and call the start sort Trace
+- [**14:40**] there we go and now we will go ahead and
+- [**14:41**] just plug that into the return node over
+- [**14:44**] there and I will do the same for the uh
+- [**14:48**] stop so go into override and say receive
+- [**14:51**] notify end let's go real quick into the
+- [**14:54**] beginning and get this three notes so
+- [**14:56**] it's faster for us copy and just go to
+- [**14:59**] the end unplug this paste this put this
+- [**15:03**] over here
+- [**15:04**] there we go and now remember to get the
+- [**15:06**] mesh component and plug it into the get
+- [**15:08**] owner and here we have to create a new
+- [**15:11**] customer event so let's go quickly into
+- [**15:13**] the attack system component and now
+- [**15:15**] right over here let's go ahead and
+- [**15:16**] create a new custom event which in this
+- [**15:18**] case will be the uh basically
+- [**15:21**] stop
+- [**15:22**] sword
+- [**15:24**] Trace
+- [**15:26**] okay and now we want to do is basically
+- [**15:28**] you stop this timer so we'll do exactly
+- [**15:31**] what we did with the normal
+- [**15:33**] um
+- [**15:34**] with our stamina okay so basically we
+- [**15:38**] need to basically create this variable
+- [**15:41**] and then call this node over here so
+- [**15:43**] let's do the same let's go into the
+- [**15:44**] attack system go into the return value
+- [**15:46**] right click promote variable this will
+- [**15:48**] be the sword Trace Loop
+- [**15:52**] it doesn't Okay sword
+- [**15:55**] Trace
+- [**15:57**] Loop so we're all together
+- [**15:59**] great and now we can do is just get the
+- [**16:02**] sword Trace Loop down here the variable
+- [**16:04**] that we have described get it and then
+- [**16:06**] say clear and invalidate timer by handle
+- [**16:09**] and this will automatically you stop
+- [**16:11**] this Loop over here and now working is
+- [**16:14**] compound safe and go back into our
+- [**16:16**] notify and then just get it from our
+- [**16:19**] component and you say stop sort Trace
+- [**16:23**] and there we go we can just go ahead and
+- [**16:24**] get this plug it in
+- [**16:27**] and then go ahead and plug that in
+- [**16:30**] wait so now you will see that we can
+- [**16:32**] begin and start
+- [**16:33**] so probably using well in the last
+- [**16:36**] episode it was just a single pin there
+- [**16:39**] was no way of knowing if you know it was
+- [**16:41**] beginning or ending so that's the
+- [**16:43**] difference between a a notify and a
+- [**16:46**] stick so let me just show you what what
+- [**16:48**] I mean so let's go quickly into our
+- [**16:50**] attack animations so let's go into
+- [**16:52**] characters RPG character animations and
+- [**16:55**] then let's go ahead and go into the uh
+- [**16:57**] what's it sword attacks and we need to
+- [**17:00**] go into the montages so let's follow
+- [**17:01**] first of all into the attack one montage
+- [**17:04**] and you see a bit how it looks over here
+- [**17:07**] so basically we need to get the starting
+- [**17:09**] position of our attack so in this case
+- [**17:11**] you can see it will be around here so
+- [**17:14**] basically where the blade is starting to
+- [**17:16**] go and run so we are around in point 25
+- [**17:19**] so I want to do is create another
+- [**17:22**] um
+- [**17:23**] no matter how how do you call it a
+- [**17:26**] selection of notified track I'm notified
+- [**17:28**] let's go here to tracks okay and add 95
+- [**17:31**] track and those will be the sword trace
+- [**17:33**] and this is just to have everything a
+- [**17:35**] bit more organized let's go here right
+- [**17:37**] click and then go into add notify State
+- [**17:40**] and that you will find out here are BP
+- [**17:42**] notify a sword Trace Loop and now you'll
+- [**17:45**] see that we have in this case a start
+- [**17:47**] and end point in here it was just a
+- [**17:50**] starting point a single pin but in here
+- [**17:53**] we have a start and end point that's the
+- [**17:55**] difference between the state and the
+- [**17:57**] normal notifies so now here we can
+- [**17:59**] determine the start position and the end
+- [**18:01**] point so this is exactly what we're
+- [**18:04**] doing in the notify when he said star
+- [**18:06**] trades and stops trades so basically
+- [**18:08**] when the sword finishes the animation
+- [**18:11**] right over here kind of we will go ahead
+- [**18:15**] and put it here so the second pin so
+- [**18:18**] around 0.30 so it'll only be this
+- [**18:20**] fraction of the animation where the
+- [**18:23**] sword uh trades will be happening and
+- [**18:25**] then we'll finish as normally
+- [**18:27**] great so let's go ahead and do the same
+- [**18:29**] with the other animations now you will
+- [**18:31**] see with the Attack 2 it's a bit
+- [**18:33**] different it's more like ages steps into
+- [**18:36**] the character so the trace will be a bit
+- [**18:39**] different let's go ahead and skip that
+- [**18:41**] for one second and go directly into the
+- [**18:43**] attack 3. which is basically what it
+- [**18:45**] just goes ahead and launch this heavy
+- [**18:47**] attack which looks pretty cool
+- [**18:48**] so you have attack will kind of start
+- [**18:50**] over here I guess the sword Trace
+- [**18:53**] so again we can just go into the
+- [**18:55**] notifies and add a new track this will
+- [**18:57**] be the sword trace and then go over here
+- [**19:00**] right click and notify State and then
+- [**19:03**] our new thing and now we can find the
+- [**19:06**] end point which will be kind of over
+- [**19:07**] here
+- [**19:09**] we just landed so around 1.53 and I just
+- [**19:13**] drag it into there and there we go save
+- [**19:15**] it and close it and now again our last
+- [**19:18**] attack is a kick so we'll use the same
+- [**19:21**] system as the stabbing so it will be a
+- [**19:23**] bit different because in here well the
+- [**19:24**] sword would not do anything of course
+- [**19:27**] Okay so
+- [**19:29**] now it should be working so now as you
+- [**19:31**] can see the trace is not happening but
+- [**19:34**] when I start attacking
+- [**19:37**] okay sorry uh nothing is happening
+- [**19:40**] um so basically
+- [**19:42**] in the what is it here no in the combo
+- [**19:45**] no
+- [**19:46**] combo next now is uh blueprints
+- [**19:50**] here it is I'm gonna type trace and the
+- [**19:53**] notify uh begin
+- [**19:55**] and okay so in the begin yes we are
+- [**19:58**] getting this the component and the only
+- [**20:00**] sword a start Trace uh maybe I think
+- [**20:04**] that's because it's very fast this could
+- [**20:06**] be
+- [**20:08**] yes okay so you solve it there all right
+- [**20:12**] look
+- [**20:13**] see it's happening there so it was very
+- [**20:15**] fast so that was not issue and so let's
+- [**20:18**] go ahead and just do it a bit longer for
+- [**20:19**] this first attack animation
+- [**20:21**] RPG character animations uh sword
+- [**20:24**] attacks attack one so it's actually very
+- [**20:27**] fast so let's start a bit sooner I like
+- [**20:29**] Point 23 at this end a bit later like at
+- [**20:34**] 0.30 to so also we can go ahead and
+- [**20:37**] preview it another thing that we can do
+- [**20:38**] is go into the component and put the
+- [**20:41**] duration to be around uh point
+- [**20:46**] but 0.2 instead of 0.1 so be a bit
+- [**20:49**] longer
+- [**20:51**] and yes it's very hard to see but you
+- [**20:54**] saw it for one second there uh it's
+- [**20:56**] basically happening another thing that
+- [**20:57**] we can do is increase the loop so point
+- [**21:00**] zero zero one and and now it will be
+- [**21:02**] basically more accurate because it will
+- [**21:04**] be launching more cast you can see there
+- [**21:06**] we go
+- [**21:07**] so now it's a bit more accurate as you
+- [**21:09**] can see
+- [**21:10**] um which maybe is what we want maybe not
+- [**21:13**] but don't worry about that but yeah
+- [**21:15**] basically now it's happening and you can
+- [**21:17**] see this only happening while the
+- [**21:20**] fraction of the animation is is playing
+- [**21:23**] so this is exactly what we want
+- [**21:26**] great so there is a few more things that
+- [**21:29**] we have to do in order to continue of
+- [**21:31**] course
+- [**21:32**] so first of all before adding the damage
+- [**21:35**] and the hit animation to this guy and
+- [**21:38**] stuff we're gonna go ahead and do the
+- [**21:42**] stop trace and also the kick Trace so
+- [**21:46**] we'll use the same trace for it so let's
+- [**21:48**] go ahead and close this close this and
+- [**21:49**] go into the attack system component
+- [**21:51**] let's go ahead and select all this press
+- [**21:53**] C and this will be the sword race over
+- [**21:57**] here and we'll apply the preset into the
+- [**21:59**] comment there we go so everything is
+- [**22:01**] nice and organized put this over here
+- [**22:03**] let's go ahead and go right over here
+- [**22:05**] and create another custom event and this
+- [**22:08**] will be basically the sphere Trace
+- [**22:12**] it is a very bad name I don't know
+- [**22:14**] really how to call it it's just a
+- [**22:15**] general Trace in front of the player so
+- [**22:19**] we'll see if we change the name later on
+- [**22:21**] but basically we need to make a sphere
+- [**22:23**] Trace by Channel
+- [**22:25**] so what is it here
+- [**22:27**] and the starting point and the end point
+- [**22:31**] will be right in front of the player so
+- [**22:34**] you'll see what we'll do in a second now
+- [**22:35**] the radius let's say it's going to be
+- [**22:37**] around 25 because it's going to be a bit
+- [**22:39**] bigger and I say that we need to debug
+- [**22:42**] it for duration
+- [**22:43**] great so let's go quickly into the third
+- [**22:46**] person guide to blueprint which I I
+- [**22:48**] don't know why I'm always closer than an
+- [**22:49**] opening but here it is let's go into the
+- [**22:51**] viewport and we'll do exactly the same
+- [**22:53**] that we did with these sword let's go
+- [**22:55**] into the general top of the blueprint
+- [**22:58**] and the parent basically and just add
+- [**23:00**] another arrow and this will be the
+- [**23:03**] sphere phrase
+- [**23:05**] and now we can just get it and put it a
+- [**23:07**] bit forward
+- [**23:08**] and basically the sphere Trace will just
+- [**23:11**] appear there
+- [**23:12**] so it will just align real quick to
+- [**23:14**] where our sword is ending in this tab
+- [**23:16**] and where our kick is happening which is
+- [**23:19**] around here so we'll play with the
+- [**23:21**] values later on let's go ahead and
+- [**23:22**] compile and go back into our
+- [**23:25**] um component and now we can just get our
+- [**23:27**] character blueprint once again and then
+- [**23:29**] say get uh what was a sphere Trace
+- [**23:33**] let's go down and hear this so now we're
+- [**23:36**] going to get the wild location of it
+- [**23:38**] it's plug it into the start and into an
+- [**23:40**] end point because this is a sphere it
+- [**23:42**] doesn't matter because it has a radius
+- [**23:43**] so it can be the same and now what we
+- [**23:45**] need to do is uh well command this go
+- [**23:49**] ahead and disconnect this weird trace
+- [**23:51**] and let's put a parenthesis here essay
+- [**23:54**] for stab and kick so we just have it
+- [**23:57**] clear later on if we forget for what you
+- [**24:00**] know this was because the name is not
+- [**24:02**] very good let's see if later on I come
+- [**24:04**] up with a better name but great so now
+- [**24:07**] we have to call this so basically this
+- [**24:10**] will be a bit different because instead
+- [**24:12**] of a state it will be just a normal
+- [**24:14**] regular notify because I mean a stop
+- [**24:16**] it's just a step it's pretty quick and
+- [**24:19**] the kick is pretty much the same thing
+- [**24:20**] it's just kicking it's just happening
+- [**24:23**] once it's not like the blade that has to
+- [**24:25**] be the whole duration of it
+- [**24:27**] let's go back into the third person map
+- [**24:29**] content blueprints let's go create a new
+- [**24:32**] blueprint class all classes and then NM
+- [**24:35**] notify and this will be a normal
+- [**24:37**] Notifier selected and let's say BP
+- [**24:40**] underscore and notify
+- [**24:43**] underscore and this will be the sphere
+- [**24:45**] phrase
+- [**24:47**] let's go ahead and open this up put it
+- [**24:49**] over here and in functions go into
+- [**24:51**] overhead and received notify and do it
+- [**24:54**] exactly the same get the mesh component
+- [**24:55**] get the owner
+- [**24:58**] great and then we want to get this cast
+- [**25:00**] to the third person character
+- [**25:03**] and put this over here
+- [**25:06**] now what to do is basically get the bpc
+- [**25:12**] attack system component and then say the
+- [**25:15**] spear Trace so there we go
+- [**25:18**] let's put it over here
+- [**25:20**] and there we go great so everything is
+- [**25:22**] nice and clean so the only thing left is
+- [**25:25**] go into the animation so it's going to
+- [**25:26**] characters RPG animations and then in
+- [**25:29**] the sword attacks we can go into the
+- [**25:31**] attack too
+- [**25:33**] and then basically right where it stops
+- [**25:35**] so around
+- [**25:36**] around here kinda in point 40 we can go
+- [**25:40**] in to notify bracket and add notify and
+- [**25:43**] then it's gonna be the BB notified
+- [**25:45**] sphere trace and that's it save close it
+- [**25:49**] as you go back into the kick Montage
+- [**25:50**] I'll do the same thing go out right when
+- [**25:54**] it does the kick around in point 46
+- [**25:56**] let's go to the another face track add
+- [**25:58**] notify and then BP notified Spirit race
+- [**26:01**] and now if we press play
+- [**26:03**] we can go ahead that there you go there
+- [**26:05**] we go there we go so you can see that
+- [**26:07**] this field Trace is happening right at
+- [**26:10**] the point for so basically for the kick
+- [**26:12**] as you can see it's pretty good
+- [**26:14**] um but for the stab it's not the best
+- [**26:19**] place you can see it kind of goes
+- [**26:20**] through the player so let's go into the
+- [**26:23**] third person and just make this way
+- [**26:25**] forward now don't worry because
+- [**26:27**] basically this series of course is
+- [**26:30**] invisible and then it will go through
+- [**26:32**] the player so you will not notice it
+- [**26:34**] let's go ahead and now implement the
+- [**26:36**] damage into the enemy okay so let's go
+- [**26:39**] back into the attack system component
+- [**26:41**] and now we're just gonna put these field
+- [**26:43**] trace and to the right over here because
+- [**26:45**] we need some space in there for our
+- [**26:48**] damage so right when I do the loop and
+- [**26:50**] do these field trips we're gonna get the
+- [**26:52**] return value and make a branch so just
+- [**26:55**] making sure that we will only apply
+- [**26:58**] damage if we actually have detected an
+- [**27:00**] object let's go ahead and get the out
+- [**27:02**] hit and also break it
+- [**27:05**] and then extend it so we have all the
+- [**27:06**] parameters of the object that we have
+- [**27:08**] basically hit over here
+- [**27:11**] now we're going to make sure that we are
+- [**27:12**] only hitting the enemy so we're going to
+- [**27:16**] just is create a tag
+- [**27:18**] let's go over here into the third person
+- [**27:20**] map
+- [**27:21**] uh well basically use the Contour of row
+- [**27:23**] select our dummy and Ctrl e to open it
+- [**27:27**] up let's go into the class defaults and
+- [**27:30**] then go and search tag and you will see
+- [**27:32**] the actor tag
+- [**27:35**] let's go ahead and add a new one now
+- [**27:36**] this will be damageable
+- [**27:39**] there we go did I spell correctly I
+- [**27:42**] think so okay so basically this will be
+- [**27:44**] the attack that we will add to all the
+- [**27:47**] objects that we want to apply damage
+- [**27:49**] when we hit with our sword kicks or
+- [**27:51**] whatever so later on if you're gonna
+- [**27:53**] create new enemies or even just objects
+- [**27:56**] that you can destroy with your sword
+- [**27:57**] you'll basically add the damageable
+- [**28:00**] attack into the actor
+- [**28:02**] let's go ahead and compile and save and
+- [**28:03**] close it so now let's go back into the
+- [**28:06**] text system
+- [**28:07**] and then we will basically make an End
+- [**28:10**] condition so just get this and make an
+- [**28:11**] ant so basically we need to be able to
+- [**28:14**] hit with something and then make sure
+- [**28:17**] that the hit actor has the tag
+- [**28:21**] damageable
+- [**28:23**] and then plug that in so we'll basically
+- [**28:25**] only continue we have actually headed
+- [**28:27**] something and then it has the attack
+- [**28:29**] damageable great so now we're going to
+- [**28:32**] do is get the hit actor and then call
+- [**28:34**] the snow which is apply damage but now
+- [**28:38**] we will only continue uh and do it once
+- [**28:41**] so let's get it through and then do once
+- [**28:43**] because the thing is that this is a loop
+- [**28:45**] so it will play multiple times uh when
+- [**28:48**] our sword is swinging so we only want to
+- [**28:51**] do it once let's go and put it in the
+- [**28:53**] ones over here
+- [**28:55**] double click this to make it a bit more
+- [**28:57**] organized and put over there let's get
+- [**29:00**] this free trace for the build to the
+- [**29:02**] right there we go and then we'll uh
+- [**29:05**] basically apply damage over here so
+- [**29:07**] later on we will have a database with
+- [**29:10**] all our weapon damage and stuff when we
+- [**29:13**] get into the equipment but just for now
+- [**29:15**] going to school with for example 10 you
+- [**29:17**] just have a simple base damage to test
+- [**29:19**] our game and then we're going to do is
+- [**29:21**] make a delay and then we want to be able
+- [**29:24**] to you know put our
+- [**29:27**] um
+- [**29:28**] our do once to reset it because if not
+- [**29:31**] the next time that we go ahead and
+- [**29:33**] attack we will not apply damage so we
+- [**29:35**] have to reset this so we will apply a
+- [**29:37**] delay so this will be 0.5 yeah something
+- [**29:41**] like that so I get I completed and just
+- [**29:43**] put it in reset double click and then we
+- [**29:46**] can just put it
+- [**29:47**] in between this notes so it's a bit more
+- [**29:51**] organized and put this over here
+- [**29:54**] great so this will kind of be the delay
+- [**29:57**] just making sure that you know they do
+- [**30:00**] wants resets and we don't apply damage
+- [**30:04**] at 20 times uh with the same animation
+- [**30:07**] you know what I mean
+- [**30:08**] okay so that actually should work now
+- [**30:11**] we'll do exactly the same for our spear
+- [**30:14**] trades for the top so we can do is
+- [**30:17**] basically get all these notes
+- [**30:19**] okay so you just get everything cop
+- [**30:22**] control C to copied go here paste it and
+- [**30:25**] then we'll go ahead and put it here log
+- [**30:27**] it in and then get the return value plug
+- [**30:30**] it here get the out hit plug it here now
+- [**30:33**] we will not need to do once because this
+- [**30:35**] time this is not a loop this is just a
+- [**30:37**] single anime Notifier so we can delete
+- [**30:38**] this delete this pin the spin and the
+- [**30:41**] delay and it's directly plug in the
+- [**30:43**] applied damage over here and that's it
+- [**30:46**] we can now go ahead and compile and save
+- [**30:48**] but let's extend this comment so it's a
+- [**30:51**] bit more organized and there we go so
+- [**30:54**] that should be it if we have play
+- [**30:56**] and go over here and then go ahead and
+- [**30:59**] deal damage into it now there's no way
+- [**31:02**] that we're now going ahead and seeing
+- [**31:05**] this and also as you can see we have
+- [**31:07**] some errors over here in the branch
+- [**31:10**] um
+- [**31:11**] because yes oh sorry so we actually
+- [**31:13**] cannot use the Ant and the reason for
+- [**31:15**] this is that well maybe if we have not
+- [**31:19**] detected an object we are already
+- [**31:22**] checking what is that and tag for the
+- [**31:25**] option so basically we are accessing the
+- [**31:27**] object even though we have not detected
+- [**31:29**] any object so we need to delete this and
+- [**31:31**] plug the return value in here
+- [**31:34**] and then make another branch in the true
+- [**31:37**] with this one okay yeah so sorry about
+- [**31:39**] that I did not realize that until now so
+- [**31:43**] get this and deleted get the written
+- [**31:45**] value put over here and then enter we're
+- [**31:47**] going to make another Branch so it has
+- [**31:48**] to be separate and because of now we're
+- [**31:51**] accessing the actor even though we have
+- [**31:53**] not collided with anything so we were
+- [**31:55**] getting errors
+- [**31:56**] anyway so now in order to detect if we
+- [**31:59**] are colliding With the Enemy and a plane
+- [**32:01**] damage let's go and get the
+- [**32:04**] um enemy control e well the dummy for
+- [**32:06**] now let's go down over here and just go
+- [**32:08**] into the apply damage
+- [**32:11**] uh sorry no apply the dimensional event
+- [**32:13**] sorry right click event any damage so
+- [**32:17**] basically when this opted or actor in
+- [**32:20**] this case the dummy receives damage it
+- [**32:22**] will call this node so in here just to
+- [**32:24**] make sure everything is working let's go
+- [**32:26**] ahead and print use uh damage
+- [**32:31**] there we go so now we will see this
+- [**32:34**] printing on the screen so now if I go
+- [**32:36**] here uh so just take a look in the top
+- [**32:39**] left on the screen when I attack you can
+- [**32:41**] see damage there we go
+- [**32:43**] and it's happening back okay great so of
+- [**32:48**] course instead of damage we want to play
+- [**32:50**] our hit animation and all that cool
+- [**32:52**] stuff let's go into dummy and delete
+- [**32:54**] this string and what to do is get this
+- [**32:57**] and say play a name
+- [**33:00**] montage
+- [**33:02**] and now in here we need to pass our hit
+- [**33:04**] animation that we just imported earlier
+- [**33:07**] on so let's go back into our project
+- [**33:09**] files RPG character animations in the
+- [**33:12**] hit react let's select both right click
+- [**33:14**] and create an anim montage and there we
+- [**33:17**] go we have them in a montage so
+- [**33:20**] basically we're going to do to make
+- [**33:21**] things more Dynamic is play a random one
+- [**33:24**] depending on uh
+- [**33:27**] yeah basically a random one between the
+- [**33:29**] two so we're going to do is create a new
+- [**33:31**] variable and call this and hit and names
+- [**33:35**] and this will basically be animation
+- [**33:37**] month just to go and search for anime
+- [**33:39**] Montage object reference and now with
+- [**33:42**] the variables selected we go into
+- [**33:43**] variable type and put this to be an
+- [**33:45**] array so it will be a list of this uh
+- [**33:48**] variables
+- [**33:49**] so save the variable and then add two
+- [**33:52**] animations in this case it will be the
+- [**33:54**] hit react left and hit react right and
+- [**33:58**] now we can do
+- [**34:00**] is go here
+- [**34:01**] and get the hit and names get that and
+- [**34:04**] you say get a copy and now instead of
+- [**34:07**] accessing the copy 0 which in this case
+- [**34:09**] will be obviously the left Montage we
+- [**34:12**] can do is do a random
+- [**34:15**] integer in range the first point will be
+- [**34:18**] zero but the maximum point will be
+- [**34:22**] basically uh one so in this case we want
+- [**34:25**] to get the hit animes get it and then
+- [**34:27**] say get I get the length
+- [**34:30**] length
+- [**34:31**] and then basically decrease it by one
+- [**34:37**] because if not it will be getting one
+- [**34:39**] more so now there you go it will go and
+- [**34:43**] get a random animation from those both
+- [**34:45**] and then player video so we can go ahead
+- [**34:48**] and check it out so we go over here
+- [**34:51**] there you go now going ahead and okay
+- [**34:55**] the combo went pretty far
+- [**34:57**] there you go I believe it's playing a
+- [**34:59**] random one
+- [**35:01**] yes it's playing a random one great so
+- [**35:03**] you can see that it's happening now
+- [**35:05**] there's a few things that we have to do
+- [**35:06**] first of all let's add a knockback force
+- [**35:08**] to this character because right now is
+- [**35:10**] playing the hit animation but he's just
+- [**35:12**] standing still and looks a bit weird so
+- [**35:15**] we're gonna go into dummy back again and
+- [**35:17**] then we're gonna call this now which is
+- [**35:19**] launch character
+- [**35:22**] and this will basically just apply a
+- [**35:24**] force so one to do is I play a force
+- [**35:27**] towards the direction that the player uh
+- [**35:31**] basically yeah the player is actually
+- [**35:32**] attacking
+- [**35:34**] so and to do is first of all cast to the
+- [**35:36**] third person character
+- [**35:38**] and then the object will be the get
+- [**35:40**] player character
+- [**35:43**] so we'll be just accessing our player
+- [**35:45**] and now what to do is basically get the
+- [**35:49**] actor rotation
+- [**35:51**] and we'll find out the uh get for Vector
+- [**35:55**] so basically the direction that the uh
+- [**35:57**] player is looking and then we can do is
+- [**36:00**] just multiply this value and Commit This
+- [**36:02**] Vector into a float so it will be a nice
+- [**36:05**] number and now this will be around let's
+- [**36:07**] say 700. this defaults that it will go
+- [**36:10**] backwards and we say why we'll go
+- [**36:13**] backwards ball because normally our
+- [**36:15**] player when it's attacking it will be
+- [**36:17**] always looking towards the
+- [**36:19**] the enemy so it will push it back if
+- [**36:23**] it's facing us so let's go ahead and
+- [**36:25**] just plug it here into the launch
+- [**36:26**] velocity and that's pretty much it so
+- [**36:28**] now if I press play go over here
+- [**36:31**] we see then when I attack there we go
+- [**36:32**] it's going backwards slowly as you can
+- [**36:35**] see I'm dragging this guy backwards and
+- [**36:37**] it's really looking pretty cool
+- [**36:39**] okay so let's quickly go ahead and
+- [**36:41**] Implement a camera Shake because I have
+- [**36:44**] noticed that it has great Origins which
+- [**36:46**] is the game that we are referencing and
+- [**36:48**] basing this RPG Series has some tiny
+- [**36:50**] camera shake when we hit so it's a bit
+- [**36:52**] more satisfying let's go ahead and do
+- [**36:54**] that let's go into blueprints right
+- [**36:56**] click blueprint class let's go into all
+- [**36:58**] classes and search for camera Shake
+- [**37:02**] and
+- [**37:04**] there we go let's go down and you will
+- [**37:06**] see this Legacy camera Shake as selected
+- [**37:09**] this will be BP underscore camera as
+- [**37:12**] well what just happened oh my God I
+- [**37:15**] don't know why it's Auto saving every
+- [**37:17**] time I'm typing anyway let's rename this
+- [**37:20**] BP
+- [**37:22**] underscore Hit camera Shake
+- [**37:27**] well actually sword hit just in case is
+- [**37:30**] we will use another one for later on so
+- [**37:33**] we can now go ahead and open this uh
+- [**37:36**] sword hit a camera Shake blueprint and
+- [**37:39**] we'll basically change some of the
+- [**37:41**] options here so in oscillation duration
+- [**37:43**] we'll change it to be 0.15 because it
+- [**37:45**] will be a very very fast
+- [**37:47**] then we'll go into the rotation and we
+- [**37:49**] will change the pitch to be 1.2 and then
+- [**37:53**] in a frequency of 50 and it was just
+- [**37:55**] basically change a bit the rotation so
+- [**37:57**] it looks a bit nicer
+- [**37:59**] let's go ahead and open The Locomotion
+- [**38:02**] and I will go into the X Y and set and
+- [**38:05**] we'll apply some force in all the
+- [**38:07**] vectors the amplitude over here will be
+- [**38:09**] around let's say
+- [**38:11**] um one and then this will be 50. and
+- [**38:14**] then the initial offset we'll go ahead
+- [**38:16**] and basically put it at zero now the Y
+- [**38:19**] will go ahead and put this to be one and
+- [**38:21**] then the frequency at 50 and leave this
+- [**38:23**] random and then in the Z so and 1.2 and
+- [**38:27**] then 50 again and there we go
+- [**38:30**] so now it will just be applying some
+- [**38:31**] force in all the directions of the
+- [**38:34**] camera
+- [**38:35**] and now we're going to do is go ahead
+- [**38:38**] and we'll apply to the camera shake so
+- [**38:41**] let's go into the attack system and
+- [**38:43**] basically right when we hit you will
+- [**38:45**] need to go ahead and play this camera
+- [**38:47**] shake so let's take this a bit into the
+- [**38:49**] right over here
+- [**38:50**] let's put this note here as go ahead and
+- [**38:53**] write this and say play World camera
+- [**38:57**] Shake
+- [**38:58**] now the the class will be the one that
+- [**39:00**] we have just created sorry Hit camera
+- [**39:02**] check and the epicenter will be the
+- [**39:05**] location of the object that we have just
+- [**39:07**] hidden and I can double click to make
+- [**39:09**] things a bit cleaner and put this on the
+- [**39:12**] top let's say so it looks a bit nicer
+- [**39:14**] and then the outer radius will be how
+- [**39:17**] far away we want to be able to hear well
+- [**39:19**] not here not to play the camera Shake
+- [**39:21**] let's put something as 2000 okay it
+- [**39:24**] doesn't really matter because this is us
+- [**39:26**] for us to the player to feel the good
+- [**39:27**] feeling and the Innovative zero and
+- [**39:29**] everything as default great
+- [**39:32**] and we'll do exactly the same so copy
+- [**39:34**] this and go over here and play it right
+- [**39:37**] after in the normal uh sphere Trace
+- [**39:41**] and in our case we have we have copied
+- [**39:44**] we don't have to change anything but get
+- [**39:45**] the location to be over here let's go
+- [**39:48**] ahead and double click and put this up
+- [**39:51**] on here once again and compile and save
+- [**39:55**] and there you go so now if we press play
+- [**39:58**] and go into this guy there you go we
+- [**40:01**] have a really cool and simple camera
+- [**40:03**] Shake going on
+- [**40:05**] don't worry about that you go pop
+- [**40:08**] you know oh that feels so good
+- [**40:11**] so there we go so of course there's a
+- [**40:13**] lot of tuning in if you want in the
+- [**40:14**] future we can create a separate socket
+- [**40:16**] for the uh kick or whatever so it's a
+- [**40:20**] bit smoother
+- [**40:21**] but you can see there's really feeling
+- [**40:22**] pretty good and we are attacking towards
+- [**40:25**] it and it looks so cool and with the
+- [**40:28**] camera Shake filling it is really good
+- [**40:30**] like the combo is feeling incredibly
+- [**40:32**] nice okay so let's quickly go ahead and
+- [**40:35**] Implement some sounds so again I will be
+- [**40:39**] leaving them in the description so you
+- [**40:41**] can go ahead and load them let's go into
+- [**40:43**] the audio folder and let's create a new
+- [**40:46**] folder over here which will be basically
+- [**40:49**] um
+- [**40:50**] sword hits let's say okay you need to
+- [**40:54**] put in underscore let's enter here and
+- [**40:56**] let's open the folder go here and in my
+- [**40:59**] case is in Sword sounds and let's get
+- [**41:02**] all this once you drag them so again I
+- [**41:04**] will be leaving them in description
+- [**41:07**] as minimize this okay counter shift s to
+- [**41:10**] save everything great so basically we
+- [**41:13**] will need to play all these sounds so if
+- [**41:15**] we take a look and listen to them I
+- [**41:17**] don't know if you will hear them very
+- [**41:18**] good or not but
+- [**41:20**] foreign
+- [**41:24**] so we'll do is play all of them at the
+- [**41:27**] same time okay
+- [**41:29**] um yeah so we'll be playing them all the
+- [**41:31**] same time
+- [**41:32**] so let's go ahead and just go into the
+- [**41:36**] um attack system let's go over here and
+- [**41:38**] create a new custom event which will be
+- [**41:40**] play sword
+- [**41:43**] sword hit sounds and what to do is just
+- [**41:48**] drag this and say get sorry now play
+- [**41:50**] sound
+- [**41:53**] as the location the location will be
+- [**41:55**] well the actor itself so say yes get
+- [**41:58**] actor location as well you will need to
+- [**42:01**] get uh the owner so get owner
+- [**42:04**] and now we can get the get actor
+- [**42:06**] location from it
+- [**42:08**] if I know how to type
+- [**42:11**] okay I don't know how to type okay there
+- [**42:13**] we go okay so we're getting the location
+- [**42:15**] from the actor and then the alternation
+- [**42:19**] will be the character so we'll be
+- [**42:21**] playing a 3D space and the sound we want
+- [**42:24**] to play let's say that the
+- [**42:26**] um
+- [**42:27**] hit one so is the hit let's copy paste
+- [**42:32**] this
+- [**42:32**] then we'll play the hit 2
+- [**42:35**] uh which is where is it oh a sword head
+- [**42:40**] wait which one okay hit sword hit let's
+- [**42:43**] selected here and put this Arrow okay
+- [**42:46**] and then lastly we have the
+- [**42:49**] sword hit two okay so play all them as
+- [**42:52**] once let's connect all these pins into
+- [**42:54**] here
+- [**42:55**] and then put a comment and play sword
+- [**42:59**] hit sounds
+- [**43:02**] put over here and the comment color will
+- [**43:05**] be our preset and now we need to call
+- [**43:07**] them of course so in here right after we
+- [**43:09**] play the camera shake it will do the
+- [**43:12**] play
+- [**43:13**] um sword hit sounds
+- [**43:16**] there we go let me put this here
+- [**43:19**] get this over here
+- [**43:21**] and then in here to do the play sword
+- [**43:25**] hit sounds
+- [**43:28**] and put it here okay now
+- [**43:33**] over here and now you'll hear the sounds
+- [**43:37**] okay
+- [**43:39**] so there's a few things that we can
+- [**43:41**] modify okay first of all
+- [**43:46**] I think this hit song doesn't sound very
+- [**43:49**] good actually so let's actually go ahead
+- [**43:51**] and skip this sound over here for now I
+- [**43:54**] don't think it looks pretty good but the
+- [**43:56**] other ones do sound pretty well I guess
+- [**44:00**] there you go
+- [**44:01**] okay I just emotion warped into my enemy
+- [**44:04**] okay so I think that we can do is again
+- [**44:06**] like with it in one of the last episodes
+- [**44:09**] with footsteps is make it Dynamic with
+- [**44:12**] basically uh a meta sound just quickly
+- [**44:14**] go ahead and do the right click go into
+- [**44:17**] sounds and we'll do a meta Sound Source
+- [**44:21**] and this will be Ms underscore sword hit
+- [**44:24**] and what we'll do R3 is play all of them
+- [**44:28**] in one let's open this get this and
+- [**44:31**] let's say play way player mono
+- [**44:34**] and in here we'll go ahead and play the
+- [**44:37**] first hit sound so in our case yes now
+- [**44:40**] this one is the sword hit
+- [**44:42**] let's go here unplug it and then the
+- [**44:44**] pitch let's go ahead and say random
+- [**44:46**] float
+- [**44:47**] and we'll go ahead and just plug into
+- [**44:49**] the next
+- [**44:50**] and into the next and it will be around
+- [**44:52**] from -3 to three so that would be kind
+- [**44:55**] of dynamic
+- [**44:57**] and we need to of course plug the mono
+- [**44:59**] here
+- [**45:00**] and the unfinished to here so now we can
+- [**45:03**] hit it
+- [**45:06**] and we're gonna even make it more
+- [**45:07**] Dynamic with -5 and 5.
+- [**45:12**] yes much better
+- [**45:14**] and another thing that we can go ahead
+- [**45:17**] and do is play them all at once
+- [**45:20**] so then we can just copy and paste this
+- [**45:23**] and put the on finish to just play the
+- [**45:27**] sound
+- [**45:28**] or actually on nearly finished let's see
+- [**45:31**] how that sounds and unfinished now we'll
+- [**45:34**] play the other one which is
+- [**45:36**] um basically sorted two
+- [**45:38**] so basically it will play all of them
+- [**45:40**] once and on here we're gonna plug two
+- [**45:42**] monos on here so we need to do is do
+- [**45:45**] this thing which is uh was Channel
+- [**45:48**] uh mono it was something of mono there
+- [**45:51**] we go mono makes her and in this case it
+- [**45:54**] will be two because we have both
+- [**45:55**] so we'll plug
+- [**45:57**] the output here
+- [**45:59**] and then one here and the other one here
+- [**46:03**] there we go so now
+- [**46:05**] [Music]
+- [**46:07**] no okay no no no it should be on play
+- [**46:10**] because now it sounds a bit weird
+- [**46:12**] basically and now
+- [**46:13**] [Music]
+- [**46:16**] thank you
+- [**46:18**] there you go you see how it sounds and
+- [**46:20**] we'll also get the pitch and just plug
+- [**46:22**] it on here so we get a value from there
+- [**46:23**] too
+- [**46:26**] [Music]
+- [**46:27**] oh yes sounding very good I don't know
+- [**46:29**] you can really hear it with the
+- [**46:31**] recording because I have the sound of
+- [**46:32**] the desktop a bit lower than my mic but
+- [**46:34**] it is sounding pretty good
+- [**46:36**] let's go back to the dummy and now what
+- [**46:39**] we can do is sorry got me not into the
+- [**46:41**] attack system and on here instead of
+- [**46:43**] doing all this messed up with it we can
+- [**46:46**] just call the meta sound now let's go
+- [**46:48**] quick into the meta sound and we'll go
+- [**46:50**] into the source attenuation and again
+- [**46:53**] for the character so remember to do the
+- [**46:55**] show and now back into the attack system
+- [**46:58**] we can just delete all of this mess over
+- [**47:01**] here
+- [**47:02**] and we can just go and search for the MS
+- [**47:05**] sort here and there we go
+- [**47:08**] so now it should sound much better than
+- [**47:10**] what we had in a few seconds ago so
+- [**47:12**] let's go here let's start attack
+- [**47:14**] [Music]
+- [**47:15**] oh yes
+- [**47:18**] oh that's so nice and it's quickly
+- [**47:20**] quickly go into dummy and apply a a
+- [**47:24**] grunt when it gets hit so let's go ahead
+- [**47:26**] and say play sound at location
+- [**47:29**] and then this will be uh what was the
+- [**47:32**] grunt
+- [**47:33**] or death or
+- [**47:35**] oh
+- [**47:37**] that too I think sounds pretty good
+- [**47:39**] and then when you say get actor location
+- [**47:44**] put it here and attenuation character
+- [**47:49**] and then the pitch actually we can also
+- [**47:52**] do the same with the method instead of
+- [**47:54**] the method sum we can do it here so
+- [**47:55**] Random floating range from -5 so what my
+- [**48:00**] three to five sorry three so I will do
+- [**48:04**] the same with the medicine but in the
+- [**48:05**] blueprint
+- [**48:06**] so
+- [**48:07**] look if I go here
+- [**48:11**] [Music]
+- [**48:12**] okay it is very very very
+- [**48:16**] um too much so minus 1.5
+- [**48:21**] to 1.3 it was do you see guys that was
+- [**48:27**] very deep
+- [**48:28**] [Music]
+- [**48:32**] Ah that's much better okay everything is
+- [**48:36**] going ahead and feeling so so good I'm
+- [**48:38**] liking how this turned out
+- [**48:40**] so of course we will need to make a tire
+- [**48:43**] lock and then we can maybe Dash a bit
+- [**48:45**] and then also play the blood effects so
+- [**48:49**] we will go ahead and do so uh let's see
+- [**48:52**] if we can do so in the next episode so
+- [**48:54**] we'll add the blood effects that we need
+- [**48:56**] maybe add two more sounds so it's a bit
+- [**48:59**] better and the target Aim so we can
+- [**49:01**] dodge this guy out and that and then
+- [**49:05**] later on we'll add the dash so we can uh
+- [**49:08**] basically yeah make a pretty cool combat
+- [**49:12**] system over there so that's it guys if
+- [**49:14**] you found it so helpful I would really
+- [**49:16**] appreciate if you like the video and
+- [**49:17**] subscribe to my channel I have lots of
+- [**49:18**] Unreal Engine fact tutorials so we're
+- [**49:20**] gonna go ahead and check them out go
+- [**49:21**] ahead join my Discord servers you can go
+- [**49:23**] ahead and share your progress with the
+- [**49:25**] RPG series or any game that you're
+- [**49:26**] making and also go ahead and ask any
+- [**49:28**] questions to me or other debts follow me
+- [**49:31**] on my social service Twitter and
+- [**49:33**] Instagram and now yes before I said bye
+- [**49:35**] bye
+- [**49:37**] foreign
+- [**49:42**] [Music]
+
+---
+
+## Related
+
+- ← Previous: [[09_Combat]]
+- → Next: [[82_Bug_Fixing]]
+- 📚 Series: [[_MOC_UE5_RPG_Framework]]

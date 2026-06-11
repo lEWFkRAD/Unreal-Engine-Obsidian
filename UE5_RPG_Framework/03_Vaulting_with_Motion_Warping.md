@@ -1,0 +1,1086 @@
+---
+title: "Unreal Engine 5 RPG Tutorial Series - #3: Vaulting with Motion Warping"
+source: "https://www.youtube.com/watch?v=HVhH2qi2B5Q"
+video_id: "HVhH2qi2B5Q"
+type: "youtube-transcript"
+series: "UE5 RPG Framework"
+episode: 3
+tags: [youtube, tutorial, transcript, ue5, rpg, gamedev]
+---
+
+# Unreal Engine 5 RPG Tutorial Series - #3: Vaulting with Motion Warping
+
+**URL:** https://www.youtube.com/watch?v=HVhH2qi2B5Q
+**Segments:** 1061
+
+## Transcript
+
+- [**0:00**] what's up guys welcome to new unreview
+- [**0:02**] engine 5 tutorial and today we are
+- [**0:04**] continuing with the RPG tutorial series
+- [**0:06**] we'll begin with the vaulting system and
+- [**0:09**] we will take use of the new Unreal
+- [**0:10**] Engine Vibes feature motion warping to
+- [**0:13**] create a nice interpolation between the
+- [**0:14**] Atari points it's going to be a very
+- [**0:16**] easy build to follow so let's get
+- [**0:18**] started
+- [**0:21**] alright so the first thing
+- [**0:23**] is basically enable the motion warping
+- [**0:26**] plugin so let's go up here into edit go
+- [**0:28**] to plugins and now we can search for
+- [**0:30**] motion warping now you can see this uh
+- [**0:34**] plug-in over here now it isn't better
+- [**0:36**] but don't worry it is you know very
+- [**0:39**] Advanced there's not any problem with it
+- [**0:41**] I have experimented with a lot and we
+- [**0:44**] want to make use of it so there's no
+- [**0:46**] problem let's go ahead and take it and
+- [**0:48**] then again a pop-up will show up there's
+- [**0:50**] some better let's say yes and now this
+- [**0:52**] uh other pop-up will appear and now it
+- [**0:55**] will say that we have to restart the
+- [**0:57**] editor let's go ahead and say restart
+- [**0:59**] okay so once you have restarted the pro
+- [**1:01**] of course if you didn't see the pop-up
+- [**1:03**] you can use manually closer so let's go
+- [**1:05**] ahead and just manually uh type in again
+- [**1:07**] motion warping just to make sure that
+- [**1:09**] indeed it is enabled okay so now we can
+- [**1:12**] close this and now what we have to do is
+- [**1:14**] go ahead and import the bouting
+- [**1:16**] animation so again I have left it in the
+- [**1:19**] description which is just an example
+- [**1:21**] animation from the epic games Echo
+- [**1:23**] template so it is completely free and
+- [**1:26**] available but you know to make things
+- [**1:28**] easier I have just left it in a simple
+- [**1:30**] download so we're gonna go into
+- [**1:32**] characters characters RPG character
+- [**1:34**] animations and now we're going to do is
+- [**1:36**] create a new folder we're just gonna be
+- [**1:38**] voting okay
+- [**1:41**] or parkour but I think Bolton is good so
+- [**1:44**] later on we'll have different modes of
+- [**1:47**] voting and jumping in and out of
+- [**1:49**] different places right now we're gonna
+- [**1:51**] do just one but later on we can add more
+- [**1:53**] operations so we're going to do is just
+- [**1:56**] open the folder and I'm gonna get the
+- [**1:58**] Vault over animation which I have left
+- [**2:00**] in the description and now we can just
+- [**2:02**] go ahead and drag it into the content
+- [**2:03**] browser and now this window will go
+- [**2:05**] ahead and pop up so again just press
+- [**2:08**] reset reset the default so the defaults
+- [**2:11**] uh all the options are by default and
+- [**2:13**] now we can go ahead and just select the
+- [**2:15**] skeleton which in our case it will be
+- [**2:16**] the SK mannequin again don't make the
+- [**2:19**] mistake of choosing the old ue41 it was
+- [**2:22**] the new ue51 just this simple SK
+- [**2:25**] mannequin and now we can say import and
+- [**2:28**] there we go we'll have a warning with
+- [**2:29**] some bones and stuff don't worry
+- [**2:31**] everything is fine we go ahead and open
+- [**2:33**] the animation and we'll put it over here
+- [**2:35**] you can see how cool it is looking so
+- [**2:37**] yeah this is the vaulting animation
+- [**2:39**] so the thing that we have to do over
+- [**2:41**] here is go into the asset details now if
+- [**2:43**] you don't see any of these windows you
+- [**2:45**] can just go into windows and open it up
+- [**2:46**] okay now what we have to do is go into
+- [**2:48**] this room motion section and just enable
+- [**2:51**] your room motion now room motion is an
+- [**2:54**] animation that will have some transform
+- [**2:56**] transformation in the wall space so this
+- [**2:59**] will have a motion and it will move okay
+- [**3:01**] we'll see how it looks in a second now
+- [**3:04**] leave everything as default so reference
+- [**3:06**] pose disabled for uh for root log and
+- [**3:10**] then normalize ticked on and now we can
+- [**3:12**] just go ahead and save and close it so
+- [**3:15**] what we have to do now is go ahead and
+- [**3:17**] convert this animation into an animation
+- [**3:19**] montage
+- [**3:20**] so an animation Montage like I mentioned
+- [**3:23**] in the last episode it is just an
+- [**3:25**] animation that we can call at any time
+- [**3:27**] from the blueprint and we can add
+- [**3:29**] effects such as motion warping so um we
+- [**3:32**] can do so many things on so working this
+- [**3:35**] is Select it right click or integrate
+- [**3:37**] and then create anime montage and now
+- [**3:40**] you can press enter and there we go we
+- [**3:42**] can just open up and this will be like
+- [**3:45**] the normal animation but now we can add
+- [**3:47**] some things over here so we want to do
+- [**3:49**] is go and add the emotion warping so we
+- [**3:53**] want to do
+- [**3:54**] is you start and find the start position
+- [**3:56**] on the motion warping in right case this
+- [**3:59**] keyframe over here around in the
+- [**4:01**] timeline M5 looks pretty good so we're
+- [**4:03**] gonna go into the section where we have
+- [**4:05**] notifies and in the first track we're
+- [**4:07**] going to do is place our cursor right on
+- [**4:09**] top of the timeline right click go into
+- [**4:11**] add notify state I'm going to go into
+- [**4:14**] motion warping if you don't see motion
+- [**4:16**] warping is that you didn't enable the
+- [**4:18**] plugin quickly so let's go ahead and
+- [**4:21**] enable motion warping now you can see
+- [**4:23**] that we can drag it so what to do is
+- [**4:25**] hold shift and I'll go into the last
+- [**4:27**] keyframe over here and start dragging it
+- [**4:30**] I want to drag it until around
+- [**4:33**] maybe 18 okay pretty much nearly 18 like
+- [**4:37**] 17 over here
+- [**4:39**] so basically the notify States will be
+- [**4:42**] basically used for duration and I notify
+- [**4:45**] normal notify will be for example play
+- [**4:47**] sound which will be just one frame so
+- [**4:50**] what we want to do is basically just
+- [**4:52**] apply the motion warping during this
+- [**4:55**] timeline over here now what I want to do
+- [**4:58**] is go ahead and have another motion
+- [**5:00**] warping so we will have three different
+- [**5:01**] states okay because we'll have the
+- [**5:03**] starting point where we jump into it
+- [**5:05**] then the
+- [**5:07**] um basically the middle point when we
+- [**5:09**] are basically going
+- [**5:11**] and landing and jumping again and then
+- [**5:13**] the final Landing one okay
+- [**5:16**] so what we have to do is to make things
+- [**5:18**] a bit cleaner and don't have like things
+- [**5:20**] going on top of each other what we can
+- [**5:22**] do is go into notifies and here just
+- [**5:24**] place at notified track and this will
+- [**5:27**] create another track so now in the
+- [**5:29**] bottom one we can just add another
+- [**5:31**] motion warping uh not if I stay so what
+- [**5:34**] to do is go around into 26 over here
+- [**5:37**] okay there this doesn't need to be exact
+- [**5:40**] okay this is an approximation now you
+- [**5:43**] can later on tune in a bit better the
+- [**5:45**] motion warping I'm gonna place the
+- [**5:47**] cursor on top I'm going to uh notify
+- [**5:49**] State and again motion warping now
+- [**5:51**] holding shift we can see that we can go
+- [**5:54**] and drag the animation so this will be
+- [**5:56**] around a bit more than 40 so around 40
+- [**6:00**] 41 there we go so this will be the
+- [**6:03**] basically the middle point of the motion
+- [**6:05**] warping and now we will add another
+- [**6:07**] motion warp in the last one which will
+- [**6:09**] be the landing point so we want to do is
+- [**6:12**] go around here so basically do it before
+- [**6:15**] like 37 something like that and we want
+- [**6:18**] to go up in the other track so we have
+- [**6:21**] space this is what I mentioned before of
+- [**6:22**] overlapping now we just want to add
+- [**6:25**] another motion warping and then hold
+- [**6:27**] shift and then move it into this final
+- [**6:31**] uh press over here so I guess we could
+- [**6:34**] add it into 50. okay so now we have a
+- [**6:36**] bunch of warping and you know in the
+- [**6:38**] preview it will not change anything but
+- [**6:40**] now what we have to do is Select this uh
+- [**6:42**] first motion warping and if we go into
+- [**6:45**] the details panel that if you don't see
+- [**6:47**] it again you can go into windows and
+- [**6:48**] details we can start changing the uh the
+- [**6:52**] options so we want to do is first of all
+- [**6:55**] make sure that the room motion modifier
+- [**6:57**] it is on skew warp okay and now we need
+- [**7:01**] to set our name so in our case this will
+- [**7:03**] be the about
+- [**7:04**] start
+- [**7:06**] okay the beginning of the belting and
+- [**7:09**] now what we want to do is just ignore
+- [**7:11**] the said axis in this first warping
+- [**7:13**] because we don't want to be
+- [**7:15**] um affected by the set axis okay now
+- [**7:20**] we're gonna go answer that the second
+- [**7:22**] um motion warping
+- [**7:24**] and again skew warp and the name this
+- [**7:26**] time will be the middle
+- [**7:29**] middle
+- [**7:34**] I think I put a vault in the other one
+- [**7:36**] first yeah well start about the middle
+- [**7:38**] and now this time we want to have the
+- [**7:41**] ignorance head access on top but we want
+- [**7:44**] to disable warp rotation
+- [**7:47**] and we want to go into the last one and
+- [**7:49**] this will be the valve
+- [**7:52**] land I don't know if I'm saying both
+- [**7:53**] about I don't know I'm Spanish I don't
+- [**7:56**] know how really how you spell it but
+- [**7:57**] hopefully it doesn't annoy you okay and
+- [**8:00**] now we want to do in this last one is
+- [**8:01**] disable work rotation and in North
+- [**8:04**] z-axis so we will only have the
+- [**8:05**] translation great so now we have our
+- [**8:09**] um motion warping in an animation
+- [**8:11**] Montage set up so now we can go ahead
+- [**8:13**] and save and close it so Ctrl shift s to
+- [**8:16**] save everything
+- [**8:17**] so now let's go ahead and open the third
+- [**8:19**] person character blueprint let's go to
+- [**8:21**] third person Blueprints and open the
+- [**8:23**] third person character
+- [**8:25**] Grace go into the van graph and you can
+- [**8:27**] save what we did in last episode which
+- [**8:28**] was the crouching step which actually we
+- [**8:30**] can do is Select everything and press C
+- [**8:33**] so we can have a nice comment
+- [**8:35**] let's go ahead and play Just Crouch
+- [**8:38**] and to have things a bit more organized
+- [**8:40**] and looking better I'm going to select
+- [**8:42**] the other comment and I'm gonna go and
+- [**8:44**] open the common color and select the
+- [**8:47**] Hexum color copy it and then in the
+- [**8:51**] other comment that I have used basically
+- [**8:53**] just pieces now it looks pretty much
+- [**8:56**] exactly the same great
+- [**8:58**] so the first thing I have to do is go
+- [**9:00**] ahead and add the motion warping
+- [**9:01**] component so we're gonna go ahead and
+- [**9:02**] going to add motion
+- [**9:05**] warping and I will just press enter and
+- [**9:07**] we don't have to touch anything
+- [**9:09**] so now what we have to do is go ahead
+- [**9:12**] and create a new function
+- [**9:14**] let's go in here function and this will
+- [**9:16**] be basically Vault or however is spelled
+- [**9:20**] great so here we go we are starting with
+- [**9:23**] the actual system of the boat I'm
+- [**9:25**] basically here we're going to calculate
+- [**9:27**] all the different points that we have to
+- [**9:29**] go
+- [**9:30**] so the first thing that we have to do is
+- [**9:32**] basically make a fourth Loop for Loop
+- [**9:35**] would break okay so not the
+- [**9:37**] um for Loop
+- [**9:39**] with the array okay we want to have a
+- [**9:42**] begin and last index so I had a bit of
+- [**9:45**] trouble to find it but here it is and
+- [**9:47**] the last index will be two so basically
+- [**9:48**] we want to do three line traces so I'll
+- [**9:52**] explain in a second what a line Trace is
+- [**9:54**] but what we want to do is actually a
+- [**9:57**] sphere Trace by channel so I just said
+- [**9:59**] line Trace Spirit traces basically the
+- [**10:01**] same but instead of being online it's
+- [**10:03**] just a whole sphere okay so we want to
+- [**10:06**] create a spirit Race by Channel
+- [**10:08**] and this will basically be an invisible
+- [**10:10**] sphere that will appear in a certain
+- [**10:12**] location and with a certain radius and
+- [**10:14**] stuff that it will detect some objects
+- [**10:17**] so in our case we will start detecting
+- [**10:20**] the objects that we want to bolt and
+- [**10:21**] stuff okay so what we want to do is go
+- [**10:24**] ahead and get the actor location okay so
+- [**10:28**] we want to start our Trace from where
+- [**10:31**] the player is at what we want to do now
+- [**10:34**] is go ahead and add
+- [**10:36**] I want to go ahead and right click and
+- [**10:38**] split so we have all the individual
+- [**10:40**] access over here and basically what we
+- [**10:43**] want to do is put this a bit to the
+- [**10:45**] right and we want to get the index of
+- [**10:47**] our Loop and we want to go ahead and add
+- [**10:51**] here time this by 30.
+- [**10:55**] so basically we'll be creating three
+- [**10:57**] different line traces with a an offset
+- [**11:01**] of 30. so basically a bit separated from
+- [**11:04**] each other so that will be the Z value
+- [**11:06**] over here okay
+- [**11:08**] put this over here there we go
+- [**11:10**] and this will be our starting point
+- [**11:13**] so really if I go now and compile and
+- [**11:17**] save and I write you so it's gonna be
+- [**11:20**] around five it's gonna be kind of a bit
+- [**11:22**] thin and then I say in this bug type for
+- [**11:25**] duration
+- [**11:26**] and then we go into the van graph and we
+- [**11:29**] go and say for example when we press
+- [**11:32**] left shift
+- [**11:34**] okay we will call vault
+- [**11:37**] let's see what this happens over here
+- [**11:39**] over a press play
+- [**11:41**] and press Vault you will see that we
+- [**11:44**] have uh basically three sphere traces I
+- [**11:47**] say line traces but you get by Point s
+- [**11:49**] for your choices going uh from a 30
+- [**11:55**] 30 of separation from each other into
+- [**11:59**] the into the point
+- [**12:01**] so in here what we'll do is basically
+- [**12:03**] just point them uh in front of us and
+- [**12:06**] check the objects that are basically in
+- [**12:08**] front of us okay so this is the idea so
+- [**12:11**] let's go into both
+- [**12:13**] sorry about the golfing guys and we want
+- [**12:15**] to
+- [**12:16**] um basically set an ending point because
+- [**12:17**] if not they will go into the zero zero
+- [**12:19**] zero and we don't want that okay we want
+- [**12:21**] to have them just in front of us so we
+- [**12:24**] want to do is get the actor rotation and
+- [**12:26**] want to do is basically get the forward
+- [**12:28**] Vector so basically where the character
+- [**12:31**] is right now looking and we want to go
+- [**12:34**] ahead and multiply this right click
+- [**12:36**] convert to a float
+- [**12:38**] by the distance so how much we want to
+- [**12:42**] detect the objects so for example we'll
+- [**12:45**] just put like 180 right now
+- [**12:47**] and now we want to do is get this
+- [**12:51**] um pane over here and basically add
+- [**12:53**] these two vectors together and this will
+- [**12:55**] give us our end point so now if we
+- [**12:58**] compile and Save
+- [**12:59**] and press play you will see that now
+- [**13:01**] when I vault
+- [**13:03**] now we have the different sphere traces
+- [**13:06**] just in front of me instead of going to
+- [**13:08**] this ratio great so everything is
+- [**13:10**] working pretty good and pretty fine
+- [**13:13**] so now we can go ahead and continue
+- [**13:16**] so now we want to do is go and check
+- [**13:18**] with a branch that we have actually
+- [**13:20**] headed something and if so we want to go
+- [**13:23**] ahead and break the Heat result so we
+- [**13:26**] have all the different parameters about
+- [**13:28**] the object that we have just hit by the
+- [**13:29**] location and so and so on
+- [**13:33**] so if we have hit something we want to
+- [**13:35**] immediately break this Loop over here
+- [**13:38**] so we're going to just get the
+- [**13:41**] uh make actually yeah we can just get
+- [**13:43**] the true rugged I'm going to break and
+- [**13:47**] what we can do to make things more
+- [**13:48**] organized is just double click and then
+- [**13:51**] make a pin okay and then double click
+- [**13:53**] and make another ping and we can drag
+- [**13:55**] this one over here
+- [**13:58**] okay so since we have detected something
+- [**14:01**] we don't need to make more sphere traces
+- [**14:04**] because we have the height so we can go
+- [**14:06**] ahead and stop the loop okay if it makes
+- [**14:09**] sense
+- [**14:09**] so
+- [**14:11**] um this is very good explained if we for
+- [**14:13**] example go in here and I just get for
+- [**14:16**] example this actually let me adjust a
+- [**14:18**] cube
+- [**14:19**] okay and then bring it here
+- [**14:23**] and then I use make a bit like this I'm
+- [**14:25**] up so you will see that
+- [**14:28**] it will only make one line Trace because
+- [**14:30**] it only calculated once now if I make it
+- [**14:33**] a bit up over here
+- [**14:36**] now it will do two line Trace until it
+- [**14:38**] touches the object you know and now they
+- [**14:40**] will do the three so you get that point
+- [**14:42**] basically okay
+- [**14:43**] so what we want to do now
+- [**14:46**] is drag this and make a sequence because
+- [**14:48**] we will have one more thing
+- [**14:50**] so there you go and what we will do
+- [**14:54**] is go and make another loop so again for
+- [**14:57**] each loop with break not with array
+- [**15:01**] I know sorry that the problem is that
+- [**15:03**] I'm writing for
+- [**15:06**] um each and it's not it's just support a
+- [**15:08**] little bit breaks that was a prawn I
+- [**15:09**] have this
+- [**15:11**] um thing where I always used for each
+- [**15:12**] looks with the braid that's why
+- [**15:14**] okay so this time the last index will be
+- [**15:17**] around let's say five
+- [**15:19**] so we'll have six different traces and
+- [**15:22**] the thing that we have to do right now
+- [**15:24**] is go ahead and make another sphere
+- [**15:28**] Trace by chance so we can just copy our
+- [**15:30**] previous one paste it and now each time
+- [**15:33**] we'll go ahead and make a Trace
+- [**15:36**] great so what we want to do now is
+- [**15:39**] basically get the location where we have
+- [**15:41**] hit
+- [**15:42**] and add
+- [**15:45**] basically
+- [**15:46**] 90 or whoa 100 basically in a height so
+- [**15:51**] you will see how this goes okay but now
+- [**15:54**] what we want to do is again get the
+- [**15:55**] index and do the same thing that we did
+- [**15:57**] before okay but this time with around
+- [**15:59**] 50.
+- [**16:00**] so we want to go ahead and have
+- [**16:03**] different Lane traces with a 50 a
+- [**16:05**] separation between them
+- [**16:07**] so we want to do now is go ahead and add
+- [**16:11**] all right let's make it here great we
+- [**16:14**] can
+- [**16:15**] put them here okay
+- [**16:17**] and we want to do is basically add the
+- [**16:21**] get actor rotation
+- [**16:25**] and get full Vector so we'll again want
+- [**16:27**] to get the the forward of the player and
+- [**16:31**] we want to multiply this
+- [**16:33**] by this separation over here and now we
+- [**16:36**] can go ahead and add this so there's a
+- [**16:39**] lot of connectors over here maybe it's a
+- [**16:41**] bit confusing but
+- [**16:43**] um you will see how it looks in a second
+- [**16:44**] so probably it will clear up your mind a
+- [**16:47**] bit better another thing that we have to
+- [**16:49**] do
+- [**16:49**] is plug it to the start so you will see
+- [**16:52**] that now
+- [**16:53**] uh when I press play let's say yeah we
+- [**16:55**] go here
+- [**16:56**] and it will create some line traces
+- [**16:58**] right up following the path and with a
+- [**17:01**] 50th separation great now the thing is
+- [**17:03**] that we have to set the endpoint if not
+- [**17:05**] we'll go against here so what we can do
+- [**17:07**] is get this point and just subtract like
+- [**17:12**] thousand
+- [**17:14**] um into the end point
+- [**17:16**] sorry not a thousand only a hundred
+- [**17:18**] because we don't have we don't want to
+- [**17:20**] basically allow our player to vote into
+- [**17:23**] like 50 meters down only a few meters
+- [**17:26**] um so this is great
+- [**17:27**] so now when I Collide you can see the
+- [**17:31**] line trades now going into a row forward
+- [**17:34**] but downwards so basically on here we
+- [**17:37**] will see the distance that we have to
+- [**17:40**] Vault so basically if I make this per
+- [**17:44**] system
+- [**17:45**] and I can just show you a bit how it
+- [**17:48**] looks so I can just go here so first of
+- [**17:50**] all we'll go ahead and make a line Trace
+- [**17:52**] uh in the in like forwards seeing okay
+- [**17:56**] which height do we have to go ahead and
+- [**17:59**] vote great and now we will see
+- [**18:03**] well
+- [**18:05**] um
+- [**18:06**] which distance we have to to go ahead
+- [**18:08**] and bolt so you can see the here is
+- [**18:10**] colliding here's colliding here's
+- [**18:11**] collating but here is not calling so
+- [**18:14**] when we check that it is no longer
+- [**18:16**] collided we can see the okay now in here
+- [**18:19**] it is where we're gonna go ahead and
+- [**18:21**] vote because the object has finished so
+- [**18:24**] now we can go ahead and end over here so
+- [**18:26**] this is why we're doing this okay great
+- [**18:28**] so now that we have uh cleared a bit
+- [**18:31**] this things over here we can go ahead
+- [**18:33**] and continue so now with the radius I
+- [**18:36**] will go ahead and increase this one into
+- [**18:37**] 10 and put this back to for duration
+- [**18:41**] okay so now we want to do is again make
+- [**18:44**] a branch to check if we have headed
+- [**18:46**] something and then break the hit result
+- [**18:48**] okay so we'll contain all the parameters
+- [**18:52**] once again
+- [**18:53**] great so what we want to do now is make
+- [**18:55**] another sequence over here okay and
+- [**18:58**] we'll basically just
+- [**19:00**] uh continue making some more right casts
+- [**19:03**] and seeing where we have to end and so
+- [**19:06**] on
+- [**19:08**] okay so
+- [**19:10**] all we have to do now is make a branch
+- [**19:12**] and basically what we have to do is get
+- [**19:14**] this index over here and check if it's
+- [**19:17**] the first Pawn so we want to do now is
+- [**19:20**] get this making a equal sign in this
+- [**19:23**] case it will be a an integer which I
+- [**19:26**] don't see it but I think I can just use
+- [**19:27**] this get the index and plug it in
+- [**19:31**] there we go and now we can double click
+- [**19:32**] to make it root so it's a bit uh cleaner
+- [**19:35**] as you can see
+- [**19:36**] great so if the rate that we have
+- [**19:40**] basically hit it it is the first index
+- [**19:43**] the first one we want to do is go ahead
+- [**19:46**] and create a new variable which will be
+- [**19:48**] the
+- [**19:49**] um vote start pause
+- [**19:53**] and now we want to change this into be a
+- [**19:55**] vector so this will be our position
+- [**19:58**] where we will start voting so now we can
+- [**20:01**] go ahead and get this and set it with
+- [**20:04**] this specific uh location here so we
+- [**20:08**] want to go ahead and drag it here now we
+- [**20:10**] can double click and drag here so it's a
+- [**20:12**] bit more organized once again and now
+- [**20:16**] what we can do to basically uh preview
+- [**20:18**] this and just get this and then draw a
+- [**20:21**] sphere the bug sphere
+- [**20:24**] and now we can go ahead and just put a
+- [**20:26**] 10. a duration of 10.
+- [**20:30**] and the thickness of two for example and
+- [**20:32**] this to be purple
+- [**20:35**] so now we will see
+- [**20:38**] where we want to start now I will go
+- [**20:40**] ahead and get rid of this because not
+- [**20:41**] really good example
+- [**20:43**] and I will for example get this okay
+- [**20:45**] over here I will just duplicate it you
+- [**20:47**] can do the same just duplicate that
+- [**20:48**] sphere over there Ctrl d
+- [**20:50**] the cube not sphere and then we can use
+- [**20:53**] the the r or the tool here to rescale it
+- [**20:56**] and we can make it uh way smaller so
+- [**20:59**] basically kind of like this maybe it's
+- [**21:02**] good
+- [**21:03**] um so you can change the values over
+- [**21:04**] here in the scale directly and now you
+- [**21:07**] can see there we go you can see this
+- [**21:10**] point this is where the vaulting will
+- [**21:12**] start the motion warping so where it
+- [**21:14**] will go basically towards
+- [**21:16**] so you can see how it's going over there
+- [**21:18**] great now in the sequence uh so you have
+- [**21:22**] if it doesn't do anything we don't want
+- [**21:24**] to do anything okay it's not the first
+- [**21:25**] point we don't want to do anything we
+- [**21:27**] only want to get the first point now
+- [**21:29**] what we want to do is in the sequence is
+- [**21:32**] get the basically the the distance Point
+- [**21:36**] okay so let's go and get this and this
+- [**21:38**] actually the Middle Point okay it's
+- [**21:40**] actually the middle point so about
+- [**21:42**] middle pass and again it's going to be a
+- [**21:46**] vector now a thing that I'm going to do
+- [**21:48**] is go ahead and create a how was it
+- [**21:52**] let's go and create a category so it is
+- [**21:55**] a bit more organized okay so you can see
+- [**21:57**] we have categories over here so let's do
+- [**21:59**] the same so what we can do is go into a
+- [**22:02**] wizard uh category here so we need to
+- [**22:05**] select the variable going to Catherine a
+- [**22:07**] normal downgrade categories okay but now
+- [**22:09**] we can change the name and this will be
+- [**22:10**] into Vault uh yeah vote and I will do
+- [**22:14**] the same with this one but now we can
+- [**22:15**] select it great so now it's a bit more
+- [**22:17**] organized later on when this player
+- [**22:19**] starts growing and stuff and actually
+- [**22:22**] later on if we want if we see that it's
+- [**22:24**] a big chunk we can move it into a
+- [**22:26**] separate component but I think honestly
+- [**22:27**] because we have it tidy we can for now
+- [**22:29**] keep it like this okay so yes so now we
+- [**22:33**] want to get the volt middle pass it's
+- [**22:35**] basically the distance that we have to
+- [**22:36**] basically
+- [**22:38**] um bout
+- [**22:39**] vote however you spell it and now we
+- [**22:42**] want to double click here and then we
+- [**22:43**] can use the same pin and now we can
+- [**22:44**] connect it so now this will be the
+- [**22:46**] destiny post kind of and now we can
+- [**22:49**] again copy this and paste it and draw
+- [**22:51**] another uh debug post and actually I'm
+- [**22:54**] gonna get these points I'm over here so
+- [**22:56**] it's a bit more organized and this time
+- [**22:58**] let's say that's going to be yellow okay
+- [**23:00**] and then we need to pass this location
+- [**23:03**] so now Ctrl shift s guys to save
+- [**23:05**] everything to know it just in case it
+- [**23:07**] crashes or whatever okay and now if I
+- [**23:09**] vote you can see
+- [**23:11**] the separate points so he collected
+- [**23:13**] quality collected and no so what I was
+- [**23:16**] saying before so this is the depth so
+- [**23:18**] here it will start then it will go into
+- [**23:20**] here into the middle point and then
+- [**23:22**] later on we'll get the landing position
+- [**23:25**] great so what we want to do now is go
+- [**23:28**] ahead and
+- [**23:30**] um
+- [**23:31**] yeah continue with the branch so if we
+- [**23:34**] have not hidden anything that means that
+- [**23:37**] we are in that landing position like can
+- [**23:39**] you show you now okay so this time we
+- [**23:42**] want to do a normal line Trace by Chain
+- [**23:44**] there's no necessity of dominant Spear
+- [**23:46**] and now we can double click and put this
+- [**23:48**] here so it's a bit more organized more
+- [**23:51**] clean
+- [**23:52**] and basically this Trace start will be
+- [**23:55**] the starting point of the last Trace so
+- [**23:59**] if I Vault you will see that the last
+- [**24:01**] race was the one that didn't hit
+- [**24:03**] anything so we want to get a starting
+- [**24:04**] point in that and we want to add an
+- [**24:07**] option to this okay so the offset of
+- [**24:10**] this sorry about the coughing uh guy
+- [**24:13**] over here will be again we get actor
+- [**24:17**] rotation
+- [**24:19**] I don't know how to spell rotation my
+- [**24:23**] goodness totation no rotation there we
+- [**24:26**] go and we want to again get the four
+- [**24:28**] vectors we want to basically get what
+- [**24:30**] are the characters looking
+- [**24:31**] and what we want to do is multiply this
+- [**24:34**] and it's going to be the distance this
+- [**24:36**] is going to be basically the distance
+- [**24:37**] that we will land so right click convert
+- [**24:40**] into a float
+- [**24:42**] and let's set it to let's say around 80.
+- [**24:46**] okay and now this will be the position
+- [**24:49**] so we'll get the trade start but with an
+- [**24:51**] offset of 80 forward so that's a landing
+- [**24:55**] position how many times I have said
+- [**24:57**] Landing I don't know anyway this will be
+- [**24:59**] his starting point and now our end point
+- [**25:01**] will be basically this but subtracting
+- [**25:03**] and just downwards in our case this will
+- [**25:06**] be a thousand so we want to basically
+- [**25:08**] this line Trace until we touch the
+- [**25:10**] ground okay great another we want to do
+- [**25:13**] is basically make a branch
+- [**25:16**] okay and then again our head we need to
+- [**25:19**] break it so we get all the parameters
+- [**25:21**] and we need to get the location right
+- [**25:24**] click promote variable and now this will
+- [**25:26**] be the vault
+- [**25:27**] land pause I'm gonna go ahead and answer
+- [**25:31**] it into vault in the category and now in
+- [**25:34**] true we can plug it in
+- [**25:36**] and great this will be the bolt land
+- [**25:38**] plus and now what we want to do is
+- [**25:40**] basically break the loop because we
+- [**25:42**] don't want to continue making more right
+- [**25:44**] gas so we need to make a massive
+- [**25:48**] a massive Arrow here so let's see uh so
+- [**25:52**] we can just go ahead and get it and I
+- [**25:54**] think that we can just do is just say
+- [**25:56**] add a rewrote node and now I can just
+- [**25:59**] put this here
+- [**26:01**] and I'll drag it and now here at uh
+- [**26:06**] route we wrote I don't know how it's
+- [**26:08**] spelled
+- [**26:10**] this node and then here we can just drag
+- [**26:12**] it and plug it into the brake
+- [**26:14**] and it did break the loop great okay
+- [**26:18**] wait it's not plugging in okay uh don't
+- [**26:21**] worry let's just plug it into break okay
+- [**26:24**] I don't know why it wasn't let me okay
+- [**26:26**] double click and it will let you okay
+- [**26:28**] weird things anyway you can just drag it
+- [**26:31**] and there we go
+- [**26:33**] so yeah basically we just have to go and
+- [**26:35**] stop the loop over here okay and we have
+- [**26:38**] to do this routing but it is what it is
+- [**26:41**] because it is a um
+- [**26:43**] basically it's a function and if not we
+- [**26:45**] could just create a custom event and
+- [**26:47**] call it here but hey
+- [**26:49**] it is what it is
+- [**26:51**] so now we can just compile and Save so
+- [**26:54**] we go ahead and check this over here
+- [**26:56**] you can see
+- [**26:57**] that we have a line Trace appearing
+- [**27:00**] which you guys cannot see here because
+- [**27:03**] we don't have it in for duration
+- [**27:06**] and let's put the trace color to be
+- [**27:07**] let's say
+- [**27:09**] um green okay
+- [**27:12**] actually not green now because it's the
+- [**27:14**] hit color so
+- [**27:17**] blue let's say blue
+- [**27:19**] so now if we go here and Trace you can
+- [**27:22**] see this uh Trace over here so this will
+- [**27:24**] be the landing position
+- [**27:27**] cool so in here basically we will lamp
+- [**27:31**] great so I believe that I don't miss
+- [**27:36**] um anything
+- [**27:38**] so I guess we can just continue
+- [**27:41**] great so what we're going to do now is
+- [**27:43**] basically just
+- [**27:45**] um
+- [**27:46**] uh basically start making the room
+- [**27:49**] motion so we have all the positions set
+- [**27:51**] up so we can go ahead and Trace we have
+- [**27:53**] the starting point the middle point and
+- [**27:55**] the landing end point so we have all the
+- [**27:58**] details that we need in order to pass to
+- [**28:00**] our animation montage and the water
+- [**28:03**] motion warping
+- [**28:05**] great so let's go ahead and start
+- [**28:07**] applying all that so what we're going to
+- [**28:10**] do is go into the third person character
+- [**28:12**] blueprint and what we can do now is
+- [**28:15**] sorry about the coughing again my
+- [**28:17**] goodness okay and now create another uh
+- [**28:20**] function which will be the Vault
+- [**28:23**] um motion
+- [**28:24**] Warp great so what we're going to do in
+- [**28:28**] here is basically double check that we
+- [**28:31**] can Warp
+- [**28:33**] and why what would you see thank God
+- [**28:36**] that I already did all this system in
+- [**28:38**] another pride and experiment with it
+- [**28:40**] because there's a lot of things that can
+- [**28:42**] go wrong in this calculations that we
+- [**28:44**] did okay
+- [**28:45**] so what we're going to do is go ahead
+- [**28:47**] and right click promote variable and
+- [**28:49**] create a new
+- [**28:50**] um node which is can work
+- [**28:54**] okay so there we go
+- [**28:58**] so it kind of work okay
+- [**29:01**] so if it's true we're going to do is
+- [**29:03**] continue now where do we set this can
+- [**29:06**] warp like where do we do it well of
+- [**29:09**] course we're going to go into Vault and
+- [**29:11**] we're going to go in here so if we get a
+- [**29:14**] middle pass
+- [**29:15**] you will say okay we can work and why
+- [**29:18**] are we doing this thing here in the
+- [**29:20**] middle position it doesn't really make
+- [**29:21**] sense the thing is that
+- [**29:23**] sometimes the line tracers do not uh
+- [**29:26**] collide with each other correctly or
+- [**29:28**] follow the sequence correctly and they
+- [**29:31**] miss sometimes the middle pass so we're
+- [**29:34**] going to do is say hey if you don't have
+- [**29:37**] a middle position you cannot warp and
+- [**29:39**] the thing is that if you don't have a
+- [**29:40**] middle position but you work
+- [**29:43**] if you you fly the character explodes it
+- [**29:46**] it is very weird so we want to make sure
+- [**29:49**] that we get a middle position so this is
+- [**29:51**] more like a patch okay but
+- [**29:54**] um but yes basically just making sure
+- [**29:56**] that we have all the correct positions
+- [**29:58**] so we can Warp
+- [**29:59**] okay so now we can go back into our uh
+- [**30:02**] voting motion warping and we can
+- [**30:05**] basically start making the
+- [**30:08**] um
+- [**30:08**] the the motion warping and stuff but the
+- [**30:11**] first thing I want to do is go and get
+- [**30:12**] the character Moon component and set the
+- [**30:15**] movement mode
+- [**30:18**] and here when it's true of course to be
+- [**30:21**] flying so we will not be able to have no
+- [**30:24**] more
+- [**30:25**] um movement but we'll be in flying great
+- [**30:28**] so now another thing to do is set actor
+- [**30:30**] Collision
+- [**30:32**] enable Collision to be false because
+- [**30:34**] with my testing sometimes the actor
+- [**30:37**] collided with the obstacle and then it
+- [**30:42**] it just
+- [**30:43**] yeah it just destroyed everything okay
+- [**30:46**] so we want to make sure that the
+- [**30:47**] collisions are disabled and now what we
+- [**30:50**] can do is finally get emotion warping
+- [**30:53**] and what we want to do is say add or
+- [**30:56**] update
+- [**30:57**] warp Target so this will be basically
+- [**31:00**] the Target and now we want to do is just
+- [**31:02**] get the settings right click and split
+- [**31:04**] it so now we have all these settings
+- [**31:06**] so now we want to set up the name so in
+- [**31:09**] our first let's start with the Vault
+- [**31:10**] start position
+- [**31:12**] let's go ahead and go into the
+- [**31:14**] characters RPG character animations
+- [**31:16**] bouting and the vaulting montage and now
+- [**31:20**] we want to go ahead and select the first
+- [**31:21**] montage and we want to put exactly the
+- [**31:24**] same name now if you remember you can
+- [**31:25**] just plug it in but I do recommend going
+- [**31:28**] selecting it copying it and then going
+- [**31:31**] back here and then paste on it okay it
+- [**31:34**] has to be exactly the same if there's a
+- [**31:38**] character missing or a a um I think it's
+- [**31:41**] also case sensitive so the vault is in
+- [**31:43**] lowercase or as space at the end it all
+- [**31:47**] messes up so it has to be exact that's
+- [**31:48**] why I recommend going coping and
+- [**31:50**] business and now the location will be
+- [**31:53**] basically about starting position
+- [**31:55**] so there you go plug it in there we go
+- [**31:57**] pretty pretty cool now the warp Target
+- [**32:00**] rotation will just be the get actor
+- [**32:03**] rotation so the rotation basically of
+- [**32:06**] the
+- [**32:07**] voting will be exactly the same we will
+- [**32:10**] not touch anything and now the last two
+- [**32:12**] settings we don't have to touch them and
+- [**32:14**] that will do exactly the same so copy
+- [**32:16**] these three notes except for the
+- [**32:19**] position paste it
+- [**32:21**] and I will do the same but with the
+- [**32:24**] middle one so let's go ahead and plug it
+- [**32:25**] and we need to go into the Montage
+- [**32:27**] select the second motion warping
+- [**32:30**] copy the name go in here and paste it
+- [**32:34**] make sure there's no any spaces at the
+- [**32:37**] end or whatever okay guys and now we
+- [**32:39**] want to do the same
+- [**32:40**] I want to get this three notes
+- [**32:43**] paste them
+- [**32:44**] and then the end is going to be the land
+- [**32:47**] position and I'm gonna plug this in and
+- [**32:50**] now again we're gonna go into the
+- [**32:51**] Montage go into the last
+- [**32:53**] um motion warp copy the name and we're
+- [**32:56**] gonna go into the third person
+- [**32:58**] blueprint and paste it great compile and
+- [**33:00**] shape so now we are setting this
+- [**33:02**] positions which basically will allow us
+- [**33:05**] to make the motion warping towards
+- [**33:08**] um that places so now it comes the best
+- [**33:11**] part which is going ahead and playing
+- [**33:13**] the Montage so if it's not uh play any
+- [**33:17**] montage
+- [**33:18**] uh we are gonna get the advanced one
+- [**33:20**] because it gave us more options so we
+- [**33:22**] can just get the play montage
+- [**33:25**] oh yeah so ah this is so bad so I just
+- [**33:30**] forgot in functions we can we can't go
+- [**33:35**] ahead and place any delays
+- [**33:37**] or any other time
+- [**33:41**] um
+- [**33:42**] any other note that basically changes
+- [**33:44**] the sequence of time so this is just
+- [**33:47**] done pretty much
+- [**33:48**] on one frame so the thing is that they
+- [**33:51**] play Montage note that I wasn't gonna
+- [**33:54**] say
+- [**33:55**] contains an uncompleted output so
+- [**33:58**] instead of in the same frame we can just
+- [**34:00**] get when the animation would have
+- [**34:02**] finished but the thing is that well that
+- [**34:05**] basically changed the sequence of the
+- [**34:06**] how this runs so we cannot use it on the
+- [**34:09**] function
+- [**34:11**] so what I'm going to do is go into this
+- [**34:15**] I'm gonna go ahead and copy everything
+- [**34:19**] and then accept the first note Ctrl X
+- [**34:23**] and I'm gonna go into the event graph
+- [**34:25**] and then create a new custom event so
+- [**34:28**] say add custom end it's going to be uh
+- [**34:30**] it was a world
+- [**34:33**] motion Warp
+- [**34:37**] ah it doesn't let me because it's the
+- [**34:38**] same name I just put two and paste it
+- [**34:41**] and I will change the name okay
+- [**34:43**] so plug it in okay select this node we
+- [**34:46**] can press C to comment it this is going
+- [**34:49**] to be the fault motion Warp
+- [**34:54**] and now we can just plug this in here
+- [**34:56**] and then we need to go ahead and get the
+- [**34:58**] Vault motion warp which doesn't contain
+- [**35:00**] anything and delete it okay press uh
+- [**35:03**] super mirror or delete I don't know how
+- [**35:05**] it's in English and I can go into the
+- [**35:07**] bank graph and change the name into
+- [**35:08**] about motion Warp
+- [**35:13**] great so now we can indeed go here and
+- [**35:16**] say get the mesh
+- [**35:18**] and say play Montage if I know how to
+- [**35:22**] split it
+- [**35:25**] there you go play montage
+- [**35:27**] so we need to plug in the mesh
+- [**35:29**] and now we need to select the asset
+- [**35:31**] which will be the bolt over that we have
+- [**35:33**] just created before and now in on
+- [**35:35**] complete we can go ahead and set back
+- [**35:38**] the character Moon component
+- [**35:40**] set movement mode to walking
+- [**35:44**] and all that you see stuff we can set
+- [**35:47**] the actor Collision back on so take it
+- [**35:52**] and then we can go ahead and what we're
+- [**35:55**] going to do he's getting kind of warped
+- [**35:57**] and I set it to false
+- [**36:00**] explain one in a second and then we're
+- [**36:02**] gonna get the land uh position
+- [**36:06**] I'm gonna set it
+- [**36:09**] and then the Z will be around 20
+- [**36:13**] 000. we're gonna say why what just
+- [**36:15**] happened here why are you doing this at
+- [**36:17**] the end let me just explain it in a
+- [**36:19**] second but first of all let's go ahead
+- [**36:22**] and we have to do one last check over
+- [**36:24**] here and also we have to call this
+- [**36:26**] motion warp so we're gonna go into the
+- [**36:28**] vault
+- [**36:29**] okay
+- [**36:31**] and the thing is that here
+- [**36:35**] um we have to call the motion warp so
+- [**36:38**] basically
+- [**36:39**] sorry not here at the end okay it's not
+- [**36:41**] at the end it's actually at the second
+- [**36:43**] trace on the uncomplete so why are we
+- [**36:46**] doing it on the second Trace instead of
+- [**36:48**] the end well this is because on this
+- [**36:50**] last race we are breaking this Loop so
+- [**36:54**] when this is completed basically
+- [**36:56**] everything all the calculations have
+- [**36:58**] finished so in this completion we can
+- [**37:01**] call the um
+- [**37:03**] about motion warp okay actually we can
+- [**37:07**] just put it over here great so this is
+- [**37:09**] what it will trigger there
+- [**37:10**] cool so now we can compound say
+- [**37:13**] now it will call but we have to make one
+- [**37:17**] more change with the ambient we have to
+- [**37:19**] do is basically get this and get the
+- [**37:23**] land position
+- [**37:25**] we're gonna get I'm gonna right click
+- [**37:27**] and split so we have all the access I'm
+- [**37:29**] gonna check that the set is in range
+- [**37:33**] that float and now we want to get the
+- [**37:35**] return value and and
+- [**37:37**] then plug it in here and then the
+- [**37:39**] canvarp here into this node and here so
+- [**37:42**] basically this two
+- [**37:44**] nodes have to be uh true in order to to
+- [**37:48**] proceed
+- [**37:49**] so basically the main value will be the
+- [**37:52**] mesh
+- [**37:55**] it's vault location
+- [**37:58**] I'm gonna split it I'm gonna set and I'm
+- [**38:00**] gonna basically in this one subtract it
+- [**38:02**] so the minimum will be minus 50.
+- [**38:05**] and plug it in and the other one will be
+- [**38:08**] plus
+- [**38:09**] 50.
+- [**38:11**] so basically
+- [**38:12**] we need to also put this here it's a
+- [**38:15**] little bit better there we go put this
+- [**38:16**] here great
+- [**38:18**] and we'll take the two so it is also
+- [**38:20**] including the 50 and 50. great so what
+- [**38:24**] is this doing well basically the things
+- [**38:26**] that sometimes uh the landing position
+- [**38:29**] might be
+- [**38:31**] basically on top of the player's head
+- [**38:34**] far away up and in that case we don't
+- [**38:38**] want to motion work okay we only want to
+- [**38:40**] motion warp if basically the
+- [**38:44**] the the the thing the landing position
+- [**38:47**] is in between that range of the place
+- [**38:49**] position in the set minus 50. so
+- [**38:52**] basically the kind of in this point over
+- [**38:54**] here not on here or on here you know
+- [**38:58**] what I mean so this will prevent us from
+- [**39:01**] climbing this wall uh at once and then
+- [**39:05**] finishing underground okay basically
+- [**39:09**] it's just checking that okay and then
+- [**39:12**] what I did here was basically it sent up
+- [**39:14**] to 2000 at the end of the of the
+- [**39:18**] completion why well again basically if
+- [**39:22**] we go into any
+- [**39:24**] uh
+- [**39:26**] while that is up the landing position
+- [**39:28**] will not basically get updated
+- [**39:31**] this because the calculations will not
+- [**39:33**] get into here so the alignment Position
+- [**39:36**] will not but yes the starting and the
+- [**39:38**] Middle Point sometimes so it will
+- [**39:41**] basically not update the landing
+- [**39:43**] position and it will get the last one so
+- [**39:45**] let's say that we just jumped over here
+- [**39:46**] the wall that we had over here which it
+- [**39:49**] is unloaded we just want to reload the
+- [**39:51**] scene
+- [**39:52**] sometimes the open world map is
+- [**39:54**] basically unlocks things okay so imagine
+- [**39:57**] that we bought this okay and we have set
+- [**39:58**] the variable of the landing position to
+- [**40:01**] whatever height over here
+- [**40:04**] so now if we go on both this maybe the
+- [**40:09**] we get the first point which is on the
+- [**40:12**] starting point at the middle point but
+- [**40:14**] not the end point
+- [**40:15**] so basically if that value is still
+- [**40:17**] there of the landing position we will
+- [**40:19**] basically jump and until Port into this
+- [**40:21**] blending position
+- [**40:22**] but because we said it with this range
+- [**40:25**] calculation here and then this massive
+- [**40:28**] number it will say hey it is out of
+- [**40:32**] bounds we don't want to jump over here
+- [**40:34**] so we'll prevent it okay it is extremely
+- [**40:36**] confusing maybe now I don't know how to
+- [**40:39**] really explain it so you can visualize
+- [**40:42**] it but it's basically just a quick way
+- [**40:45**] of just making sure that everything is
+- [**40:47**] on
+- [**40:48**] um
+- [**40:49**] on the great values okay
+- [**40:52**] great so it is time to test it out
+- [**40:57**] finally so much time waiting for this
+- [**40:59**] moment you know press play
+- [**41:01**] experience in this bowl we can go
+- [**41:04**] towards it we can press shift and there
+- [**41:07**] we go you can see how cool it looks
+- [**41:09**] let's do it again wow that looks
+- [**41:12**] absolutely amazing guys look at this
+- [**41:15**] yes so motion warping working so yeah it
+- [**41:19**] looks absolutely incredible guys so look
+- [**41:22**] what I was saying if I jump here it will
+- [**41:24**] not let us and
+- [**41:26**] basically you're maybe insane okay what
+- [**41:28**] if we want to jump there well we would
+- [**41:31**] use another both system later on the
+- [**41:33**] thing is that you can see that this boat
+- [**41:34**] goes from up to down and the thing as
+- [**41:38**] here is that this place goes uh this
+- [**41:42**] mesh over here goes just up and then
+- [**41:44**] finishes here so if our animation was
+- [**41:46**] keep going it will need to go down again
+- [**41:48**] but it will trespass so that's why we
+- [**41:50**] did all that calculation so we cannot go
+- [**41:52**] now in the future we will add more
+- [**41:55**] voting animation setup so we will
+- [**41:58**] include one that will only jump here
+- [**42:01**] okay great guys so if you found it so
+- [**42:04**] helpful I would really appreciate if you
+- [**42:06**] could like the video and subscribe to my
+- [**42:08**] channel I have lots of Unreal Engine 5
+- [**42:10**] tutorials so this one so if you want to
+- [**42:11**] go ahead check them out also see the
+- [**42:13**] full playlist until now of the RPG
+- [**42:16**] series and delete the comment below of
+- [**42:18**] some things I want to see probably next
+- [**42:20**] episode we'll start with the
+- [**42:22**] assassinations and start with the combat
+- [**42:24**] feeling and stuff so I'm very excited
+- [**42:26**] now if you want to see first before that
+- [**42:28**] the source control tutorial I can go
+- [**42:31**] ahead and
+- [**42:32**] make it so we can basically just set the
+- [**42:35**] source control so leave me your comment
+- [**42:37**] what you think in the description anyway
+- [**42:39**] go ahead and join the Disco server so
+- [**42:41**] you can show your progress and ask any
+- [**42:43**] questions and now yes with all that says
+- [**42:45**] subscribe and like the video and what I
+- [**42:47**] said bye bye
+- [**42:48**] [Music]
+
+---
+
+## Related
+
+- ← Previous: [[02_Locomotion_Blendspace_Crouching_and_Procedural_Leaning]]
+- → Next: [[04_Assassinations]]
+- 📚 Series: [[_MOC_UE5_RPG_Framework]]

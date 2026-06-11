@@ -1,0 +1,668 @@
+---
+title: "Unreal Engine 5 RPG Tutorial Series - #7: Levels and XP"
+source: "https://www.youtube.com/watch?v=3cf4T-B53SM"
+video_id: "3cf4T-B53SM"
+type: "youtube-transcript"
+series: "UE5 RPG Framework"
+episode: 7
+tags: [youtube, tutorial, transcript, ue5, rpg, gamedev]
+---
+
+# Unreal Engine 5 RPG Tutorial Series - #7: Levels and XP
+
+**URL:** https://www.youtube.com/watch?v=3cf4T-B53SM
+**Duration:** 25:31
+**Segments:** 642
+
+## Transcript
+
+- [**0:00**] what's up guys welcome to new Unreal
+- [**0:02**] Engine 5 tutorial and today we are
+- [**0:04**] continuing with the RPG Series today we
+- [**0:06**] will finally continue on with the XP and
+- [**0:09**] level system and also we'll finish up
+- [**0:10**] some things left of the stamina
+- [**0:12**] basically making sure that we cannot run
+- [**0:14**] when Crouch and also used to implement a
+- [**0:17**] new uh kind of sprinting quicker
+- [**0:19**] animation it's gonna be a very easy
+- [**0:21**] beautiful so let's get started
+- [**0:26**] all right so let's get started by just
+- [**0:28**] making sure that a character cannot
+- [**0:30**] Sprint basically when we are crouched I
+- [**0:33**] mean right now if we are crush and then
+- [**0:35**] I start sprinting it goes faster but the
+- [**0:38**] Sprint animation kept the same and stuff
+- [**0:40**] anyway I don't want my character to be
+- [**0:42**] able to basically go faster when
+- [**0:44**] crouching okay the velocity of crouching
+- [**0:47**] is additives so let's go into third
+- [**0:49**] person Blueprints and open up the third
+- [**0:51**] person character blueprint you know here
+- [**0:53**] we already have the stamina system so
+- [**0:55**] basically we just want to make sure that
+- [**0:58**] we are not crouched when we want to go
+- [**1:00**] ahead and Sprint so we're gonna put this
+- [**1:03**] a bit to the right over here
+- [**1:05**] and first of all we want to create
+- [**1:07**] another Branch uh actually we can do
+- [**1:09**] this is make an End condition so just
+- [**1:11**] get the condition and make an end so now
+- [**1:13**] we can use this Branch so basically
+- [**1:15**] a Sprint can need to be true and then
+- [**1:18**] Kraus needs to uh not be true so
+- [**1:21**] basically we'll place a not Boolean okay
+- [**1:24**] now it's making a bit of a mess here so
+- [**1:27**] let's see if I can take this a bit down
+- [**1:29**] yeah a bit better and put this actually
+- [**1:32**] let me copy and paste this separate so
+- [**1:35**] it's a bit cleaner there we go so
+- [**1:37**] basically if we are if we can Sprint and
+- [**1:39**] we are not crouched we will be able to
+- [**1:41**] start sprinting but then if we are
+- [**1:44**] sprinting and suddenly we press uh
+- [**1:47**] control to crouch the character will
+- [**1:49**] Crouch so we have to go into the crash
+- [**1:51**] system over here and make sure that we
+- [**1:53**] are not crossed and
+- [**1:57**] we are not sprinting so again it's
+- [**2:00**] printing and let's say not Boolean not
+- [**2:03**] not not branch no not
+- [**2:07**] Bool and there we go and then plug this
+- [**2:11**] on here
+- [**2:12**] all right so basically if we are not
+- [**2:14**] crouched and also we are not sprinting
+- [**2:16**] so there we go that should be it if we
+- [**2:18**] can compile and save so now if I am
+- [**2:20**] crouched I cannot go ahead and Sprint
+- [**2:22**] all right I can't it doesn't work as you
+- [**2:25**] can see the design of artisan uh go off
+- [**2:27**] and then also if I start running and
+- [**2:30**] then uh press Ctrl uh I can't it doesn't
+- [**2:33**] do anything now you can see that there's
+- [**2:35**] the camera transition working all right
+- [**2:37**] on the on the thing I'm probably
+- [**2:40**] wondering why well if we go into the uh
+- [**2:42**] third person uh character over here the
+- [**2:45**] thing is that this event of a Crouch and
+- [**2:49**] and Crouch
+- [**2:51**] I believe that it's being called so
+- [**2:53**] let's uh quickly see all the references
+- [**2:56**] into it so basically it's being used
+- [**2:58**] over here and it jumps so actually no
+- [**3:00**] that's another problem okay
+- [**3:03**] um
+- [**3:04**] anyway uh yeah that's pretty much it so
+- [**3:09**] yeah I mean we're
+- [**3:11**] running and then
+- [**3:15**] I should not be able to to be crushed
+- [**3:19**] um I guess this is because of the
+- [**3:21**] timeline so you know what as you said a
+- [**3:24**] simple Branch over here in both cases so
+- [**3:27**] basically
+- [**3:28**] um if we are not sprinting okay again
+- [**3:31**] basically the same one I honestly it
+- [**3:34**] found a bit weird but hey what let's
+- [**3:36**] just add this over here so this will be
+- [**3:38**] in Reverse ferment and this printing is
+- [**3:41**] not true of course we can also just put
+- [**3:43**] sprinting and put it from the false root
+- [**3:46**] but I think it gets a bit more cleaner
+- [**3:47**] now if I'm running and I press Ctrl
+- [**3:50**] there we go nothing um
+- [**3:52**] will happen basically okay
+- [**3:54**] great so everything is now uh going
+- [**3:57**] ahead and working
+- [**3:59**] so now we're gonna go ahead and continue
+- [**4:01**] on with the player's test but actually
+- [**4:03**] before we can add this printing
+- [**4:05**] animation so the thing is that the
+- [**4:06**] lighter Locomotion system
+- [**4:08**] doesn't have any heavy sprinting I
+- [**4:10**] really have this jog animation and it's
+- [**4:13**] like the maximum velocity that it has
+- [**4:15**] yeah so what we're gonna do is basically
+- [**4:18**] duplicate this animation and just
+- [**4:19**] increase the playback speed so it will
+- [**4:21**] simulate like we are going faster in the
+- [**4:24**] animation wise now in the future we'll
+- [**4:27**] of course Implement a more sprinting one
+- [**4:29**] but right now jet I don't have one so
+- [**4:31**] don't worry uh in a very near episode
+- [**4:33**] ooh add it but it doesn't matter we can
+- [**4:35**] just go into characters RPG character
+- [**4:37**] animations uh sorry this will be
+- [**4:39**] actually in the mannequin so go into
+- [**4:41**] mannequins animations and then under
+- [**4:44**] money we will see the ROM forward so
+- [**4:46**] it's duplicate this and let's change
+- [**4:48**] this to be basically just uh instead of
+- [**4:51**] mm Sprint
+- [**4:54**] and that's it that's really what we need
+- [**4:56**] so now just double click to open it
+- [**4:59**] and you'll see the guys Printing and
+- [**5:01**] then what we have to do is get the rate
+- [**5:02**] scale and just increase it so let's see
+- [**5:04**] 1.5 is too crazy yes that's great maybe
+- [**5:07**] 1.3
+- [**5:08**] 1.3 seems pretty okay we will need to
+- [**5:11**] adjust it maybe later so we'll see so
+- [**5:13**] now we have this print uh thing created
+- [**5:16**] the animation so now we can go back into
+- [**5:18**] our PG character animations and now
+- [**5:20**] under Locomotion we can open our plan
+- [**5:23**] space so as you can see our max value
+- [**5:25**] was 500 which was basically the maximum
+- [**5:28**] speed that we could basically just walk
+- [**5:30**] over here and the max speed is set to
+- [**5:32**] this normal Jack animation but now in
+- [**5:34**] the last episodes we added sprinting
+- [**5:37**] with stamina system
+- [**5:39**] so let's see which Matt uh what is the
+- [**5:42**] max velocity that it can go so if we go
+- [**5:45**] into sorry not in sprinting here we can
+- [**5:49**] see that it's actually
+- [**5:50**] 750. so now we're going to go into a
+- [**5:53**] band space and put that the maximum is
+- [**5:54**] going to be 750 because it's now at the
+- [**5:57**] velocity that we Sprint and now we can
+- [**5:59**] add at the end the Sprint animation so
+- [**6:03**] let's go ahead and find it let's drag it
+- [**6:04**] here put it at the end and now if I
+- [**6:06**] press I hold Ctrl you can see that
+- [**6:08**] everything works but now we have an
+- [**6:09**] extra step over here that maybe we need
+- [**6:12**] to increment more or less we'll see so
+- [**6:15**] that should be it now if I'm working and
+- [**6:17**] running you can see that the animation
+- [**6:19**] indeed is going ahead and changing and
+- [**6:21**] it's pretty noticeable now don't worry
+- [**6:23**] in the future we'll go ahead and
+- [**6:25**] Implement a more proper sprinting like
+- [**6:27**] if it's more lean down to be more
+- [**6:29**] aerodynamic animation I don't know
+- [**6:31**] whatever cool thing that we can find so
+- [**6:33**] don't worry about that but we have
+- [**6:34**] things working all right now yes we can
+- [**6:37**] continue on with the player's dance and
+- [**6:39**] do the final thing for for now for the
+- [**6:42**] basics of the structure which is the XP
+- [**6:44**] in leveling system all right and we'll
+- [**6:46**] basically display on the screen and
+- [**6:48**] stuff and in the we'll continue then
+- [**6:51**] with uh advancing something so DUI in in
+- [**6:54**] the next episode and then in the next
+- [**6:56**] next episode we'll begin finally with
+- [**6:58**] combat and then later on as we get into
+- [**7:00**] more of the combat leveling systems and
+- [**7:03**] also the equipment we will touch back
+- [**7:06**] again a bit of the structure of the
+- [**7:08**] player stats to make it more advanced
+- [**7:10**] okay so right now we are like in the
+- [**7:12**] basics anyway let's go into Blueprints
+- [**7:13**] and go into the component so while what
+- [**7:16**] we got to do is create also different
+- [**7:17**] functions for the experience them so I
+- [**7:21**] already have the variables created and
+- [**7:22**] we have some functions for this health
+- [**7:24**] and stamina so now we want to do is
+- [**7:27**] basically go ahead and create a new
+- [**7:29**] function which is going to be basically
+- [**7:31**] increase XP
+- [**7:34**] and there we go and we're going to go
+- [**7:35**] ahead and select it over here in this
+- [**7:37**] node and basically put a new category
+- [**7:39**] which will be just honestly XP
+- [**7:43**] um level and XP let's say so we have
+- [**7:46**] both level 1 XP great and now what we
+- [**7:49**] can do is also uh create a new function
+- [**7:53**] which will be basically increase level
+- [**7:57**] okay and now again this will be in
+- [**7:59**] category we cannot drag uh this drop
+- [**8:02**] down and now it's going to be level on
+- [**8:03**] XP we have everything organized great so
+- [**8:05**] let's go first of all into let's
+- [**8:07**] increase XP The Experience okay the
+- [**8:09**] little points that we will be getting
+- [**8:11**] great so what we need to do is basically
+- [**8:14**] get XP and set it and now basically it
+- [**8:18**] will get the current XP that it has and
+- [**8:20**] then add another value which are in a
+- [**8:22**] case will be an input so when we go this
+- [**8:25**] node we will be adding and we need to
+- [**8:27**] plug of course this into the setup uh
+- [**8:30**] whatever new XP into the current one now
+- [**8:33**] we're going to select this node and
+- [**8:34**] change the input to be
+- [**8:36**] um uh added XP or whatever you want to
+- [**8:39**] call it and then there we go so now we
+- [**8:42**] will be increasing XP now we need to
+- [**8:44**] make sure that when we get into the
+- [**8:47**] maximum speed and we increase the level
+- [**8:50**] so we're going to do is right after this
+- [**8:52**] make a branch and we're going to say is
+- [**8:54**] well when I get the current XP and say
+- [**8:57**] if it's basically am bigger or equal
+- [**9:00**] then the max XP over here and let's put
+- [**9:03**] that on there so this is true we will
+- [**9:06**] need to increase the level so we'll go
+- [**9:08**] ahead and go from true and then say
+- [**9:10**] increase level
+- [**9:12**] and we'll go ahead and have a nice flow
+- [**9:15**] over here and right now our Max XPS head
+- [**9:18**] to 100 and our current XP is set to zero
+- [**9:20**] so good to get the first level we will
+- [**9:23**] need basically a hundred of XP and later
+- [**9:26**] on it will increase so we're gonna go
+- [**9:28**] into the increased level and we're going
+- [**9:30**] to do is get the well the level variable
+- [**9:33**] um over here
+- [**9:35**] and basically we're gonna go ahead and
+- [**9:37**] also set it so we can also add it like
+- [**9:41**] we did basically with the XP so edit and
+- [**9:44**] in this case it will be always one now
+- [**9:47**] if we want we can also put it as an
+- [**9:49**] input so later on from another place we
+- [**9:52**] can call increase level and put whatever
+- [**9:53**] you want but you know let's actually do
+- [**9:56**] that so let's put it as a new
+- [**9:58**] um input that's going to be the added
+- [**10:00**] level
+- [**10:01**] and then this will basically add
+- [**10:03**] whatever we want and in our case we want
+- [**10:06**] to go back to our XP and put it to be
+- [**10:08**] one okay so we'll increase one level so
+- [**10:10**] one so later on if we call this
+- [**10:12**] increased level uh function for another
+- [**10:15**] place we can manually put like for
+- [**10:16**] example 10 levels imagine that we do a
+- [**10:18**] heavy
+- [**10:19**] um Mission or whatever and instead of
+- [**10:21**] just adding XP we just want to directly
+- [**10:23**] at level levels now we can very easily
+- [**10:25**] okay it's just making sure that things
+- [**10:27**] are easier for us in the future anyway
+- [**10:29**] so what we want to do is now a part of
+- [**10:32**] increasing the level we want to increase
+- [**10:34**] the max experience and we set the XP so
+- [**10:38**] right now in order to get to the next
+- [**10:40**] level the max XP needed
+- [**10:43**] um that also Max XP will be also
+- [**10:45**] symbolizing the XP needed to to go into
+- [**10:48**] null level okay and basically I'm just
+- [**10:50**] taking the Assassin's Creed style of
+- [**10:52**] Origins okay you have a certain amount
+- [**10:55**] of XP and a Max XP when you get into
+- [**10:57**] that a Max XP the level increases and
+- [**11:00**] then all resets and then the max XP will
+- [**11:04**] be increased it might be a bit confusing
+- [**11:06**] but let me just put it over here if you
+- [**11:08**] you have played the game you probably
+- [**11:09**] will be getting if not you're like what
+- [**11:11**] is this guy saying don't worry don't
+- [**11:12**] worry okay so we have to do is basically
+- [**11:14**] get the max XP okay and then set it
+- [**11:19**] and then we'll get the max XP the
+- [**11:22**] current one and add a value over here so
+- [**11:24**] right now let's say that we're going to
+- [**11:26**] add 150. now this value will be better
+- [**11:29**] to get it from a database so we can have
+- [**11:32**] a list of all the levels and the XP
+- [**11:34**] required for each one now for now we're
+- [**11:36**] gonna keep it simple and just add 115
+- [**11:39**] twitch uh level needed but don't worry
+- [**11:42**] in the future like I said when we start
+- [**11:43**] touching with the advanced part of the
+- [**11:46**] player stats with the combat and
+- [**11:47**] Equipment don't worry we will want to
+- [**11:50**] make this data table so we have more
+- [**11:52**] control but for now we can just leave it
+- [**11:53**] like that and now we want to do is reset
+- [**11:55**] the XP so we go back to zero and one to
+- [**11:58**] increase back so you set it into zero
+- [**12:00**] and now that main flow should be uh
+- [**12:03**] unfinished really so
+- [**12:07**] now it's time to be able to call these
+- [**12:11**] functions and also display a UI so let's
+- [**12:13**] quickly go ahead and display a UI so
+- [**12:16**] we're going to do is go to hearing
+- [**12:18**] content and now UI and we're gonna use
+- [**12:20**] the same HUD widget that we have before
+- [**12:22**] so here we have the the hellbar stamina
+- [**12:25**] bar and the health and stuff so number
+- [**12:28**] one to do is basically display the
+- [**12:31**] levels and stuff so we're going to do is
+- [**12:32**] go in here and first of all let's put
+- [**12:35**] our level text so let's get a new text
+- [**12:37**] drag it over here I'm not going to set a
+- [**12:39**] new anchor and in our case it's going to
+- [**12:42**] be up here in the corner even though
+- [**12:43**] we're gonna drop it a bit down over here
+- [**12:46**] and then the text we can put a
+- [**12:48**] placeholder just to us to visualize how
+- [**12:50**] it will look for example we are level 15
+- [**12:53**] let's say so this is just us to see and
+- [**12:56**] now we can go into the alignment and
+- [**12:58**] just put it in the center so we have a
+- [**13:00**] remote control and then make it smaller
+- [**13:01**] because we are not gonna have like
+- [**13:03**] massive uh numbers over here at least
+- [**13:05**] for now this will depend for you if you
+- [**13:07**] want to have level
+- [**13:08**] 1550 you can go ahead and change that
+- [**13:12**] but you know anyway
+- [**13:14**] um
+- [**13:15**] so also be nice to add like a little
+- [**13:17**] background Shield or whatever right now
+- [**13:19**] I don't have a shoot don't worry in the
+- [**13:21**] next episode we'll be touching the UI
+- [**13:24**] and basically modifying the sliders and
+- [**13:25**] adding sounds we will add the shield
+- [**13:27**] okay but if you want right now we can
+- [**13:29**] just add a simple image over here so
+- [**13:32**] again put the anchors be here and the
+- [**13:35**] brush we can get is something random
+- [**13:37**] over here I don't really know we can for
+- [**13:39**] example this one this over here so we
+- [**13:42**] can just put a size of
+- [**13:45**] um 70 and 70 and then just put it uh
+- [**13:49**] over here so it needs to be
+- [**13:51**] um
+- [**13:53**] well I'll be smaller and then maybe you
+- [**13:55**] can just put it on top of the level I
+- [**13:57**] don't know later on with other Shield
+- [**13:58**] okay tomorrow uh well in the next
+- [**14:00**] episode
+- [**14:01**] um so for now this is good so let's say
+- [**14:03**] like this text and change the name to be
+- [**14:05**] the uh basically the level text so level
+- [**14:09**] NT uh XT
+- [**14:12**] oh I actually use text better and I made
+- [**14:15**] sure that it's variable so we can go
+- [**14:16**] ahead and modify it later on great and
+- [**14:20**] now we want to basically create a
+- [**14:22**] progress bar like we did with basically
+- [**14:24**] with the stamina stuff so we want to do
+- [**14:26**] is get the new progressor drag it over
+- [**14:28**] here set the anchors to be on top right
+- [**14:31**] and then we want to basically change the
+- [**14:34**] size y to be much thinner some AVS like
+- [**14:37**] three some of that this is very very
+- [**14:38**] thin maybe it's too much uh
+- [**14:42**] but we'll see I'm basically we're going
+- [**14:43**] to make this a bit longer to maybe 140
+- [**14:46**] is pretty okay and basically here we'll
+- [**14:49**] have the the the bar of the XP so we can
+- [**14:51**] see how much we need
+- [**14:53**] now of course this is all up to you you
+- [**14:55**] want to change the customization and how
+- [**14:57**] it looks up to you but I do recommend
+- [**14:58**] following you know how I do stuff uh
+- [**15:02**] just make things make things a bit
+- [**15:04**] easier for the feature okay and now I
+- [**15:06**] can just put a percent of 0.7 for
+- [**15:08**] example so you see how it looks and then
+- [**15:10**] we can put another color
+- [**15:13**] I don't know for example kind of
+- [**15:16**] greenish this is just temporary okay but
+- [**15:19**] for example
+- [**15:21**] um great and now we want to do is change
+- [**15:23**] this to be the um XP bar
+- [**15:27**] and now this image let's change this to
+- [**15:29**] be the level icon
+- [**15:32**] and then also what we're going to do is
+- [**15:34**] get another text so let's go and get
+- [**15:37**] this level text and Ctrl D to duplicate
+- [**15:39**] it and this won't be the level text this
+- [**15:43**] will be the XP text okay and we will
+- [**15:47**] need to set it back over here and put it
+- [**15:50**] here so
+- [**15:51**] sorry I moved the bar now we need to add
+- [**15:53**] this one the XP text put it over here
+- [**15:55**] and this will be for example we have
+- [**15:59**] um zero out of 100. okay and now we're
+- [**16:03**] gonna make the size space smaller so
+- [**16:05**] let's say like 15 uh 310 uh yeah
+- [**16:08**] something like that 10 make it smaller
+- [**16:12**] and put it over here okay so now we can
+- [**16:15**] see the level and the XP needed and so
+- [**16:17**] on avoid the UI customization let's put
+- [**16:21**] it actually a bit smaller seven uh it's
+- [**16:23**] temporary uh next episode we'll tune in
+- [**16:25**] a bit more and as long as this series
+- [**16:28**] goes we'll make some touches and stuff
+- [**16:30**] but this is just the planning overall of
+- [**16:32**] the UI great and now we need to make the
+- [**16:34**] X2 bar as variable so make sure it is
+- [**16:36**] that and the level icon we can disable
+- [**16:38**] this variable we don't want to access it
+- [**16:40**] outside and then everything that we did
+- [**16:42**] needs to be is bearable except that icon
+- [**16:44**] okay so I'm going to compile save the UI
+- [**16:47**] good and place
+- [**16:49**] great so let's go into player stats and
+- [**16:52**] now let's start with the increase XP so
+- [**16:55**] we want to do is go ahead and basically
+- [**16:57**] customize the UI so we can just get the
+- [**17:00**] player the player character that we
+- [**17:02**] saved earlier on and then again get the
+- [**17:04**] hot widget basically we're going to do
+- [**17:06**] very simple thing that we did with the
+- [**17:07**] health and 7M I want to basically now
+- [**17:09**] get uh this and then go ahead and also
+- [**17:13**] get the progress bar okay so well bar uh
+- [**17:18**] XV bar there we go
+- [**17:19**] I want to do now is basically set the
+- [**17:22**] percent great so let's plug this in up
+- [**17:24**] here so we want to go from two different
+- [**17:27**] levels so we want to do is basically get
+- [**17:30**] our current XP and then go ahead and
+- [**17:33**] divide it by our Max XP and it will
+- [**17:36**] automatically create as a nice flow from
+- [**17:39**] zero to one as you can see the values
+- [**17:40**] from the progress bar are from zero to
+- [**17:42**] one and great that's great and I want to
+- [**17:45**] do is go ahead and let's just get this
+- [**17:47**] too uh first notes and put them here so
+- [**17:50**] until you UI and then we want to now get
+- [**17:53**] the text of the
+- [**17:56**] um XP text that we got so we can
+- [**17:58**] basically change that and now we just
+- [**18:00**] want to basically set the text
+- [**18:04**] and basically here for our text what we
+- [**18:06**] want to do is hold this knot named
+- [**18:08**] format text so now in here you will see
+- [**18:11**] what we can do is basically we'll put
+- [**18:13**] two parameters so in here basically two
+- [**18:15**] inputs so let's put the screw to Black
+- [**18:17**] brackets uh how about their code and
+- [**18:20**] then in the first one we're gonna have
+- [**18:21**] and basically current XP
+- [**18:25**] and then we're going to put basically a
+- [**18:27**] space on an F Bar so this is going to be
+- [**18:29**] basically our text in middle and I'm
+- [**18:31**] gonna add another input parameter
+- [**18:33**] another square bracket and this will be
+- [**18:35**] the max XP now if we hit enter you can
+- [**18:38**] see that now we have two inputs and
+- [**18:40**] great we can now put them together and
+- [**18:42**] basically we'll replace what is inside
+- [**18:45**] of this squared bracket with the input
+- [**18:47**] and then we'll have this middle bar over
+- [**18:49**] here this bar so what we can do is now
+- [**18:52**] just basically put this a bit up here
+- [**18:54**] get the XP
+- [**18:56**] put it on here and then get the an xxp
+- [**18:59**] and then put it over here compile and
+- [**19:02**] say
+- [**19:03**] okay another thing that we have to do is
+- [**19:06**] basically get all this that we did over
+- [**19:07**] here copy and go into the event graph
+- [**19:10**] and the begin play and then also paste
+- [**19:13**] it and so it will basically initialize
+- [**19:15**] it so when we load the game it will
+- [**19:17**] automatically do all that so now let's
+- [**19:20**] go into the increased level and now we
+- [**19:22**] have to do the same stuff so we have to
+- [**19:23**] basically get our player character
+- [**19:26**] and we want to now get the hot Butcher
+- [**19:29**] and now we want to do is basically get
+- [**19:32**] the level text in this case it's going
+- [**19:35**] to be way simpler we just want to do a
+- [**19:37**] set text
+- [**19:38**] text there we go the second one
+- [**19:41**] put it here and now we just want to get
+- [**19:44**] our level variable
+- [**19:45**] raggy get it and drag it and there we go
+- [**19:48**] then it will create also this node if
+- [**19:50**] you want you can just put it to the side
+- [**19:52**] and there we go compile and save and
+- [**19:54**] also we need to get once more this UI
+- [**19:58**] so let's get oh come on this and then go
+- [**20:01**] to the then graph go back here and then
+- [**20:03**] paste it and now if we put this down
+- [**20:06**] going compile and Save
+- [**20:08**] now you'll see that when we press play
+- [**20:10**] you have the UI here now it's incredible
+- [**20:12**] small so try to increase it but it
+- [**20:16**] should be working so you can see that it
+- [**20:18**] set it the zero and then a hundred and
+- [**20:21**] then it also set it the level to be one
+- [**20:24**] so that's great it's working for example
+- [**20:26**] if I go here and set the max XP to be
+- [**20:29**] 250 you will see how it would change as
+- [**20:32**] you can see it's now zero to 250. very
+- [**20:35**] small so let's change that let's also
+- [**20:37**] put this back into 100 and it's going to
+- [**20:40**] the HUD and then we can go ahead and
+- [**20:43**] select overall everything I think and we
+- [**20:44**] can just make it bigger
+- [**20:47**] but actually let's go ahead and do it
+- [**20:49**] slowly so
+- [**20:51**] um I think that
+- [**20:54**] yeah we need to make this bigger so
+- [**20:57**] let's put this as 12 something like that
+- [**20:59**] and that's a bit better and then uh
+- [**21:03**] maybe the health bar well the progress
+- [**21:05**] bar no health bar sorry about that oh
+- [**21:08**] the XP has to be a bit bigger let's put
+- [**21:10**] it centered again
+- [**21:12**] um and basically that's pretty much it
+- [**21:16**] uh yes nothing that looks a bit better
+- [**21:18**] great so now let's go ahead and call
+- [**21:21**] these functions when we click a button
+- [**21:23**] oh well a key I used to debug them and
+- [**21:26**] see that everything is working so we can
+- [**21:28**] now go ahead and save everything Ctrl
+- [**21:30**] shift s and then close everything and
+- [**21:32**] now we can open our third person guys
+- [**21:34**] whooping all we can do though is go down
+- [**21:36**] here and add another debug key so let's
+- [**21:38**] say there's gonna be a debug key and
+- [**21:41**] then let's say that it's gonna be let's
+- [**21:43**] just click in whatever key and then we
+- [**21:45**] can select the node and then click this
+- [**21:47**] keyboard and I suppose it's gonna be the
+- [**21:48**] number two so just click your number two
+- [**21:50**] and then we can do is get the bpc
+- [**21:53**] player's test and then what we can do is
+- [**21:56**] just call the function so in our case
+- [**21:57**] we'll be basically increase XP and now
+- [**22:00**] you can see all the categories here very
+- [**22:03**] um beautiful layout okay it's going to
+- [**22:05**] be X increase and XP
+- [**22:08**] and also this will increase the level so
+- [**22:10**] let's say it's going to be 10 okay for
+- [**22:12**] example if I put the number correct
+- [**22:14**] there we go compile save so now if I
+- [**22:16**] press play I have uh 0 over 100 and the
+- [**22:19**] progress already zero but if I start
+- [**22:21**] pressing two
+- [**22:23**] nothing uh it changes great so let's see
+- [**22:26**] what's happening okay so we're going uh
+- [**22:28**] basically increase XP
+- [**22:31**] and sorry about the cuffing
+- [**22:33**] um basically in green XP increase the
+- [**22:36**] speed
+- [**22:38**] great so it's basically it's not
+- [**22:40**] updating the UI because I made the
+- [**22:42**] mistake of putting it after uh we
+- [**22:45**] increase the level one is only true so
+- [**22:48**] we need to guess get the false condition
+- [**22:49**] and then plug it into the set percent
+- [**22:51**] and we can do is just double click and
+- [**22:53**] put it up here in order to have it a bit
+- [**22:56**] more organized okay
+- [**22:57**] okay so basically if it's true it will
+- [**23:00**] go principle with the increased level
+- [**23:01**] and then go here but if not I will just
+- [**23:03**] directly go into the set percent and I
+- [**23:06**] believe that in the increased level we
+- [**23:08**] don't have any of that issue there we go
+- [**23:10**] so great so let's go ahead and press
+- [**23:12**] play press two and now you can see how
+- [**23:14**] the progress bar increases when I press
+- [**23:16**] 2 and also the text so now I have 70 or
+- [**23:20**] 100 that are done and then when we get
+- [**23:22**] to 100 there we go the level increases
+- [**23:25**] now it's zero to 250 now we'll go ahead
+- [**23:28**] and increase
+- [**23:29**] you can see and then
+- [**23:31**] boom level three zero to 400 so it's
+- [**23:34**] increasing every time we have more XP
+- [**23:36**] great everything is going ahead and
+- [**23:39**] working perfectly like I mentioned
+- [**23:41**] before later on in the series if you
+- [**23:43**] want we can add a database with all the
+- [**23:46**] values for each level so for example we
+- [**23:48**] need uh 5000 rx3 for level 20. things
+- [**23:51**] like that you know but of course you can
+- [**23:53**] just keep the system is very Optimum
+- [**23:56**] very fast just increasing the max XP
+- [**23:58**] every time but we'll see what is better
+- [**24:00**] for us as we go in the series and stuff
+- [**24:03**] and also let me know in the comments
+- [**24:05**] below so in the next episode we'll go
+- [**24:07**] ahead and add some sounds so some
+- [**24:09**] footsteps some jumping uh some running
+- [**24:13**] sounds some and knife hits for the
+- [**24:15**] stealth kills and so on and also and
+- [**24:19**] also probably level up and stuff of
+- [**24:21**] course and then we'll customize a bit
+- [**24:22**] the UI basically just change the bedroom
+- [**24:25**] uh the health bar so on the stamina bar
+- [**24:28**] so it's a bit cooler and stuff and then
+- [**24:31**] of course retouch this a bit so that the
+- [**24:33**] like the shield for the
+- [**24:35**] you know the level and so on maybe put a
+- [**24:38**] different font and retouch baby colors
+- [**24:41**] and so on basically just we add some
+- [**24:43**] sounds and we touch a bit the UI that we
+- [**24:45**] happen to know and then in the next
+- [**24:46**] episode after that we can start with the
+- [**24:49**] combat system that I'm very very excited
+- [**24:51**] for all right guys so if you found it so
+- [**24:53**] helpful I would really appreciate you
+- [**24:55**] glad the video and subscribe to my
+- [**24:56**] channel I have lots of Unreal Engine 5
+- [**24:58**] tutorials so if you want to go ahead and
+- [**24:59**] check them out go ahead I really
+- [**25:01**] appreciate that video And subscribe to
+- [**25:03**] my channel I already just said that oh
+- [**25:04**] my God okay join my Discord server so
+- [**25:07**] you can go ahead and you know uh show
+- [**25:09**] your progress in this series or any game
+- [**25:12**] at all and then also ask any questions
+- [**25:14**] and just go and chat with our game this
+- [**25:16**] follow me on all my socials such as
+- [**25:18**] Twitter and Instagram and now yes with
+- [**25:20**] all I said bye bye
+- [**25:22**] [Music]
+
+---
+
+## Related
+
+- ← Previous: [[06_Damage_and_Stamina]]
+- → Next: [[08_Sounds_and_UI]]
+- 📚 Series: [[_MOC_UE5_RPG_Framework]]

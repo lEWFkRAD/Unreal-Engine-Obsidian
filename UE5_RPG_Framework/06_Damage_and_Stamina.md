@@ -1,0 +1,575 @@
+---
+title: "Unreal Engine 5 RPG Tutorial Series - #6: Damage and Stamina"
+source: "https://www.youtube.com/watch?v=7P4U5wmONKI"
+video_id: "7P4U5wmONKI"
+type: "youtube-transcript"
+series: "UE5 RPG Framework"
+episode: 6
+tags: [youtube, tutorial, transcript, ue5, rpg, gamedev]
+---
+
+# Unreal Engine 5 RPG Tutorial Series - #6: Damage and Stamina
+
+**URL:** https://www.youtube.com/watch?v=7P4U5wmONKI
+**Duration:** 22:09
+**Segments:** 549
+
+## Transcript
+
+- [**0:00**] what's up guys welcome to new Unreal
+- [**0:02**] Engine 5 tutorial and today we are
+- [**0:04**] continuing with the RPG series we will
+- [**0:07**] continue with the stats system so the
+- [**0:09**] health stamina XP and level and we'll do
+- [**0:12**] today is basically go ahead and fix over
+- [**0:14**] doing an in the last episode and
+- [**0:16**] continue on and implement the stamina
+- [**0:18**] when you run and then also we'll see if
+- [**0:21**] we have time to get started with the XP
+- [**0:24**] and level system so we'll see it's going
+- [**0:27**] to be a very easy beautiful so let's get
+- [**0:29**] started alright so the first thing I
+- [**0:30**] want to do is go into open up the um
+- [**0:33**] basically the blueprint component the
+- [**0:36**] bpc player stats so in this episode we
+- [**0:38**] did that you can debug with the one key
+- [**0:41**] how the health will decrease and the
+- [**0:44**] stamina increase this is for testing but
+- [**0:47**] I think that we can get into negative
+- [**0:49**] numbers in our um health and also when
+- [**0:52**] we expect the play we have a few errors
+- [**0:55**] so let's go ahead and fix all this so
+- [**0:57**] first of all the errors are because
+- [**0:59**] based basically we are we are in the
+- [**1:02**] beginning playing when the game starts
+- [**1:03**] we are trying to access the player's HUD
+- [**1:06**] before it actually has been created in
+- [**1:10**] the player so basically this code is
+- [**1:12**] running before the variable for the HUD
+- [**1:16**] is being assigned so the only thing that
+- [**1:18**] we have to do is make a small delay and
+- [**1:21**] a very good delay that we can use is
+- [**1:23**] delay until next stick basically this
+- [**1:25**] will wait one frame so that should be
+- [**1:28**] enough in order to basically assign the
+- [**1:30**] variable in our place now if we do uh
+- [**1:33**] you know anything you will see that we
+- [**1:35**] don't have any errors so great
+- [**1:36**] everything is working on that part over
+- [**1:38**] here so
+- [**1:40**] um that is fixed
+- [**1:42**] great so another thing that we have to
+- [**1:43**] do is fix the decreased health over here
+- [**1:46**] so let's go into the decreased Health
+- [**1:47**] function and what we have to do is copy
+- [**1:50**] this statement now here so if health is
+- [**1:53**] smaller and equal than zero and the
+- [**1:55**] thing is that we also have to check it
+- [**1:57**] before we
+- [**2:00**] um
+- [**2:01**] called the function so this will be
+- [**2:03**] basically plugged into here and this
+- [**2:06**] will be a not Boolean so basically if
+- [**2:08**] the player is alive okay so it does not
+- [**2:12**] have
+- [**2:13**] um less than zero in that place and then
+- [**2:16**] what we can do is get this one off here
+- [**2:21**] uh actually we can leave it and I will
+- [**2:23**] explain one in a second and then we can
+- [**2:25**] plug in the false into the uh sorry is
+- [**2:28**] player Dead uh in this one over here
+- [**2:32**] okay so we will just copy and paste this
+- [**2:34**] node over here adding a not get
+- [**2:37**] um so why are we doing this well this
+- [**2:40**] because basically we were trying to
+- [**2:43**] um go ahead and decrease health
+- [**2:46**] right off the bat now we were
+- [**2:48**] controlling if it was that but still we
+- [**2:51**] could decrease the health and we don't
+- [**2:52**] want that so now this will prevent it of
+- [**2:54**] decreasing every time we call it and the
+- [**2:57**] thing is that we want to keep this over
+- [**2:59**] here because imagine that we get hit
+- [**3:01**] well it will be better to get hit and if
+- [**3:04**] it gets into zero die then wait until we
+- [**3:08**] get hit again with already B Health
+- [**3:10**] being zero then die anyway this is a
+- [**3:12**] matter of sequence so we have to do this
+- [**3:14**] so we will plug the false over into the
+- [**3:17**] is that is true and then not get over
+- [**3:19**] here
+- [**3:20**] I will basically need to do exactly the
+- [**3:22**] same on the decreased stamina because if
+- [**3:25**] not we'll have the same problem so just
+- [**3:27**] copy this Boolean over here paste it and
+- [**3:30**] then connect it here and then this will
+- [**3:32**] be on the false because we will add the
+- [**3:34**] not Boolean so I prefer to have and
+- [**3:37**] remember to plug it in
+- [**3:39**] um the main conditions on true sorry
+- [**3:42**] true I don't know why I did say false
+- [**3:45**] untrue okay so this isn't true this is
+- [**3:47**] another not gate and then the false will
+- [**3:50**] go directly into here like we did with
+- [**3:52**] the other one and then we can just put
+- [**3:54**] this over here so it's a bit more
+- [**3:56**] unclear great so that's done so now if I
+- [**4:00**] press play you will see that now when I
+- [**4:01**] press one it does get to zero and we
+- [**4:04**] don't die great so let's first of all go
+- [**4:06**] ahead and Implement
+- [**4:08**] um the damage system so we're going to
+- [**4:10**] do is open the third person character
+- [**4:12**] blueprint
+- [**4:13**] and their third person in Blueprint and
+- [**4:16**] then what we can do is get start with
+- [**4:18**] the
+- [**4:19**] um calling the functions when we get hit
+- [**4:22**] uh basically this this stuff okay so
+- [**4:25**] what we have to do is basically make
+- [**4:27**] this note which is uh um sorry event any
+- [**4:30**] damage
+- [**4:31**] any Dash so basically when the player
+- [**4:34**] receives any damage it will call this
+- [**4:36**] node and on here we'll receive the
+- [**4:38**] amount of damage taken who was the one
+- [**4:40**] that send us the damage and so on so we
+- [**4:43**] can do a lot of cool stuff
+- [**4:45**] so what we're going to do is get the BBC
+- [**4:47**] players test component and basically
+- [**4:49**] just go ahead and decrease health and it
+- [**4:52**] is as simple as just going ahead
+- [**4:53**] unplugging the debt taken into here
+- [**4:57**] and that's it uh we have all the control
+- [**5:00**] and flow and calculations inside this
+- [**5:03**] node so everything is nice and organized
+- [**5:05**] and also it's an external component so
+- [**5:07**] even better and I will have this player
+- [**5:10**] there so here we can do stuff so we can
+- [**5:12**] do is make a branch over here and say
+- [**5:14**] well if the player is dead we can go
+- [**5:17**] ahead and call the die event so we can
+- [**5:20**] go ahead and create a new Custom Image
+- [**5:21**] basically will be die and then on here
+- [**5:24**] we will go ahead and play the die
+- [**5:28**] um effect and then on false what we can
+- [**5:30**] do is make all the other effects that we
+- [**5:33**] want to get hit with the sounds and
+- [**5:36**] stuff and in that I will do the effects
+- [**5:38**] only for the dice so rag doll and stuff
+- [**5:41**] so we'll go ahead and for example make
+- [**5:43**] the Ragdoll defect so we can do is first
+- [**5:45**] of all disable input we don't want our
+- [**5:48**] player to be able to move again if we
+- [**5:50**] are dead we are dead okay and then we
+- [**5:53**] want to do is basically get our mesh so
+- [**5:55**] get the model of the character turn this
+- [**5:58**] one over there I want to do is set
+- [**6:01**] simulate physics ticked on so now
+- [**6:04**] basically it would enable the physics on
+- [**6:07**] all its bones and it will just allow it
+- [**6:10**] to flow now that's the thing that we
+- [**6:12**] have to check and it's in mesh go down
+- [**6:15**] over here and make sure that the
+- [**6:16**] Collision preset is set on
+- [**6:20**] um custom and then we change the
+- [**6:23**] Collision enabled to be Collision
+- [**6:25**] enabled query and physics because we
+- [**6:28**] need this mesh to be having this physics
+- [**6:32**] and collisions enabled and now let's go
+- [**6:34**] into the capsule component and what we
+- [**6:37**] have to do is set this Collision preset
+- [**6:39**] to ignore only Pawn because if not the
+- [**6:42**] own mesh will be colliding with the
+- [**6:45**] capsule component while we interactive
+- [**6:46**] and it will just fly around and we don't
+- [**6:49**] want all right so let's go ahead and
+- [**6:51**] command this so select everything press
+- [**6:53**] C die and then comment everything press
+- [**6:57**] C and then
+- [**6:58**] um damage apply damage
+- [**7:02**] okay and then what we can do is just
+- [**7:05**] move this one around so this is just
+- [**7:06**] debugging and we can put nice and
+- [**7:07**] organize this under here great and
+- [**7:11**] another thing that we're going to do is
+- [**7:12**] set a preset for this so a lot of you
+- [**7:14**] guys were put in the comments that I can
+- [**7:16**] actually create a preset for the color
+- [**7:17**] so we're gonna have to copy manually
+- [**7:18**] anything so that's very handy so we can
+- [**7:20**] use like this color over here and then
+- [**7:23**] and you will see that there's already a
+- [**7:25**] preset uh made over here so we can just
+- [**7:27**] rename it and to be just for example
+- [**7:29**] dark and then say accept and now what we
+- [**7:32**] can do is just get this color over here
+- [**7:34**] either out or new and just drag it into
+- [**7:37**] this part over here and now the dark
+- [**7:39**] will be assigned so now we can go into
+- [**7:41**] the applied damage open the color and
+- [**7:43**] then select this preset over here and
+- [**7:45**] it's just much faster as you can see and
+- [**7:48**] I just put this debug stop over here
+- [**7:50**] down great so now immediately you will
+- [**7:53**] see that when uh we press one and we die
+- [**7:56**] nothing happens great so what is
+- [**7:59**] happening and it is just because I
+- [**8:02**] forgot that we have to call the damage
+- [**8:04**] event instead of just the normal debug
+- [**8:06**] and decrease health so now we don't need
+- [**8:08**] all this
+- [**8:09**] what we can do is just go uh apply
+- [**8:12**] damage and then the damage actor will be
+- [**8:15**] basically itself and then the base
+- [**8:17**] damage you can say like for example 10
+- [**8:19**] so now instead of directly going through
+- [**8:21**] the player stats we need to apply Health
+- [**8:23**] to the actor itself which can be done
+- [**8:25**] with this note which is Supply damage
+- [**8:27**] which Unreal Engine will rather call
+- [**8:28**] this event on any damage okay so now
+- [**8:31**] when I press one
+- [**8:32**] and there we go we are dead and we
+- [**8:34**] cannot move on anything great so of
+- [**8:36**] course in the future what effects sounds
+- [**8:38**] and so on
+- [**8:40**] that's right so that's working so now
+- [**8:42**] that's done for the health uh for the
+- [**8:45**] basics of the health of course we have
+- [**8:46**] many more things in the future but for
+- [**8:48**] now it's okay now we can move on into
+- [**8:50**] the stamina system great so let's go
+- [**8:52**] ahead and start creating an input so
+- [**8:54**] let's go into third person input actions
+- [**8:56**] let's go ahead and go and create a new
+- [**8:58**] input action EA underscore and it's
+- [**9:01**] gonna be Sprint let's go ahead and open
+- [**9:03**] this
+- [**9:04**] um and we actually don't have to change
+- [**9:06**] anything the value tab will be still a
+- [**9:08**] book so now we can go into the
+- [**9:10**] collection and we can add a new mapping
+- [**9:12**] and this will be the
+- [**9:13**] Sprint and now we can click this button
+- [**9:16**] right here and then press any key on our
+- [**9:18**] keyboard which in our case will be
+- [**9:20**] um let's say
+- [**9:22**] left control because we're already using
+- [**9:24**] the the shift for about in in the
+- [**9:27**] feature we will arrange good the
+- [**9:30**] you know the keys if you want to ready
+- [**9:31**] change them how you want you can do so
+- [**9:34**] but you know in my tutorial I recommend
+- [**9:36**] following the same keys and stuff and
+- [**9:38**] later on we'll tune in in anyway we
+- [**9:40**] don't have to change anything more we
+- [**9:41**] can closer and I'll go in the third
+- [**9:43**] person cat blueprint I'm going to
+- [**9:45**] actually go into this area over here in
+- [**9:47**] the right so we have a bit more space
+- [**9:49**] so now we can use the EA Sprint and
+- [**9:52**] we're going to do is that when it has
+- [**9:55**] started it will basically begin a loop
+- [**9:58**] okay so the loop will be basically a set
+- [**10:01**] timer by event
+- [**10:04**] so now we can basically be looping this
+- [**10:06**] time uh that will basically leave it in
+- [**10:09**] an event anyway you'll see in a second
+- [**10:11**] so go ahead and check it's looping and
+- [**10:13**] in the time I'm gonna make it 0.1
+- [**10:15**] seconds so this will repeat a lot but
+- [**10:18**] take only a bit of stamina so we have a
+- [**10:21**] more smoother
+- [**10:23**] um decrease on the health bar now also
+- [**10:26**] in the future if you want we can add
+- [**10:28**] some lurping so it will be even more
+- [**10:30**] smoother
+- [**10:32**] um like with some interpolations and
+- [**10:34**] we'll probably do that but for now we'll
+- [**10:35**] keep it simple anyway let's go into the
+- [**10:37**] band dragon and then let's say create
+- [**10:39**] custom event and this will be the rain
+- [**10:41**] stamina and what we have to do is you
+- [**10:45**] guess go and get our player stats and
+- [**10:47**] then the decrease stamina function and
+- [**10:51**] now on here let's say for example one
+- [**10:53**] for now
+- [**10:54**] another thing that we're going to do is
+- [**10:57**] go and put all this to the right and
+- [**10:59**] actually change the player's velocity
+- [**11:00**] because we want to be able to run so
+- [**11:02**] let's get the character movement and
+- [**11:04**] then go and drag it and set max walk
+- [**11:07**] speed and for now we're gonna say that
+- [**11:10**] it's gonna be around 750 because right
+- [**11:14**] now the normal walk speed is at 500. now
+- [**11:17**] what we're going to do is that when we
+- [**11:18**] stop holding what we can do is get all
+- [**11:21**] this attribute put it down and then copy
+- [**11:24**] this node and then plug it in so we can
+- [**11:27**] reuse it and in uncompleted when we stop
+- [**11:29**] pressing the keyboard plug it back into
+- [**11:31**] 500. and now what we can do is basically
+- [**11:34**] get all this put it back to the right
+- [**11:36**] and we can test this before we keep
+- [**11:39**] going
+- [**11:40**] um so if I press play I'm walking
+- [**11:42**] normally but when I hold shift
+- [**11:45**] sorry Ctrl
+- [**11:47**] I am running and actually control is the
+- [**11:49**] worst key because we go ahead and crunch
+- [**11:52**] uh with control so let's go and go into
+- [**11:56**] the collection again and we'll change
+- [**11:57**] this to be out
+- [**11:59**] like I said the keys are temporary okay
+- [**12:01**] so now if I hold out you will see then
+- [**12:04**] out I am running and the stamina is
+- [**12:06**] draining as you can see each second now
+- [**12:08**] we got to zero so we have to do now is
+- [**12:10**] that basically uh when the stamina gets
+- [**12:13**] to zero we cannot run anymore you can
+- [**12:15**] see now I'm back running the difference
+- [**12:16**] is speed maybe in the video you cannot
+- [**12:18**] really appreciate it so much even though
+- [**12:20**] I think you can but uh but you know when
+- [**12:22**] you test you will see it better anyway
+- [**12:24**] we have to basically say that you can
+- [**12:25**] run if we have this stamina's head at
+- [**12:27**] zero and then also that when you stop
+- [**12:30**] moving this terminal will slightly
+- [**12:32**] increase slowly so let's go back into
+- [**12:34**] the third person guide to blueprint okay
+- [**12:36**] and what we have to do is basically on
+- [**12:39**] start it
+- [**12:40**] well actually in the loop
+- [**12:42**] we need to get this Branch under here so
+- [**12:45**] now stamina left so if we don't have any
+- [**12:48**] more stamina left what we'll do is
+- [**12:50**] create a new variable and say con Sprint
+- [**12:55**] uh yes can Sprint
+- [**12:59**] and by default it will be true so
+- [**13:02**] compile and then put over here and now
+- [**13:04**] the thing is that in the loop over here
+- [**13:08**] uh yes over here
+- [**13:11**] sorry
+- [**13:15**] yes here at the start so basically
+- [**13:18**] if
+- [**13:20**] we can Sprint we will go ahead and
+- [**13:22**] continue but if we can't nothing will go
+- [**13:26**] ahead and cap and happen
+- [**13:27**] now we will need to set can Sprint to be
+- [**13:31**] false over here and in else we can go
+- [**13:34**] ahead and toggle it to be true now if we
+- [**13:37**] cannot Sprint we'll immediately go ahead
+- [**13:38**] and set the character speed to be back
+- [**13:41**] at um 500. so we'll stop running and
+- [**13:45**] then if we test this you can see that
+- [**13:48**] we're running sorry now running the
+- [**13:50**] stamina is decreasing on the bottom bar
+- [**13:54**] and then when we get into zero I'm still
+- [**13:57**] running
+- [**13:59**] and still can run okay sorry
+- [**14:02**] um so the thing is that
+- [**14:05**] okay sorry so we are draining stamina by
+- [**14:08**] one
+- [**14:09**] and then setting this variable but this
+- [**14:13**] will only be available when we Sprint at
+- [**14:17**] the start
+- [**14:18**] so we will we can keep that okay we can
+- [**14:21**] keep that
+- [**14:22**] um
+- [**14:24**] but the control has to actually be at
+- [**14:26**] the start of the drain stamina so this
+- [**14:29**] will be on through and on false
+- [**14:34**] basically we will move this on here
+- [**14:38**] okay so we basically at the start now
+- [**14:42**] I'm running without and then when the
+- [**14:45**] summit gets to zero
+- [**14:49**] I am
+- [**14:50**] still running and can run and I found
+- [**14:53**] the issue and we have to go into player
+- [**14:55**] stats and sorry I missed this so go into
+- [**14:57**] decreased stamina and you will see that
+- [**14:59**] we have current Summit at the dump on
+- [**15:01**] here suddenly we have current health and
+- [**15:03**] no we want to use coin stamina so just
+- [**15:05**] drag it on top of it and it will change
+- [**15:07**] in both conditions over here so that was
+- [**15:11**] the issue so now if we go ahead and
+- [**15:13**] press alt we'll be sprinting but then
+- [**15:15**] immediately we will go ahead and go back
+- [**15:18**] into walking as you can see and now we
+- [**15:20**] cannot go ahead and run anymore because
+- [**15:23**] we don't have any stamina great so
+- [**15:25**] that's working perfectly so we can go
+- [**15:27**] back here and now what we have to go
+- [**15:30**] ahead if you want I can drag this a bit
+- [**15:32**] to the right so everything can be a bit
+- [**15:34**] more
+- [**15:35**] less confusing
+- [**15:38**] there we go okay much better and another
+- [**15:41**] thing that we basically have to go ahead
+- [**15:44**] and do
+- [**15:46**] is basically stop this timer when we
+- [**15:50**] stop running because we don't want to
+- [**15:52**] have this always in a loop so what we
+- [**15:55**] want to do is get this return value and
+- [**15:57**] promote it and this will be the Sprint
+- [**15:59**] whoop
+- [**16:00**] okay and now we want to do is on
+- [**16:03**] completed not only put back the result
+- [**16:05**] the velocity but get the Sprint Loop get
+- [**16:08**] it and then uh what was it that was a
+- [**16:10**] clear and validate Time by handle
+- [**16:13**] basically it will delete the the loop
+- [**16:16**] okay we'll stop this over here
+- [**16:19**] great so there's only one more thing
+- [**16:21**] left for this stamina and also we're
+- [**16:23**] gonna commend this so stamina
+- [**16:26**] and put the preset over here and what we
+- [**16:28**] want to do is go ahead and well increase
+- [**16:31**] the stamina when we are no longer
+- [**16:33**] running so we're going to do is go and
+- [**16:36**] open up the event tick so this will
+- [**16:38**] basically
+- [**16:40**] um be coat on every frame for each
+- [**16:42**] second
+- [**16:43**] so I want to do here is basically
+- [**16:46**] um just get overall the stamina and see
+- [**16:49**] if well sorry sorry if the velocity and
+- [**16:52**] if we are not moving so we can do is
+- [**16:54**] just so go here get velocity
+- [**16:58**] of the actor and then a vector length so
+- [**17:02**] we'll compare this into a nice float and
+- [**17:04**] if this is basically
+- [**17:07**] um
+- [**17:08**] list
+- [**17:11**] or equal to let's say one so we can have
+- [**17:14**] some threshold uh we can go ahead and
+- [**17:16**] add a branch and basically this will
+- [**17:18**] mean if we're not moving because one is
+- [**17:20**] barely not moving you know actually you
+- [**17:22**] know what let's say zero so if we are
+- [**17:24**] not moving we will be able to basically
+- [**17:27**] increase our stamina so we'll go ahead
+- [**17:29**] and just make a small delay of let's say
+- [**17:31**] 0.1 because like I mentioned before this
+- [**17:34**] basically goes and plays in every frame
+- [**17:36**] so if not it will be pretty instantly so
+- [**17:38**] we want to play a delay and then what we
+- [**17:41**] basically want to go ahead and do is
+- [**17:44**] increase the stamina so we have to go
+- [**17:47**] into the
+- [**17:49**] stats get this and then say basically
+- [**17:53**] increase as stamina and then we can put
+- [**17:56**] it by one for example uh so this will
+- [**18:00**] automatically you know go ahead and
+- [**18:02**] detect if the stamina is the low or
+- [**18:05**] bigger than zero so we don't have to do
+- [**18:08**] any calculations
+- [**18:09**] so now you can see that this terminal is
+- [**18:12**] increasing because I am standing still
+- [**18:14**] and it will also get into a point so now
+- [**18:16**] if I go and move and press alt I'm
+- [**18:18**] running the stamina is decreasing if now
+- [**18:21**] I stop running and stop this timer will
+- [**18:24**] be increasing and then when I move you
+- [**18:28**] will consider the stamina stops
+- [**18:29**] increasing but then when I go ahead and
+- [**18:32**] run and completely drain my estimate you
+- [**18:34**] can see already it's looking so cool
+- [**18:37**] um in a second we'll get to zero and
+- [**18:41**] there we go I am stopping uh basically
+- [**18:43**] stopping running and also when I'm
+- [**18:46**] walking the seven doesn't recover but
+- [**18:48**] when I start completely the stamina
+- [**18:50**] increases back again now cool there's
+- [**18:53**] one thing that we can do and is change
+- [**18:55**] uh the the velocity to be is currently
+- [**19:00**] running
+- [**19:01**] so let's say that you want to be able to
+- [**19:05**] increase the stamina even if you're
+- [**19:08**] walking but not running so what we can
+- [**19:10**] do is create a new variable uh for that
+- [**19:13**] so we will actually actually do it that
+- [**19:16**] way so we're going to create new
+- [**19:18**] variable NS is
+- [**19:20**] um sprinting
+- [**19:22**] Sprint
+- [**19:24**] uh yeah and actually it will be just
+- [**19:27**] sprinting and then with that
+- [**19:29**] that
+- [**19:30**] the symbol at the end
+- [**19:32**] so we'll basically go ahead and just say
+- [**19:34**] well
+- [**19:35**] is it not
+- [**19:37**] Boolean sprinting so if we are not
+- [**19:40**] sprinting we can go ahead and increase
+- [**19:42**] the stamina and then here what we can do
+- [**19:45**] is go in here and say well
+- [**19:48**] in here sprinting
+- [**19:49**] will be
+- [**19:51**] um set
+- [**19:52**] to true
+- [**19:55**] well I didn't know here it will be set
+- [**19:58**] to false okay
+- [**20:00**] in here it will be set to false
+- [**20:04**] in here into true
+- [**20:07**] and there we go so now
+- [**20:09**] basically
+- [**20:11**] I'm recovering and I can move and the
+- [**20:12**] stamina still recovers but when I run it
+- [**20:15**] decreases and I stop running
+- [**20:19**] and there's one more thing that we have
+- [**20:22**] to do go here and then on the completed
+- [**20:24**] okay so I missed that we need to go also
+- [**20:26**] put it is printing to false okay so now
+- [**20:31**] I am basically walking and it's having
+- [**20:33**] recovers I'm sprinting it decreases I
+- [**20:36**] stop
+- [**20:37**] running is working as having increases
+- [**20:39**] and then I stop and sign up keeps going
+- [**20:42**] great so everything's working now
+- [**20:44**] there's a tiny thing that we have to
+- [**20:46**] change and it's the animation as you can
+- [**20:48**] see it is exactly the same one
+- [**20:51**] um for for kind of jogging and also
+- [**20:56**] sprinting
+- [**20:58**] so we will have to change that now for
+- [**21:00**] now in this episode we will not do that
+- [**21:02**] we will do that in
+- [**21:04**] um in the future very soon okay so let's
+- [**21:08**] see what we do next episode put me ideas
+- [**21:09**] but probably we'll do is change this
+- [**21:11**] animation and then go ahead and continue
+- [**21:14**] with the XP level system because I don't
+- [**21:16**] have enough time to right now also uh
+- [**21:19**] complete the XP and level system so
+- [**21:21**] don't worry next episode we will do go
+- [**21:23**] ahead and do so and then in the next
+- [**21:25**] episode after that we can just apply
+- [**21:28**] some cool sounds and and images for the
+- [**21:32**] UI and stuff like basically change the
+- [**21:34**] progressor to a better design and then
+- [**21:37**] after that we can begin with a combat
+- [**21:39**] system yes guys finally we will begin
+- [**21:41**] with the combat system very very soon so
+- [**21:44**] with all said guys if you found the
+- [**21:46**] video and helpful I really appreciate
+- [**21:48**] you like the video and subscribe to my
+- [**21:49**] channel and lots of Unreal Engine 5
+- [**21:51**] tutorials so we're gonna go ahead and
+- [**21:52**] check them out go ahead join the Discord
+- [**21:54**] server so you can share your progress
+- [**21:56**] and also ask any questions and now yes
+- [**21:59**] before I said bye bye
+- [**22:06**] [Music]
+
+---
+
+## Related
+
+- ← Previous: [[05_Player_Stats_Health_Stamina_and_XP]]
+- → Next: [[07_Levels_and_XP]]
+- 📚 Series: [[_MOC_UE5_RPG_Framework]]

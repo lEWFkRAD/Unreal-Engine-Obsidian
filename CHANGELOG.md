@@ -4,6 +4,14 @@ All notable changes to the UE5 Tutorial Knowledge Base will be documented in thi
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v1.2.1] — 2026-06-11
+
+### Fixed
+- Updated README.md to reflect all 26 folders, topic folders, architecture docs, and current file counts
+- Added "Update README" step to release workflow skill
+
+---
+
 ## [v1.2.0] — 2026-06-11
 
 ### Added

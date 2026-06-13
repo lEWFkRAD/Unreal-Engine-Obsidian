@@ -1,0 +1,81 @@
+// Echoes of Ascension - starter scaffold.
+
+#include "EchoesAttributeSet.h"
+#include "GameplayEffectExtension.h"
+#include "Net/UnrealNetwork.h"
+
+UEchoesAttributeSet::UEchoesAttributeSet()
+{
+	// Safety-net defaults. Real initialization should come from GE_InitStats (see InitDefaultAttributes).
+	Health.Init(100.0f);
+	MaxHealth.Init(100.0f);
+	Aether.Init(100.0f);
+	MaxAether.Init(100.0f);
+	AttackPower.Init(10.0f);
+}
+
+void UEchoesAttributeSet::PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue)
+{
+	Super::PreAttributeChange(Attribute, NewValue);
+
+	if (Attribute == GetHealthAttribute())
+	{
+		NewValue = FMath::Clamp(NewValue, 0.0f, GetMaxHealth());
+	}
+	else if (Attribute == GetAetherAttribute())
+	{
+		NewValue = FMath::Clamp(NewValue, 0.0f, GetMaxAether());
+	}
+}
+
+void UEchoesAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data)
+{
+	Super::PostGameplayEffectExecute(Data);
+
+	// EvaluatedData.Attribute is the attribute the effect actually modified.
+	if (Data.EvaluatedData.Attribute == GetHealthAttribute())
+	{
+		SetHealth(FMath::Clamp(GetHealth(), 0.0f, GetMaxHealth()));
+	}
+	else if (Data.EvaluatedData.Attribute == GetAetherAttribute())
+	{
+		SetAether(FMath::Clamp(GetAether(), 0.0f, GetMaxAether()));
+	}
+}
+
+void UEchoesAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	// REPNOTIFY_Always so the RepNotify fires even when the value looks unchanged — required for GAS reconciliation.
+	DOREPLIFETIME_CONDITION_NOTIFY(UEchoesAttributeSet, Health, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UEchoesAttributeSet, MaxHealth, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UEchoesAttributeSet, Aether, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UEchoesAttributeSet, MaxAether, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UEchoesAttributeSet, AttackPower, COND_None, REPNOTIFY_Always);
+}
+
+void UEchoesAttributeSet::OnRep_Health(const FGameplayAttributeData& OldHealth)
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UEchoesAttributeSet, Health, OldHealth);
+}
+
+void UEchoesAttributeSet::OnRep_MaxHealth(const FGameplayAttributeData& OldMaxHealth)
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UEchoesAttributeSet, MaxHealth, OldMaxHealth);
+}
+
+void UEchoesAttributeSet::OnRep_Aether(const FGameplayAttributeData& OldAether)
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UEchoesAttributeSet, Aether, OldAether);
+}
+
+void UEchoesAttributeSet::OnRep_MaxAether(const FGameplayAttributeData& OldMaxAether)
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UEchoesAttributeSet, MaxAether, OldMaxAether);
+}
+
+void UEchoesAttributeSet::OnRep_AttackPower(const FGameplayAttributeData& OldAttackPower)
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UEchoesAttributeSet, AttackPower, OldAttackPower);
+}

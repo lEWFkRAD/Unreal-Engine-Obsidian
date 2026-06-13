@@ -4,6 +4,44 @@ All notable changes to the UE5 Tutorial Knowledge Base will be documented in thi
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v1.3.0] — 2026-06-13
+
+### Added
+- **UE5_CPP/UE5_Cpp_Reference_Guide.md** — Comprehensive C++ reference (897 lines):
+  - Epic C++ Coding Standard — naming, formatting, portable types, modern C++
+  - UObject System — CDO, creation rules, GC, ticking
+  - Smart Pointers — TSharedPtr/TSharedRef/TWeakPtr/TUniquePtr, thread safety
+  - UFUNCTION — all specifiers, metadata, parameter specifiers
+  - Metadata Specifiers — class, enum, function, property meta tags (full reference)
+  - UPROPERTY — all property specifiers, bitmask patterns, data types
+  - TSubclassOf — type-safe UClass pointers
+  - Containers — TArray, TMap/TMultiMap, TSet with full API reference
+  - Delegates & Lambdas — declaration, binding, execution, examples
+  - Low-Level Memory Tracker (LLM) — setup, tags, custom tags
+- **UE5_CPP/UE5_Gameplay_Framework_Reference.md** — Gameplay architecture:
+  - Class hierarchy & lifecycle (GameInstance → GameMode → GameState → Controller → Pawn)
+  - Constructor patterns (ObjectInitializer, ConstructorHelpers, subobjects)
+  - Gameplay Modules — DLL structure, Build.cs, INI setup
+  - Module categories (Runtime, Editor, Developer)
+- **UE5_CPP/UE5_GAS_Reference.md** — Gameplay Ability System:
+  - ASC setup with IAbilitySystemInterface
+  - Gameplay Abilities — lifecycle, granting/revoking, tag interactions, network replication, instancing
+  - Attributes & Attribute Sets — creation, helper macros, dual values, PostGameplayEffectExecute
+  - Gameplay Effects — duration types, GE components, stacking, Gameplay Cues
+  - Ability Tasks — async execution, custom tasks
+  - GAS networking summary (prediction, rollback)
+- Updated `_MOC_UE5_CPP.md` — new "Reference Guides" section with wikilinks
+- Updated `README.md` — UE5_CPP file count 5→8
+
+### Sources
+- Epic Games UE 5.7 official documentation (11 pages extracted)
+  - Coding Standard, Programming with C++, Delegates & Lambdas
+  - Objects, Smart Pointers, UFunctions, Metadata, UProperties, Typed Object Pointers
+  - Gameplay Framework, Gameplay Classes, Gameplay Modules
+  - GAS: Understanding GAS, GAS Component, Abilities, Attributes, Effects, Ability Tasks
+
+---
+
 ## [v1.2.1] — 2026-06-11
 
 ### Fixed

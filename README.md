@@ -20,7 +20,7 @@ An Obsidian vault containing extracted summaries, transcripts, step-by-step guid
 | Folder | Files | What It Covers |
 |--------|-------|----------------|
 | `UE5_GAS/` | 5 | Gameplay Ability System — abilities, effects, attributes, combat |
-| `UE5_CPP/` | 5 | C++ for UE5 — UPROPERTY/UFUNCTION macros, components, Blueprint communication |
+| `UE5_CPP/` | 8 | C++ for UE5 — coding standard, UObject, containers, delegates, gameplay framework, GAS |
 | `UE5_Data_Assets/` | 3 | Data Assets & Data Tables — UDataAsset, PrimaryDataAsset, DataTables |
 | `UE5_AI/` | 3 | AI — Behavior Trees, Blackboards, AI Perception |
 | `UE5_Niagara/` | 3 | Niagara particles — emitters, VFX, mesh particles |

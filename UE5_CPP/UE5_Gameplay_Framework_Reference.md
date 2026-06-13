@@ -115,7 +115,7 @@ StaticMesh = ConstructorStatics.MeshAsset.Object;
 ### Class References
 ```cpp
 // Method 1: FClassFinder
-static FClassFinder<UNavigationMeshBase> ClassFinder(
+static ConstructorHelpers::FClassFinder<UNavigationMeshBase> ClassFinder(
     TEXT("class'Engine.NavigationMeshBase'"));
 if (ClassFinder.Succeeded()) { NavMeshClass = ClassFinder.Class; }
 
@@ -131,7 +131,7 @@ AMyActor::AMyActor()
     RootComponent = WindSource;
 
     DisplaySphere = CreateDefaultSubobject<UDrawSphereComponent>(TEXT("DisplaySphere"));
-    DisplaySphere->AttachTo(RootComponent);
+    DisplaySphere->SetupAttachment(RootComponent);
 }
 ```
 Store pointers in UPROPERTY for GC.
@@ -153,15 +153,16 @@ Modules are DLLs containerizing related classes. Each game needs at least one pr
 
 **Header (.h):**
 ```cpp
-#include "Engine.h"
-#include "EnginePrivate.h"
-#include "<ModuleName>Classes.h"
+#include "CoreMinimal.h"
+// Per-file includes as needed, e.g.:
+// #include "GameFramework/Actor.h"
+// UHT discovers classes automatically — no module-wide headers needed
 ```
 
 **Source (.cpp):**
 ```cpp
 #include "<ModuleName>.h"
-IMPLEMENT_PRIMARY_GAME_MODULE(<ModuleName>, "<GameName>");
+IMPLEMENT_PRIMARY_GAME_MODULE(FDefaultGameModuleImpl, <ModuleName>, "<GameName>");
 // Additional modules: IMPLEMENT_GAME_MODULE instead
 ```
 
@@ -170,7 +171,7 @@ IMPLEMENT_PRIMARY_GAME_MODULE(<ModuleName>, "<GameName>");
 using UnrealBuildTool;
 public class <ModuleName> : ModuleRules
 {
-    public <ModuleName>(TargetInfo Target)
+    public <ModuleName>(ReadOnlyTargetRules Target) : base(Target)
     {
         PublicDependencyModuleNames.AddRange(
             new string[] { "Core", "Engine" });
@@ -180,22 +181,25 @@ public class <ModuleName> : ModuleRules
 }
 ```
 
-### INI Setup (for UObject code)
-```ini
-[UnrealEd.EditorEngine]
-+EditPackages=<ModuleName>
+### Module Registration (UE 5.7)
+Register modules in two places:
 
-[Launch]
-Module=<ModuleName>
+**`.uproject`** — `Modules` array:
+```json
+"Modules": [
+    { "Name": "<ModuleName>", "Type": "Runtime", "LoadingPhase": "Default" }
+]
+```
 
-[/Script/Engine.UObjectPackages]
-+NativePackages=<ModuleName>
+**`*.Target.cs`** — `ExtraModuleNames`:
+```csharp
+ExtraModuleNames.AddRange(new string[] { "<ModuleName>" });
 ```
 
 ### Multiple Modules
 - Better link times, faster iteration
 - More DLL exports/interfaces, increased complexity
-- Add to `Target.cs` in `OutExtraModuleNames` array
+- Add to `Target.cs` in `ExtraModuleNames` array
 - Only ONE uses `IMPLEMENT_PRIMARY_GAME_MODULE`
 
 ---

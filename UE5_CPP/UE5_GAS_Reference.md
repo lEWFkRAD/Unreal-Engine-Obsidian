@@ -93,9 +93,9 @@ ASC->ClearAllAbilities();
 
 | Policy | Description | Use Case |
 |--------|-------------|----------|
-| **Instanced per Execution** | New object each run | Infrequent abilities (MOBA ults) |
-| **Instanced per Actor** | One instance, reused | Good for replication, scales |
-| **Non-Instanced** | Uses CDO (no spawn) | C++ only, max efficiency (RTS) |
+| **Instanced per Actor** | One instance, reused | **Default for UE 5.5+.** Good for replication, scales well |
+| ~~Instanced per Execution~~ | ~~New object each run~~ | **Deprecated in UE 5.5** — use InstancedPerActor |
+| ~~Non-Instanced~~ | ~~Uses CDO (no spawn)~~ | **Deprecated in UE 5.5** — use InstancedPerActor |
 
 ### Triggering via Gameplay Events
 ```cpp

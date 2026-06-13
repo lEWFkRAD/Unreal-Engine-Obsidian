@@ -21,6 +21,28 @@ A small, **reviewed** C++ scaffold for the *Echoes of Ascension* vertical slice.
 
 (The `UE5_Gotchas/` docs live in the Unreal-Engine-Obsidian vault — read the matching one before you touch each system.)
 
+## Slice scaffold (combat / enemy / echoes loop)
+
+A second wave that takes the core from "systems" toward a *playable* vertical slice:
+
+| File(s) | Role |
+|---|---|
+| `EchoesGameplayTags` | Native gameplay tags (`InputTag.*`, `Ability.*`, `Data.Damage`, `State.Dead`). |
+| `EchoesDamageExecution` | A GAS Execution Calc: source AttackPower (+ SetByCaller) → the target's `Damage` meta-attribute. Assign as the Execution on your `GE_Damage`. |
+| `EchoesAttributeSet` (extended) | Added a transient `Damage` meta-attribute; `PostGameplayEffectExecute` drains it into a Health loss (death TODO marked). |
+| `EchoesAbilitySystemComponent` (extended) | `AbilityInputTagPressed(Tag)` — fires granted abilities whose `InputTag` matches. Bind your Enhanced Input actions to this. |
+| `EchoesEnemyCharacter` + `EchoesAIController` | An AI enemy (ASC-on-pawn, Full replication) that runs a Behavior Tree. |
+| `EchoesGameMode` | Wires `AEchoesCharacter` + `AEchoesPlayerState`. |
+| `EchoesEchoDataAsset` + `EchoesEchoLibrary` | The Echoes hook: an Echo is a data asset holding an infinite GameplayEffect; `BindEcho`/`UnbindEcho` apply/remove it on an ASC. |
+
+**Wiring these (after it compiles):**
+1. **Damage:** make a `GE_Damage` (instant) GameplayEffect, add `UEchoesDamageExecution` as its Execution. Apply it from your attack ability.
+2. **Input:** create Enhanced Input `InputAction`s, add a Mapping Context, and in your player controller/character `BindAction(...)` → `ASC->AbilityInputTagPressed(EchoesTags::InputTag_Attack)` etc. Set the matching `InputTag` on each ability Blueprint.
+3. **Enemy:** Blueprint-child `AEchoesEnemyCharacter`, set its `AIControllerClass` to `AEchoesAIController`, give the controller a Behavior Tree, assign a `GE_InitStats` to `DefaultAttributesEffect`.
+4. **Echoes:** make `UEchoesEchoDataAsset` assets (each pointing at an infinite `GE_*` modifier), and call `UEchoesEchoLibrary::BindEcho` from your shrine's bind UI.
+
+See `design/02_MILESTONE_BACKLOG.md` — this scaffold covers the C++ spine of M1–M4.
+
 ## How to drop it into a project
 
 1. Create (or open) a UE **5.7 C++** project.
@@ -37,12 +59,19 @@ A small, **reviewed** C++ scaffold for the *Echoes of Ascension* vertical slice.
 Then follow `design/02_MILESTONE_BACKLOG.md` from **M1**.
 
 ## What you still write (it's intentionally not here)
-The *game*: the actual abilities, the `GE_Damage` execution calc, the Echo modifier assets + shrine flow, the room modules, the UI. The scaffold ends where your design begins.
+The *game*: the actual ability Blueprints, the GameplayEffect/DataAsset *assets* (the C++ Execution and data classes are provided — you author the GE/Echo assets that use them), the Behavior Tree, the room modules, and the UI. The scaffold ends where your design begins.
 
 ## First-draft errors corrected during review (transparency)
+Core module:
 - `Data.EvaluatedAttributes.ContainsAttribute(...)` → `Data.EvaluatedData.Attribute == ...` (real API) in the AttributeSet.
 - `ASC->GetLevel()` → literal `1.f` in `MakeOutgoingSpec` (ASC has no reliable `GetLevel`).
-- A hallucinated `ActivateAbility` override signature on the base ability → removed (kept the ability minimal + correct).
+- A hallucinated `ActivateAbility` override signature on the base ability → removed.
 - Non-idiomatic `#include "EchoesCore/Public/..."` paths → bare header names.
-- The save subsystem + persistent-id component were dropped by a truncated generation → hand-authored against `UGameplayStatics::AsyncSaveGameToSlot` / `AsyncLoadGameFromSlot`.
+- The save subsystem + persistent-id component were dropped by a truncated generation → hand-authored.
 - Boss-floor cadence guarded so floor 0 isn't a boss.
+
+Slice scaffold:
+- `EchoesGameMode` — the generator melted into a `GENERATED_BODYONLY…` loop; rewritten from scratch.
+- `EchoesEchoDataAsset`/`Library` — fake `#include "CoreObject.h"` → `CoreMinimal.h` + `Engine/DataAsset.h`; a garbage `Text DisplayName;` line removed; `GameplayEffectTypes.h` added so `FActiveGameplayEffectHandle` is complete for UHT.
+- `EchoesEnemyCharacter` — `MakeOutgoingSpec` was passed a CDO pointer → now the `TSubclassOf`; removed a non-existent `Context.AddSourceActor`.
+- `EchoesDamageExecution` — `Execute_Implementation` missing `const` (wouldn't override) → fixed; `Spec.SetByCallerTagMap.Contains` (wrong member) → `GetSetByCallerMagnitude(tag, false, 0)`.

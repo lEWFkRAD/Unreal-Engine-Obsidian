@@ -52,6 +52,12 @@ public:
 	FGameplayAttributeData AttackPower;
 	ATTRIBUTE_ACCESSORS(UEchoesAttributeSet, AttackPower)
 
+	// Damage — transient META attribute. NOT replicated, NOT in GetLifetimeReplicatedProps.
+	// The damage Execution Calc writes here; PostGameplayEffectExecute converts it into a Health loss.
+	UPROPERTY(BlueprintReadOnly, Category = "Echoes|Attributes|Meta")
+	FGameplayAttributeData Damage;
+	ATTRIBUTE_ACCESSORS(UEchoesAttributeSet, Damage)
+
 protected:
 	UFUNCTION()
 	void OnRep_Health(const FGameplayAttributeData& OldHealth);

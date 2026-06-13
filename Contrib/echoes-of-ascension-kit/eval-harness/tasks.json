@@ -1,0 +1,58 @@
+[
+  {
+    "id": "attributeset_replication",
+    "category": "GAS",
+    "prompt": "Write a UE5.7 C++ AttributeSet (header + cpp) with a single replicated Health attribute, including the accessor macros, GetLifetimeReplicatedProps, and the OnRep handler. Output only code.",
+    "must_include": ["ATTRIBUTE_ACCESSORS", "DOREPLIFETIME_CONDITION_NOTIFY", "GAMEPLAYATTRIBUTE_REPNOTIFY"],
+    "must_not_include": ["EvaluatedAttributes.ContainsAttribute", "UGameplayAbilityComponent"]
+  },
+  {
+    "id": "asc_on_playerstate",
+    "category": "GAS",
+    "prompt": "Write a UE5.7 PlayerState that owns an AbilitySystemComponent using Mixed replication mode and implements IAbilitySystemInterface. Output only code.",
+    "must_include": ["IAbilitySystemInterface", "SetReplicationMode", "EGameplayEffectReplicationMode::Mixed", "GetAbilitySystemComponent"],
+    "must_not_include": ["UGameplayAbilityComponent", "UAbilitySystemLibrary::SetOwner"]
+  },
+  {
+    "id": "apply_gameplay_effect",
+    "category": "GAS",
+    "prompt": "In UE5.7 C++, apply an instant GameplayEffect (a TSubclassOf<UGameplayEffect>) to an AbilitySystemComponent's own actor at level 1. Output only the function body.",
+    "must_include": ["MakeEffectContext", "MakeOutgoingSpec", "ApplyGameplayEffectSpecToSelf"],
+    "must_not_include": ["ASC->GetLevel()", "GetAbilityLevel()"]
+  },
+  {
+    "id": "init_ability_actor_info_timing",
+    "category": "GAS",
+    "prompt": "In UE5.7, where do you call InitAbilityActorInfo when the ASC lives on the PlayerState? Show the Character's PossessedBy and OnRep_PlayerState overrides. Output only code.",
+    "must_include": ["PossessedBy", "OnRep_PlayerState", "InitAbilityActorInfo"],
+    "must_not_include": ["BeginPlay() override"]
+  },
+  {
+    "id": "secondary_module_impl",
+    "category": "Modules",
+    "prompt": "Write the module .cpp for a secondary UE5.7 game module named EchoesCore. Output only code.",
+    "must_include": ["IMPLEMENT_MODULE", "FDefaultGameModuleImpl", "EchoesCore"],
+    "must_not_include": ["EnginePrivate.h", "EditPackages"]
+  },
+  {
+    "id": "component_attach_constructor",
+    "category": "Framework",
+    "prompt": "In a UE5.7 Actor constructor, create a StaticMeshComponent and attach it to the root component. Output only code.",
+    "must_include": ["CreateDefaultSubobject", "SetupAttachment"],
+    "must_not_include": ["AttachTo("]
+  },
+  {
+    "id": "build_cs_gas",
+    "category": "Modules",
+    "prompt": "Write a UE5.7 Build.cs for a module that uses the Gameplay Ability System. Output only code.",
+    "must_include": ["ReadOnlyTargetRules", "GameplayAbilities", "GameplayTags"],
+    "must_not_include": ["TargetInfo"]
+  },
+  {
+    "id": "deterministic_random",
+    "category": "Gameplay",
+    "prompt": "In UE5.7 C++, generate a deterministic random integer between 6 and 10 from a seed so the same seed always gives the same result. Output only code.",
+    "must_include": ["FRandomStream"],
+    "must_not_include": ["FMath::RandRange", "FMath::Rand("]
+  }
+]

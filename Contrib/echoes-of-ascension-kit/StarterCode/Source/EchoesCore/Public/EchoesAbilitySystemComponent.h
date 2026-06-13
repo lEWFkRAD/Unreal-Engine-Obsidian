@@ -4,11 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "AbilitySystemComponent.h"
+#include "GameplayTagContainer.h"
 #include "EchoesAbilitySystemComponent.generated.h"
 
 /**
- * Project ASC subclass. Empty for now — exists so you have a place to add input-tag binding,
- * ability-input handling, and gameplay-event helpers later without touching the engine class.
+ * Project ASC subclass. Adds input-tag ability activation: bind your Enhanced Input actions to
+ * AbilityInputTagPressed() and abilities tagged with the matching UEchoesGameplayAbility::InputTag fire.
  */
 UCLASS()
 class ECHOESCORE_API UEchoesAbilitySystemComponent : public UAbilitySystemComponent
@@ -17,4 +18,7 @@ class ECHOESCORE_API UEchoesAbilitySystemComponent : public UAbilitySystemCompon
 
 public:
 	UEchoesAbilitySystemComponent();
+
+	/** Try-activate every granted ability whose UEchoesGameplayAbility::InputTag equals InputTag. */
+	void AbilityInputTagPressed(const FGameplayTag& InputTag);
 };

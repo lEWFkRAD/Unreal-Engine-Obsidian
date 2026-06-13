@@ -33,7 +33,18 @@ void UEchoesAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 	Super::PostGameplayEffectExecute(Data);
 
 	// EvaluatedData.Attribute is the attribute the effect actually modified.
-	if (Data.EvaluatedData.Attribute == GetHealthAttribute())
+	if (Data.EvaluatedData.Attribute == GetDamageAttribute())
+	{
+		// Drain the transient Damage meta-attribute into a Health loss.
+		const float LocalDamage = GetDamage();
+		SetDamage(0.f);
+		if (LocalDamage > 0.f)
+		{
+			SetHealth(FMath::Clamp(GetHealth() - LocalDamage, 0.0f, GetMaxHealth()));
+			// TODO (server): if GetHealth() <= 0, add EchoesTags::State_Dead and trigger the death ability.
+		}
+	}
+	else if (Data.EvaluatedData.Attribute == GetHealthAttribute())
 	{
 		SetHealth(FMath::Clamp(GetHealth(), 0.0f, GetMaxHealth()));
 	}

@@ -4,6 +4,34 @@ All notable changes to the UE5 Tutorial Knowledge Base will be documented in thi
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v1.4.0] — 2026-06-13
+
+### Added
+- **Merged PR #1** from lEWFkRAD (Jeff) — community contribution with 54 new files:
+  - `UE5_Gotchas/` — 5 concept docs + MOC covering GAS replication, open-world save architecture, multiplayer-from-day-one, procedural tower generation, performance budgets
+  - `Contrib/echoes-of-ascension-kit/` — full dev kit: vertical-slice spec, milestone backlog, system design, starter UE 5.7 C++ module (EchoesCore with GAS triad, async save, deterministic floor gen), eval harness, Hermes skill
+  - `Articles/ue5-canonical-references.md` — stable external references (Epic docs, tranek, Lyra, benui, Tom Looman, Cedric's Network Compendium)
+  - `_REVIEW_Contributed_Gotchas.md` — review notes for contributed content
+
+### Fixed
+- Modernized `UE5_Gameplay_Framework_Reference.md` per errata (PR #1 review):
+  - `AttachTo()` → `SetupAttachment()` (deprecated since UE4.12)
+  - Removed legacy module headers (`Engine.h`, `EnginePrivate.h`, `*Classes.h`)
+  - `IMPLEMENT_PRIMARY_GAME_MODULE` — added missing `FDefaultGameModuleImpl` first arg
+  - `TargetInfo` → `ReadOnlyTargetRules` with `: base(Target)`
+  - Replaced obsolete INI module registration with `.uproject` Modules array + `.Target.cs` ExtraModuleNames
+  - `OutExtraModuleNames` → `ExtraModuleNames`
+  - `FClassFinder` → `ConstructorHelpers::FClassFinder`
+- Modernized `UE5_GAS_Reference.md` per errata (PR #1 review):
+  - `InstancedPerExecution` / `NonInstanced` marked deprecated in UE 5.5+
+  - `InstancedPerActor` set as default instancing policy
+
+### Sources
+- PR #1 authored with Claude Code, reviewed against UE 5.7 API
+- Starter code reviewed for API correctness but not yet compiled against engine (no UE install available at authoring time)
+
+---
+
 ## [v1.3.0] — 2026-06-13
 
 ### Added
@@ -21,7 +49,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **UE5_CPP/UE5_Gameplay_Framework_Reference.md** — Gameplay architecture:
   - Class hierarchy & lifecycle (GameInstance → GameMode → GameState → Controller → Pawn)
   - Constructor patterns (ObjectInitializer, ConstructorHelpers, subobjects)
-  - Gameplay Modules — DLL structure, Build.cs, INI setup
+  - Gameplay Modules — DLL structure, Build.cs, module registration
   - Module categories (Runtime, Editor, Developer)
 - **UE5_CPP/UE5_GAS_Reference.md** — Gameplay Ability System:
   - ASC setup with IAbilitySystemInterface

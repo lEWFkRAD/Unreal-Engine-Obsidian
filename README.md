@@ -46,6 +46,15 @@ An Obsidian vault containing extracted summaries, transcripts, step-by-step guid
 | `GASDocumentation.md` | Pointer to tranek's GAS documentation (324KB community reference) |
 | `open-source-ue5-game-references.md` | ActionRoguelike and Alis as code architecture references |
 
+### Contributed Content (Added in v1.4.0)
+
+| Folder | What's In It |
+|--------|-------------|
+| `UE5_Gotchas/` | 5 concept docs + MOC — GAS replication, save architecture, multiplayer, procedural gen, performance budgets. The "what bites you" layer. |
+| `Contrib/echoes-of-ascension-kit/` | Community dev kit: vertical-slice spec, milestone backlog, system design, errata, starter UE 5.7 C++ module (EchoesCore), eval harness, Hermes skill |
+| `Articles/ue5-canonical-references.md` | Stable external references that don't rot — Epic docs, tranek, Lyra, benui, etc. |
+| `_REVIEW_Contributed_Gotchas.md` | Review notes for the contributed gotchas |
+
 ### Special Folders
 
 | Folder | What's In It |

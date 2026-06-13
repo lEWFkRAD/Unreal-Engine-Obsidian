@@ -22,4 +22,4 @@ In this episode, we continue our work from the previous part of the Procedural V
 
 ## Related
 
-- → Next: [[Auto_Landscape_Generator_in_UE5.7_Heightmap_and_PCG_and_Blueprint_Workflow]]
+- → Next: [[auto-landscape-generator-in-ue5-7]]

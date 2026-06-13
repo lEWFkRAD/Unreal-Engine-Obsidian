@@ -88,5 +88,5 @@ Weapon Actor (Parent)
 ## Related
 
 - ← Previous: [[BP_Class_6-5_UI_Reusable_Widgets]]
-- → Next: [[BP_Crash_for_Creatives]]
+- → Next: [[BP_Interface_Demystified]]
 - 📚 Series: [[_MOC_Blueprint_Fundamentals]]

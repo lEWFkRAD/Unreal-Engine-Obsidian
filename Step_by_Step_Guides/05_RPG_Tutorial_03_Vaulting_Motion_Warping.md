@@ -4,7 +4,7 @@ source: "https://www.youtube.com/watch?v=HVhH2qi2B5Q"
 video_id: "HVhH2qi2B5Q"
 type: "step-by-step-guide"
 series: "Step-by-Step Guides"
-episode: 6
+episode: 5
 tags: [ue5, rpg, vaulting, motion-warping, parkour, guide]
 ---
 
@@ -231,7 +231,7 @@ For each of the three warping points, use **Add or Update Warp Target**:
 ## Related
 
 - 📄 Full Transcript: [[03_Vaulting_with_Motion_Warping]]
-- ← Previous: [[05_RPG_Tutorial_02_Locomotion_Blendspace]]
-- → Next: [[07_RPG_Tutorial_04_Assassinations]]
+- ← Previous: [[04_RPG_Tutorial_02_Locomotion_Blendspace]]
+- → Next: [[06_RPG_Tutorial_04_Assassinations]]
 - 📚 Series: [[_MOC_Step_by_Step_Guides]]
 - 📄 Full Transcript: [[06_Damage_and_Stamina]]

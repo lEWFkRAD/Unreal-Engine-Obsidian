@@ -4,7 +4,7 @@ source: "https://www.youtube.com/watch?v=WcDj4uZygyE"
 video_id: "WcDj4uZygyE"
 type: "step-by-step-guide"
 series: "Step-by-Step Guides"
-episode: 5
+episode: 4
 tags: [ue5, rpg, locomotion, blendspace, crouching, animation, guide]
 ---
 
@@ -346,6 +346,6 @@ tags: [ue5, rpg, locomotion, blendspace, crouching, animation, guide]
 
 - 📄 Full Transcript: [[02_Locomotion_Blendspace_Crouching_and_Procedural_Leaning]]
 - ← Previous: [[03_Optimizing_Your_Unreal_Engine_Game]]
-- → Next: [[06_RPG_Tutorial_03_Vaulting_Motion_Warping]]
+- → Next: [[05_RPG_Tutorial_03_Vaulting_Motion_Warping]]
 - 📚 Series: [[_MOC_Step_by_Step_Guides]]
 - 📄 Full Transcript: [[05_Player_Stats_Health_Stamina_and_XP]]

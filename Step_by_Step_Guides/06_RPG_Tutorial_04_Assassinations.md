@@ -4,7 +4,7 @@ source: "https://www.youtube.com/watch?v=TuiDgXCarP0"
 video_id: "TuiDgXCarP0"
 type: "step-by-step-guide"
 series: "Step-by-Step Guides"
-episode: 7
+episode: 6
 tags: [ue5, rpg, assassinations, stealth, combat, guide]
 ---
 
@@ -211,7 +211,7 @@ Before the assassination system, fix the crouch/jump issue:
 ## Related
 
 - 📄 Full Transcript: [[04_Assassinations]]
-- ← Previous: [[06_RPG_Tutorial_03_Vaulting_Motion_Warping]]
-- → Next: [[08_RPG_Tutorial_05_Player_Stats]]
+- ← Previous: [[05_RPG_Tutorial_03_Vaulting_Motion_Warping]]
+- → Next: [[07_RPG_Tutorial_05_Player_Stats]]
 - 📚 Series: [[_MOC_Step_by_Step_Guides]]
 - 📄 Full Transcript: [[07_Levels_and_XP]]

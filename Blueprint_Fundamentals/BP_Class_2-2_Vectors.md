@@ -74,6 +74,6 @@ Returns vector **perpendicular** to both inputs. Order determines direction.
 
 ## Related
 
-- ← Previous: [[BP_Class_2-1_Variables_Array_Maps]]
+- ← Previous: [[BP_Class_2-1_Arrays_and_Maps]]
 - → Next: [[BP_Class_2_Variables]]
 - 📚 Series: [[_MOC_Blueprint_Fundamentals]]

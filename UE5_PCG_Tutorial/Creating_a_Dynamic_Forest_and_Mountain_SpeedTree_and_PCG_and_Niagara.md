@@ -22,6 +22,6 @@ In this tutorial, we build a fully dynamic forest and mountain environment using
 
 ## Related
 
-- ← Previous: [[Create_Procedural_WWII_Battlefield_–_Full]]
-- → Next: [[Creating_a_Procedural_Road_with_Spline_Sampler]]
+← Previous: [[procedural-wwii-battlefield-full-tutorial]]
+→ Next: [[procedural-road-spline-sampler-ue-5-5]]
 - 📚 Series: [[_MOC_UE5_PCG_Tutorial]]

@@ -4,7 +4,7 @@ source: "https://www.youtube.com/watch?v=2YEZpSrdHfk"
 video_id: "2YEZpSrdHfk"
 type: "step-by-step-guide"
 series: "Step-by-Step Guides"
-episode: 8
+episode: 7
 tags: [ue5, rpg, player-stats, health, stamina, xp, guide]
 ---
 
@@ -230,7 +230,7 @@ Remove these when done testing.
 ## Related
 
 - 📄 Full Transcript: [[05_Player_Stats_Health_Stamina_and_XP]]
-- ← Previous: [[07_RPG_Tutorial_04_Assassinations]]
-- → Next: [[09_RPG_Tutorial_06_Damage_and_Stamina]]
+- ← Previous: [[06_RPG_Tutorial_04_Assassinations]]
+- → Next: [[08_RPG_Tutorial_06_Damage_and_Stamina]]
 - 📚 Series: [[_MOC_Step_by_Step_Guides]]
 - 📄 Full Transcript: [[08_Sounds_and_UI]]

@@ -84,6 +84,6 @@ Begin Play -> AddTwoNumbers(FirstNumber: 10, SecondNumber: 11) -> Print String (
 
 ## Related
 
-- ← Previous: [[BP_Class_3_Events_Functions]]
-- → Next: [[BP_Class_4_Branches_Booleans]]
+← Previous: [[BP_Class_2_Variables]]
+→ Next: [[BP_Class_4_Branches_and_Booleans]]
 - 📚 Series: [[_MOC_Blueprint_Fundamentals]]

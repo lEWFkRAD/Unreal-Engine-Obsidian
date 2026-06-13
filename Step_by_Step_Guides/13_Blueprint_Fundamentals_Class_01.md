@@ -4,7 +4,7 @@ source: "https://www.youtube.com/watch?v=IipvT6aGinM"
 video_id: "IipvT6aGinM"
 type: "step-by-step-guide"
 series: "Step-by-Step Guides"
-episode: 14
+episode: 13
 tags: [ue5, blueprint, fundamentals, visual-scripting, guide]
 ---
 
@@ -240,5 +240,5 @@ This is a crash course in visual scripting for complete beginners — no program
 
 ## Related
 
-- ← Previous: [[13_RPG_Tutorial_10_Sword_Trace_Damage]]
+- ← Previous: [[12_RPG_Tutorial_10_Sword_Trace_Damage]]
 - 📚 Series: [[_MOC_Step_by_Step_Guides]]

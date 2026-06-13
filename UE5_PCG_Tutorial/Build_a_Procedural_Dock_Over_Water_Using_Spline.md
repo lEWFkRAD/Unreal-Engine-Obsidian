@@ -22,6 +22,6 @@ In this Unreal Engine 5.6 tutorial, we create a procedural dock over water using
 
 ## Related
 
-- ← Previous: [[Auto_Landscape_Generator_in_UE5.7_Heightmap_and_PCG_and_Blueprint_Workflow]]
-- → Next: [[Building_a_Narrative_Military_Camp_with]]
+← Previous: [[auto-landscape-generator-in-ue5-7]]
+→ Next: [[building-narrative-military-camp-pcg]]
 - 📚 Series: [[_MOC_UE5_PCG_Tutorial]]

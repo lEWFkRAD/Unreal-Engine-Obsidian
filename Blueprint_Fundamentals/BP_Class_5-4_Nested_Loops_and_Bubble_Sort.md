@@ -81,6 +81,6 @@ This tutorial demonstrates **nested for loops** in Unreal Engine Blueprints and 
 
 ## Related
 
-- ← Previous: [[BP_Class_5-4_Nested_Loops_Bubble_Sort]]
-- → Next: [[BP_Class_5_For_Loops_Arrays]]
+← Previous: [[BP_Class_5-3_Loops_Arrays_Applied_3]]
+→ Next: [[BP_Class_5_For_Loops_and_Arrays]]
 - 📚 Series: [[_MOC_Blueprint_Fundamentals]]

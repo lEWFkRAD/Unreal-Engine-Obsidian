@@ -4,7 +4,7 @@ source: "https://www.youtube.com/watch?v=7P4U5wmONKI"
 video_id: "7P4U5wmONKI"
 type: "step-by-step-guide"
 series: "Step-by-Step Guides"
-episode: 9
+episode: 8
 tags: [ue5, rpg, damage, stamina, combat, guide]
 ---
 
@@ -155,7 +155,7 @@ Instead of copying hex colors every time:
 ## Related
 
 - 📄 Full Transcript: [[06_Damage_and_Stamina]]
-- ← Previous: [[08_RPG_Tutorial_05_Player_Stats]]
-- → Next: [[10_RPG_Tutorial_07_Levels_and_XP]]
+- ← Previous: [[07_RPG_Tutorial_05_Player_Stats]]
+- → Next: [[09_RPG_Tutorial_07_Levels_and_XP]]
 - 📚 Series: [[_MOC_Step_by_Step_Guides]]
 - 📄 Full Transcript: [[09_Combat]]

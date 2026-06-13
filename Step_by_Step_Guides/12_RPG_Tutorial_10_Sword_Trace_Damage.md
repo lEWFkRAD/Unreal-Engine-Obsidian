@@ -4,7 +4,7 @@ source: "https://www.youtube.com/watch?v=zbbWk851IXk"
 video_id: "zbbWk851IXk"
 type: "step-by-step-guide"
 series: "Step-by-Step Guides"
-episode: 13
+episode: 12
 tags: [ue5, rpg, combat, sword, damage, hit-reactions, guide]
 ---
 
@@ -167,6 +167,6 @@ Attack Montage Plays
 ## Related
 
 - 📄 Full Transcript: [[10_Sword_Trace_Damage_and_Hit_Reactions]]
-- ← Previous: [[12_RPG_Tutorial_09_Combat]]
-- → Next: [[14_Blueprint_Fundamentals_Class_01]]
+- ← Previous: [[11_RPG_Tutorial_09_Combat]]
+- → Next: [[13_Blueprint_Fundamentals_Class_01]]
 - 📚 Series: [[_MOC_Step_by_Step_Guides]]

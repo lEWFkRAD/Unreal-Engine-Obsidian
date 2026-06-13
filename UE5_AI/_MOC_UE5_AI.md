@@ -15,3 +15,7 @@ Artificial Intelligence — Behavior Trees, Blackboards, AI Perception, EQS
 - [[01_Behavior_Trees_Basics]]
 - [[02_Simple_Behavior_Tree]]
 - [[03_AI_Perception_System]]
+
+## See Also
+
+- [[unreal-engine-rpg-systems]] — AI patterns in quest and combat systems

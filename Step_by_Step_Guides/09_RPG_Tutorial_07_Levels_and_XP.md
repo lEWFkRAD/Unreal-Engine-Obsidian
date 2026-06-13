@@ -4,7 +4,7 @@ source: "https://www.youtube.com/watch?v=3cf4T-B53SM"
 video_id: "3cf4T-B53SM"
 type: "step-by-step-guide"
 series: "Step-by-Step Guides"
-episode: 10
+episode: 9
 tags: [ue5, rpg, levels, xp, progression, guide]
 ---
 
@@ -173,7 +173,7 @@ In `IncreaseLevel` function:
 ## Related
 
 - 📄 Full Transcript: [[07_Levels_and_XP]]
-- ← Previous: [[09_RPG_Tutorial_06_Damage_and_Stamina]]
-- → Next: [[11_RPG_Tutorial_08_Sounds_and_UI]]
+- ← Previous: [[08_RPG_Tutorial_06_Damage_and_Stamina]]
+- → Next: [[10_RPG_Tutorial_08_Sounds_and_UI]]
 - 📚 Series: [[_MOC_Step_by_Step_Guides]]
 - 📄 Full Transcript: [[10_Sword_Trace_Damage_and_Hit_Reactions]]

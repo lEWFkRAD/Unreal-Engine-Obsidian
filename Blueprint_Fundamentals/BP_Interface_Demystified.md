@@ -73,6 +73,6 @@ On Interact Input ->
 
 ## Related
 
-- ← Previous: [[BP_Crash_for_Creatives]]
-- → Next: [[BP_Vectors_Applied_Dash_Launch]]
+← Previous: [[BP_Crash_Classes_Inheritance]]
+→ Next: [[BP_Vectors_Applied_Dash_and_Launch]]
 - 📚 Series: [[_MOC_Blueprint_Fundamentals]]

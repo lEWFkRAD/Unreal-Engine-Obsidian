@@ -15,3 +15,7 @@ Animation — Animation Blueprints, State Machines, Blend Spaces, montages
 - [[01_Animation_Blueprint_Blendspaces]]
 - [[02_Animation_Blueprint_State_Machine]]
 - [[03_Jump_Turn_In_Place]]
+
+## See Also
+
+- [[unreal-engine-solo-rpg-learning-path]] — Where animation fits in the learning sequence

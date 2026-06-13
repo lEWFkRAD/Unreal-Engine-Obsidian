@@ -4,7 +4,7 @@ source: "https://www.youtube.com/watch?v=QmgXB9wAYRk"
 video_id: "QmgXB9wAYRk"
 type: "step-by-step-guide"
 series: "Step-by-Step Guides"
-episode: 11
+episode: 10
 tags: [ue5, rpg, sound, ui, audio, interface, guide]
 ---
 
@@ -163,6 +163,6 @@ tags: [ue5, rpg, sound, ui, audio, interface, guide]
 ## Related
 
 - 📄 Full Transcript: [[08_Sounds_and_UI]]
-- ← Previous: [[10_RPG_Tutorial_07_Levels_and_XP]]
-- → Next: [[12_RPG_Tutorial_09_Combat]]
+- ← Previous: [[09_RPG_Tutorial_07_Levels_and_XP]]
+- → Next: [[11_RPG_Tutorial_09_Combat]]
 - 📚 Series: [[_MOC_Step_by_Step_Guides]]

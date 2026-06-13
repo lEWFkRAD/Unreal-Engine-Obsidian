@@ -8,19 +8,18 @@ An Obsidian vault containing extracted summaries, transcripts, step-by-step guid
 
 | Folder | Source | What It Covers |
 |--------|--------|----------------|
-| `UE5_RPG_Framework/` | Gorka Games (83 episodes) | Full RPG game — combat, AI, quests, equipment, open world, save/load |
-| `Blueprint_Fundamentals/` | Ask A Dev (28 classes) | Visual scripting from zero — variables, events, loops, UI, interfaces |
-| `UE5_Beginner_Tutorials/` | Coqui Games (19 episodes) | C++/Blueprint coding — classes, functions, interfaces, components |
-| `UE5_7_Starter_Course/` | Bad Decisions Studio (21 parts) | Engine basics — modeling, lighting, materials, animation, rendering |
-| `UE5_PCG_Tutorial/` | PolyBoost (33 tutorials) | Procedural generation — forests, farms, roads, landscapes, cities |
-| `Learn_to_Code_Blueprints/` | UNF Games (22 videos) | World building — landscapes, water, foliage, materials, optimization |
+| `Blueprint_Fundamentals/` | Ask A Dev (19 classes) | Visual scripting from zero — variables, events, loops, UI, interfaces |
+| `UE5_Beginner_Tutorials/` | Coqui Games (16 episodes) | C++/Blueprint coding — classes, functions, interfaces, components |
+| `UE5_7_Starter_Course/` | Bad Decisions Studio (20 parts) | Engine basics — modeling, lighting, materials, animation, rendering |
+| `UE5_PCG_Tutorial/` | PolyBoost (20 tutorials) | Procedural generation — forests, farms, roads, landscapes, cities |
+| `Learn_to_Code_Blueprints/` | UNF Games (21 videos) | World building — landscapes, water, foliage, materials, optimization |
 
 ### Topic Folders (Added in v1.1.0)
 
 | Folder | Files | What It Covers |
 |--------|-------|----------------|
 | `UE5_GAS/` | 5 | Gameplay Ability System — abilities, effects, attributes, combat |
-| `UE5_CPP/` | 8 | C++ for UE5 — coding standard, UObject, containers, delegates, gameplay framework, GAS (3 new reference guides in v1.3.0: 897-line C++ reference, gameplay framework, full GAS breakdown) |
+| `UE5_CPP/` | 9 | C++ for UE5 — coding standard, UObject, containers, delegates, gameplay framework, GAS (3 new reference guides in v1.3.0: 897-line C++ reference, gameplay framework, full GAS breakdown) |
 | `UE5_Data_Assets/` | 3 | Data Assets & Data Tables — UDataAsset, PrimaryDataAsset, DataTables |
 | `UE5_AI/` | 3 | AI — Behavior Trees, Blackboards, AI Perception |
 | `UE5_Niagara/` | 3 | Niagara particles — emitters, VFX, mesh particles |
@@ -54,6 +53,11 @@ An Obsidian vault containing extracted summaries, transcripts, step-by-step guid
 | `Contrib/echoes-of-ascension-kit/` | Community dev kit: vertical-slice spec, milestone backlog, system design, errata, starter UE 5.7 C++ module (EchoesCore), eval harness, Hermes skill |
 | `Articles/ue5-canonical-references.md` | Stable external references that don't rot — Epic docs, tranek, Lyra, benui, etc. |
 | `_REVIEW_Contributed_Gotchas.md` | Review notes for the contributed gotchas |
+### Gotchas (Added in v1.3.1, contributed by Jeff)
+
+| Folder | Files | What It Covers |
+|--------|-------|----------------|
+| `UE5_Gotchas/` | 5 | What breaks and why — GAS replication traps, open-world save architecture, multiplayer-from-day-one pitfalls, procedural generation gotchas, performance budget reality |
 
 ### Special Folders
 
@@ -75,12 +79,14 @@ Each folder has a `_MOC_` file (Map of Content) that links to every file in that
 ## How To Use
 
 1. **Open this folder as an Obsidian vault**
-2. **Browse by series** — open any `_MOC_` file to see all episodes listed
-3. **Navigate episodes** — click the `← Previous` and `→ Next` links at the bottom of each file
-4. **Search by topic** — use Obsidian's search with tags (`#ue5`, `#rpg`, `#blueprint`, `#pcg`, etc.)
-5. **Graph view** — shows how episodes connect to each other across series
-6. **Start building** — `Step_by_Step_Guides/` has the most actionable content
-7. **Design decisions** — `Architecture/` has the "why" behind the "what"
+2. **Start here** — open `_MOC_ROOT.md` for the master index
+3. **Browse by series** — open any `_MOC_` file to see all episodes listed
+4. **Navigate episodes** — click the `← Previous` and `→ Next` links at the bottom of each file
+5. **Search by topic** — use Obsidian's search with tags (`#ue5`, `#rpg`, `#blueprint`, `#pcg`, etc.)
+6. **Graph view** — shows how episodes connect to each other across series
+7. **Start building** — `Step_by_Step_Guides/` has the most actionable content
+8. **Design decisions** — `Architecture/` has the "why" behind the "what"
+9. **What breaks** — `UE5_Gotchas/` has the traps tutorials skip
 
 ## Tags
 
@@ -94,6 +100,7 @@ Each folder has a `_MOC_` file (Map of Content) that links to every file in that
 - `#guide` — Step-by-step instructions
 - `#moc` — Map of Content index files
 - `#combat`, `#ai`, `#ui`, `#animation`, `#niagara`, `#materials` — Topic-specific tags
+- `#gotchas`, `#architecture` — Architecture and "what breaks" docs
 
 ## Versions
 

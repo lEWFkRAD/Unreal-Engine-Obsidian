@@ -57,6 +57,6 @@ A hybrid workflow for automated landscape generation in UE5.7 that combines **he
 
 ## Related
 
-- ← Previous: [[aaa-wooden-fence-creation-pcg]]
+- ← Previous: [[wooden-fence-creation-pcg]]
 - → Next: [[building-narrative-military-camp-pcg]]
 - 📚 Series: [[_MOC_UE5_PCG_Tutorial]]

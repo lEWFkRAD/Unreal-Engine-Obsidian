@@ -46,6 +46,6 @@ A comprehensive AAA game-ready pipeline for creating a modular, procedural woode
 
 ## Related
 
-- ← Previous: [[Wooden_Fence_Creation_From_Modeling_and_Sculpting_to_Unreal_Engine_Pcg_Fence]]
+- ← Previous: [[post-apocalyptic-car-wall-pcg-splines-part1]]
 - → Next: [[auto-landscape-generator-in-ue5-7]]
 - 📚 Series: [[_MOC_UE5_PCG_Tutorial]]

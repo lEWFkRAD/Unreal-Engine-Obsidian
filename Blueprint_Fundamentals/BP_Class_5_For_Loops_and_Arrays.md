@@ -76,6 +76,6 @@ Use the traditional `For Loop` to update items by index.
 
 ## Related
 
-- ← Previous: [[BP_Class_5_For_Loops_Arrays]]
+- ← Previous: [[BP_Class_5-4_Nested_Loops_and_Bubble_Sort]]
 - → Next: [[BP_Class_6-1_UI_Layout]]
 - 📚 Series: [[_MOC_Blueprint_Fundamentals]]

@@ -115,6 +115,6 @@ tags: [ue5, optimization, performance, profiling, guide]
 ## Related
 
 - ← Previous: [[02_Packaging_Project]]
-- → Next: [[05_RPG_Tutorial_02_Locomotion_Blendspace]]
+- → Next: [[04_RPG_Tutorial_02_Locomotion_Blendspace]]
 - 📚 Series: [[_MOC_Step_by_Step_Guides]]
 - 📄 Full Transcript: [[03_Vaulting_with_Motion_Warping]]

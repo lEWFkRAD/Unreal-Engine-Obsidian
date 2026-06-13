@@ -137,6 +137,6 @@ Cast to ThirdPersonCharacter (child class)
 
 ## Related
 
-- ← Previous: [[BP_Vectors_Applied_Dash_Launch]]
-- → Next: [[BP_Visual_Scripting_Class_2_Variables]]
+← Previous: [[BP_Interface_Demystified]]
+→ Next: [[BP_Class_2-1_Arrays_and_Maps]]
 - 📚 Series: [[_MOC_Blueprint_Fundamentals]]

@@ -59,5 +59,5 @@ Use this variable for all Get and Remove operations in this iteration
 ## Related
 
 - ← Previous: [[BP_Class_5-2_Loops_Arrays_Applied_2]]
-- → Next: [[BP_Class_5-4_Nested_Loops_Bubble_Sort]]
+- → Next: [[BP_Class_5-4_Nested_Loops_and_Bubble_Sort]]
 - 📚 Series: [[_MOC_Blueprint_Fundamentals]]

@@ -126,5 +126,5 @@ Begin Play → Delay(DelayDuration) → Set World Scale = (HouseScale * 2.0) →
 ## Related
 
 - ← Previous: [[BP_Class_2-2_Vectors]]
-- → Next: [[BP_Class_3_Events_Functions]]
+- → Next: [[BP_Class_3_Events_and_Functions]]
 - 📚 Series: [[_MOC_Blueprint_Fundamentals]]

@@ -17,3 +17,8 @@ Gameplay Ability System — abilities, effects, attributes, combat
 - [[03_Full_Course]]
 - [[04_GAS_UE5.5_2025]]
 - [[05_GAS_Combat]]
+
+## See Also
+
+- [[unreal-engine-gameplay-ability-system]] — GAS overview with RPG system mapping
+- [[unreal-engine-rpg-systems]] — How GAS fits into inventory, quests, combat

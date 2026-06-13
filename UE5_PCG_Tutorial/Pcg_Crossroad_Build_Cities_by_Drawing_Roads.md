@@ -22,6 +22,6 @@ What if you could build an entire city... just by drawing one intersection\n\nIn
 
 ## Related
 
-- ← Previous: [[Creating_a_Procedural_Road_with_Spline_Sampler]]
-- → Next: [[Procedural_Vegetation_Editor_Building_a_Full_Forest_with]]
+← Previous: [[procedural-road-spline-sampler-ue-5-5]]
+→ Next: [[procedural-vegetation-editor-ue-5-7-full-forest]]
 - 📚 Series: [[_MOC_UE5_PCG_Tutorial]]

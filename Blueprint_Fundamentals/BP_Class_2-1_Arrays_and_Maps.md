@@ -107,5 +107,5 @@ Two Methods:
 ## Related
 
 - ← Previous: [[BP_Class_1_Workbook]]
-- → Next: [[BP_Class_2-1_Variables_Array_Maps]]
+- → Next: [[BP_Class_2-1_Arrays_and_Maps]]
 - 📚 Series: [[_MOC_Blueprint_Fundamentals]]

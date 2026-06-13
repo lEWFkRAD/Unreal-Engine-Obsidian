@@ -68,6 +68,6 @@ Located in **Math → Boolean Math**.
 
 ## Related
 
-- ← Previous: [[BP_Class_4_Branches_Booleans]]
+- ← Previous: [[BP_Class_3_Events_and_Functions]]
 - → Next: [[BP_Class_5-1_Loops_Arrays_Applied_1]]
 - 📚 Series: [[_MOC_Blueprint_Fundamentals]]

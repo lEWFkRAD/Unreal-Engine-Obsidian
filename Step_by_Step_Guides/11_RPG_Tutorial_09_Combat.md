@@ -4,7 +4,7 @@ source: "https://www.youtube.com/watch?v=sWpENaVGj2M"
 video_id: "sWpENaVGj2M"
 type: "step-by-step-guide"
 series: "Step-by-Step Guides"
-episode: 12
+episode: 11
 tags: [ue5, rpg, combat, combos, melee, guide]
 ---
 
@@ -180,6 +180,6 @@ Left Click → SwordAttack
 ## Related
 
 - 📄 Full Transcript: [[09_Combat]]
-- ← Previous: [[11_RPG_Tutorial_08_Sounds_and_UI]]
-- → Next: [[13_RPG_Tutorial_10_Sword_Trace_Damage]]
+- ← Previous: [[10_RPG_Tutorial_08_Sounds_and_UI]]
+- → Next: [[12_RPG_Tutorial_10_Sword_Trace_Damage]]
 - 📚 Series: [[_MOC_Step_by_Step_Guides]]

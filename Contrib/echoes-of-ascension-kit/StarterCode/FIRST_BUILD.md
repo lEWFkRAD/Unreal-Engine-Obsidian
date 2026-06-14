@@ -2,14 +2,19 @@
 
 This module was **reviewed line-by-line against UE 5.7 APIs** but authored without an engine install, so the first build is a "wire it up + fix any nits" pass, not magic. This doc front-loads every issue likely to surface so that pass is ~15 minutes, not a debugging session.
 
-## Second-pass audit (2026-06-14)
+## Build verification (2026-06-14) — now compiles clean against UE 5.7
 
-An independent compile-oriented audit (separate reviewers, fresh read of every `.h`/`.cpp`) ran after the merge to catch what a review without a compiler can't. It found **two real build-breakers** — both fixed in this commit, both structural rather than 5.7-specific (they'd fail on any UE5 version):
+The module was put through a real build against an installed **UE 5.7**: a minimal C++ host project, **Game target** (`Win64 Development`), UnrealHeaderTool + MSVC v143 over all 33 files, then link. **Result: it compiles and links clean.** Four fixes were needed, in two waves:
 
+**Wave 1 — found by an independent read-audit (structural, version-independent):**
 1. **`EchoesCore.Build.cs` was missing `AIModule`.** `EchoesAIController` (`AIController.h`, `UBehaviorTree`, `RunBehaviorTree`) needs it; `GameplayTasks` doesn't pull it in. Added to `PublicDependencyModuleNames` (public, since the include is in a public header).
-2. **`EchoesGameplayTags.h` exported tags incorrectly.** `ECHOESCORE_API UE_DECLARE_GAMEPLAY_TAG_EXTERN(...)` placed `__declspec` before `extern` (MSVC warning → error under warnings-as-errors) and was asymmetric with the unmarked `.cpp` definitions. Removed `ECHOESCORE_API` from all 8 — the idiomatic Epic/Lyra native-tag form.
+2. **`EchoesGameplayTags.h` exported tags incorrectly.** `ECHOESCORE_API UE_DECLARE_GAMEPLAY_TAG_EXTERN(...)` placed `__declspec` before `extern` and was asymmetric with the unmarked `.cpp` defs. Removed `ECHOESCORE_API` from all 8 — the Epic/Lyra native-tag idiom.
 
-Everything else in the module audited **API-correct for 5.7**. Four cosmetic nits (an unused header include, a self-vs-target effect-spec intent note, a non-`BlueprintType` handle pin, an over-stated persistent-id comment) were logged but not changed — none block a build. The per-file "High confidence" ratings below stand for the C++ *logic*; the gap was entirely in build/link plumbing the first pass couldn't exercise.
+**Wave 2 — found only by compiling (plausible API names no read-review caught):**
+3. **`EchoesAttributeSet.cpp` ctor called `FGameplayAttributeData::Init()`**, which doesn't exist. Switched to the `ATTRIBUTE_ACCESSORS`-generated `InitHealth(...)` / `InitMaxHealth(...)` / etc. (they set base + current).
+4. **`EchoesDamageExecution.cpp` called `FTagContainerAggregator::GetAggregatorTags()`**, which doesn't exist. Corrected to `GetAggregatedTags()`.
+
+Note the **Game target** is used deliberately: it compiles every EchoesCore file (all runtime) without pulling in `UnrealEd` → `SwarmInterface` (which requires the .NET Framework SDK). An Editor-target build needs that SDK component installed — a toolchain detail, unrelated to EchoesCore. Four cosmetic nits (an unused header include, a self-vs-target effect-spec note, a non-`BlueprintType` handle pin, an over-stated persistent-id comment) remain logged-not-changed — none affect the build. The per-file ratings below now reflect a real compile, not just a read.
 
 ## Pre-build checklist (do these first — they cause 90% of first-build failures)
 

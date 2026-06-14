@@ -2,6 +2,15 @@
 
 This module was **reviewed line-by-line against UE 5.7 APIs** but authored without an engine install, so the first build is a "wire it up + fix any nits" pass, not magic. This doc front-loads every issue likely to surface so that pass is ~15 minutes, not a debugging session.
 
+## Second-pass audit (2026-06-14)
+
+An independent compile-oriented audit (separate reviewers, fresh read of every `.h`/`.cpp`) ran after the merge to catch what a review without a compiler can't. It found **two real build-breakers** — both fixed in this commit, both structural rather than 5.7-specific (they'd fail on any UE5 version):
+
+1. **`EchoesCore.Build.cs` was missing `AIModule`.** `EchoesAIController` (`AIController.h`, `UBehaviorTree`, `RunBehaviorTree`) needs it; `GameplayTasks` doesn't pull it in. Added to `PublicDependencyModuleNames` (public, since the include is in a public header).
+2. **`EchoesGameplayTags.h` exported tags incorrectly.** `ECHOESCORE_API UE_DECLARE_GAMEPLAY_TAG_EXTERN(...)` placed `__declspec` before `extern` (MSVC warning → error under warnings-as-errors) and was asymmetric with the unmarked `.cpp` definitions. Removed `ECHOESCORE_API` from all 8 — the idiomatic Epic/Lyra native-tag form.
+
+Everything else in the module audited **API-correct for 5.7**. Four cosmetic nits (an unused header include, a self-vs-target effect-spec intent note, a non-`BlueprintType` handle pin, an over-stated persistent-id comment) were logged but not changed — none block a build. The per-file "High confidence" ratings below stand for the C++ *logic*; the gap was entirely in build/link plumbing the first pass couldn't exercise.
+
 ## Pre-build checklist (do these first — they cause 90% of first-build failures)
 
 1. **UE version:** 5.7 (the code targets 5.7 APIs; see version-sensitivity notes below if you're on 5.4–5.6).
@@ -28,7 +37,7 @@ All 20 files traced. Confidence = how likely it compiles unchanged on a clean 5.
 | `EchoesPersistentIdComponent.h/.cpp` | High | `OnRegister`/`FGuid::NewGuid` standard. |
 | `EchoesBiomeDataAsset.h` | High | `TSoftObjectPtr<UWorld>` fine. |
 | `EchoesFloorGenerator.h/.cpp` | High | `Math/RandomStream.h` included for `FRandomStream`. |
-| `EchoesCore.Build.cs` / `EchoesCore.cpp` | High | See module-registration steps above. |
+| `EchoesCore.Build.cs` / `EchoesCore.cpp` | High | `AIModule` dep added in the 2026-06-14 audit (was missing → AI controller wouldn't compile); see module-registration steps above. |
 
 No file is rated below High — the earlier code review removed the real API errors (logged in `README.md`). The realistic failures are the *environmental* ones in the checklist, not the C++.
 
